@@ -1,0 +1,1940 @@
+[
+  {
+    "canonical_exercise_id": "ח_2_בסיס_25",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "25",
+    "text": {
+      "question": [
+        "השלימו את טבלת הערכים החלקיים על ידי הצבה בייצוג האלגברי הנתון (לדוגמה הצבה של x=3 אז $y=3^2=9$) וסמנו את הנקודות במערכת הצירים. x 0 1 2 3 y 0 9",
+        "אם נחבר את הנקודות שסימנו בסעיף הקודם נקבל קו ישר?"
+      ],
+      "solution": [
+        "הטבלה שהושלמה: x 0 1 2 3 y 0 1 4 9",
+        "לא, גרף של ישר."
+      ],
+      "hint": [
+        "הציבו כל ערך של x במשוואה $y = x^2$ כדי למצוא את ערך y המתאים.",
+        "סמנו את הנקודות במערכת צירים, ונסו לחבר אותן"
+      ],
+      "full_solution": [
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי $y = x^2$: עבור x = 0: $y = 0^2 = 0$ עבור x = 1 : $y = 1^2 = 1$ עבור x = 2 : $y = 2^2 = 4$ עבור x = 3 : $y = 3^2 = 9$ הנקודות שיתקבלו הן: (0,0), (1,1), (2,4), (3,9).",
+        "לא, אם נחבר את הנקודות שסימנו (0,0), (1,1), (2,4), (3,9) לא נקבל קו ישר. כי הקצב שינוי לא נשמר"
+      ]
+    },
+    "math": [
+      "y=3^2=9",
+      "y = x^2",
+      "y = x^2",
+      "y = 0^2 = 0",
+      "y = 1^2 = 1",
+      "y = 2^2 = 4",
+      "y = 3^2 = 9"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68973e195a8dafc23fe595e4",
+      "created_date": "2025-08-09T12:24:57.470000",
+      "updated_date": "2025-08-09T12:29:17.688000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_חישוב_14",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "חישוב",
+    "exercise_number": "14",
+    "text": {
+      "question": [
+        "נתון גרף של ישר- ו-2 ייצוגים אלגברים של ישרים טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי $y=-1\\cdot x+3$ $y=-2\\cdot x+3$",
+        "נתון גרף של ישר- ו-2 ייצוגים אלגברים של ישרים טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי $y=-1\\cdot x+3$ $y=-2\\cdot x+3$",
+        "נתון גרף של ישר- ו-2 ייצוגים אלגברים של ישרים טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי $y=-1\\cdot x+3$ $y=-2\\cdot x+3$",
+        "נתון גרף של ישר- ו-2 ייצוגים אלגברים של ישרים טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי $y=-1\\cdot x+3$ $y=-2\\cdot x+3$"
+      ],
+      "solution": [
+        "$y=-1\\cdot x+3$ (1) $y=-2\\cdot x+3$ (2) $y=-3\\cdot x+3$ (3)",
+        "השיפוע של הגרף הוא קצב העלייה - הוא M המקדם של x במשוואה   $y=M\\cdot x+b$ הנקודות חיתוך (שיעור ה-y)  של הגרף  - הוא b האיבר החופשי במשוואה  $y=M\\cdot x+b$"
+      ],
+      "hint": [
+        "נסו להבין מה משותף לישרים ומה שונה",
+        "קשור לייצוג אלגברי כללי של ישר   $y=M\\cdot x+b$"
+      ],
+      "full_solution": [
+        "נקודת החיתוך עם ציר ה-y זהה לכל הישרים ולכן הייצוג נקבע לפי השיפוע של הגרף, ככל שהוא תלול יותר הוא גדול יותר ישר (1) השיפוע הכי פחות תלול $y=-1\\cdot x+3$ ישר (2) שיפוע פחות תלול ולכן $y=-2\\cdot x+3$ ישר (3) שיפוע הכי תלול ולכן משוואתו היא $y=-3\\cdot x+3$"
+      ]
+    },
+    "math": [
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3",
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3",
+      "y=-3\\cdot x+3",
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3",
+      "y=-3\\cdot x+3",
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3",
+      "y=M\\cdot x+b",
+      "y=M\\cdot x+b",
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3",
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68973c6e46f5bd51bfb64b95",
+      "created_date": "2025-08-09T12:17:50.101000",
+      "updated_date": "2025-08-09T12:21:26.853000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_חישוב_12",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "חישוב",
+    "exercise_number": "12",
+    "text": {
+      "question": [
+        "התאימו בין הגרף המתאים וייצוג האלגברי",
+        "רשמו מסקנה, כיצד ניתן להתאים בין גרף של ישר ובין משוואותו"
+      ],
+      "solution": [
+        "$y=-1\\cdot x+3$ (1) $y=-2\\cdot x+3$ (2) $y=-3\\cdot x+3$ (3)",
+        "השיפוע של הגרף הוא קצב העלייה - הוא M המקדם של x במשוואה   $y=M\\cdot x+b$ הנקודות חיתוך (שיעור ה-y)  של הגרף  - הוא b האיבר החופשי במשוואה  $y=M\\cdot x+b$"
+      ],
+      "hint": [
+        "נסו להבין מה משותף לישרים ומה שונה",
+        "קשור לייצוג אלגברי כללי של ישר   $y=M\\cdot x+b$"
+      ],
+      "full_solution": [
+        "נקודת החיתוך עם ציר ה-y זהה לכל הישרים ולכן הייצוג נקבע לפי השיפוע של הגרף, ככל שהוא תלול יותר הוא גדול יותר ישר (1) השיפוע הכי פחות תלול $y=-1\\cdot x+3$ ישר (2) שיפוע פחות תלול ולכן $y=-2\\cdot x+3$ ישר (3) שיפוע הכי תלול ולכן משוואתו היא $y=-3\\cdot x+3$"
+      ]
+    },
+    "math": [
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3",
+      "y=-3\\cdot x+3",
+      "y=-1\\cdot x+3",
+      "y=-2\\cdot x+3",
+      "y=-3\\cdot x+3",
+      "y=M\\cdot x+b",
+      "y=M\\cdot x+b"
+    ],
+    "svg": [
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"-1\" x2=\"6\" y2=\"-1\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n  \n  <line x1=\"-1\" y1=\"-7\" x2=\"2\" y2=\"2\" stroke=\"black\" stroke-width=\"0.1\"/>\n  <line x1=\"-1\" y1=\"-6\" x2=\"3\" y2=\"2\" stroke=\"black\" stroke-width=\"0.1\"/>\n  <line x1=\"-1\" y1=\"-5\" x2=\"4\" y2=\"0\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n <text x=\"4\" y=\"0\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(1)</text>\n <text x=\"1.2\" y=\"2\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(3)</text>\n  <text x=\"2.4\" y=\"1\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(2)</text>\n\n\n <circle cx=\"0\" cy=\"-4\" r=\"0.2\" fill=\"#C00000\" />\n\n      </svg>"
+    ],
+    "metadata": {
+      "id": "689738d4159b3700c694a9b5",
+      "created_date": "2025-08-09T12:02:28.801000",
+      "updated_date": "2025-08-09T12:14:36.589000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_חישוב_11",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "חישוב",
+    "exercise_number": "11",
+    "text": {
+      "question": [
+        "התאימו בין הגרף המתאים וייצוג האלגברי",
+        "רשמו מסקנה, כיצד ניתן להתאים בין גרף של ישר ובין משוואותו"
+      ],
+      "solution": [
+        "$y=1\\cdot x+1$ (1) $y=2\\cdot x+1$ (2) $y=3\\cdot x+1$ (3)",
+        "השיפוע של הגרף הוא קצב העלייה - הוא M המקדם של x במשוואה   $y=M\\cdot x+b$ הנקודות חיתוך (שיעור ה-y)  של הגרף  - הוא b האיבר החופשי במשוואה  $y=M\\cdot x+b$"
+      ],
+      "hint": [
+        "נסו להבין מה משותף לישרים ומה שונה",
+        "קשור לייצוג אלגברי כללי של ישר   $y=M\\cdot x+b$"
+      ],
+      "full_solution": [
+        "נקודת החיתוך עם ציר ה-y זהה לכל הישרים ולכן הייצוג נקבע לפי השיפוע של הגרף, ככל שהוא תלול יותר הוא גדול יותר ישר (3) חותך בנקודה (0,3) ולכן משוואתו היא $y=1\\cdot x+1$ ישר (2) חותך בנקודה (0,1) ולכן משוואתו היא $y=2\\cdot x+1$ ישר (1) חותך בנקודה (2-,0) ולכן משוואתו היא $y=3\\cdot x+1$"
+      ]
+    },
+    "math": [
+      "y=1\\cdot x+1",
+      "y=2\\cdot x+1",
+      "y=3\\cdot x+1",
+      "y=1\\cdot x+1",
+      "y=2\\cdot x+1",
+      "y=3\\cdot x+1",
+      "y=M\\cdot x+b",
+      "y=M\\cdot x+b"
+    ],
+    "svg": [
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"-1\" x2=\"6\" y2=\"-1\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n  \n  <line x1=\"-1\" y1=\"1\" x2=\"2\" y2=\"-8\" stroke=\"black\" stroke-width=\"0.1\"/>\n  <line x1=\"-1\" y1=\"0\" x2=\"2.5\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.1\"/>\n  <line x1=\"-1\" y1=\"-1\" x2=\"3\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n <text x=\"1.7\" y=\"-7.4\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(1)</text>\n <text x=\"2.5\" y=\"-4\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(3)</text>\n  <text x=\"2.3\" y=\"-5.9\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(2)</text>\n\n\n <circle cx=\"0\" cy=\"-2\" r=\"0.2\" fill=\"#C00000\" />\n\n      </svg>"
+    ],
+    "metadata": {
+      "id": "689734f17f8c4621cb9237c4",
+      "created_date": "2025-08-09T11:45:53.721000",
+      "updated_date": "2025-08-09T12:01:26.494000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_חישוב_10",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "חישוב",
+    "exercise_number": "10",
+    "text": {
+      "question": [
+        "התאימו בין הגרף המתאים וייצוג האלגברי",
+        "רשמו מסקנה, כיצד ניתן להתאים בין גרף של ישר ובין משוואותו"
+      ],
+      "solution": [
+        "$y=1\\cdot x-2$  (3) $y=1\\cdot x+3$ (1) $y=1\\cdot x+1$  (2)",
+        "השיפוע של הגרף הוא קצב העלייה - הוא M המקדם של x במשוואה   $y=M\\cdot x+b$ הנקודות חיתוך (שיעור ה-y)  של הגרף  - הוא b האיבר החופשי במשוואה  $y=M\\cdot x+b$"
+      ],
+      "hint": [
+        "נסו להבין מה משותף לישרים ומה שונה",
+        "קשור לייצוג אלגברי כללי של ישר   $y=M\\cdot x+b$"
+      ],
+      "full_solution": [
+        "על פי נקודת החיתוך עם ציר ה-y ניתן להבין לגבי הייצוג האלגברי, כי השיפוע זהה לכל הישרים ישר (1) חותך בנקודה (0,3)  ולכן משוואתו היא $y=1\\cdot x+3$ ישר (2) חותך בנקודה (0,1)  ולכן משוואתו היא $y=1\\cdot x+1$ ישר (3) חותך בנקודה (2-,0)  ולכן משוואתו היא $y=1\\cdot x-2$"
+      ]
+    },
+    "math": [
+      "y=1\\cdot x-2",
+      "y=1\\cdot x+3",
+      "y=1\\cdot x+1",
+      "y=1\\cdot x+3",
+      "y=1\\cdot x+1",
+      "y=1\\cdot x-2",
+      "y=M\\cdot x+b",
+      "y=M\\cdot x+b"
+    ],
+    "svg": [
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"-1\" x2=\"6\" y2=\"-1\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n  \n  <line x1=\"-1\" y1=\"-3\" x2=\"4\" y2=\"-8\" stroke=\"black\" stroke-width=\"0.1\"/>\n  <line x1=\"-1\" y1=\"-1\" x2=\"4\" y2=\"-6\" stroke=\"black\" stroke-width=\"0.1\"/>\n  <line x1=\"-1\" y1=\"2\" x2=\"4\" y2=\"-3\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n <text x=\"4\" y=\"-7\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(1)</text>\n <text x=\"4\" y=\"-5\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(2)</text>\n  <text x=\"4\" y=\"-2\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">(3)</text>\n\n <circle cx=\"0\" cy=\"-4\" r=\"0.2\" fill=\"#C00000\" />\n <circle cx=\"0\" cy=\"-2\" r=\"0.2\" fill=\"#C00000\" />\n <circle cx=\"0\" cy=\"1\" r=\"0.2\" fill=\"#C00000\" />\n      </svg>"
+    ],
+    "metadata": {
+      "id": "689719dc2973497feb51e02a",
+      "created_date": "2025-08-09T09:50:20.884000",
+      "updated_date": "2025-08-09T10:05:51.751000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_חישוב_9",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "חישוב",
+    "exercise_number": "9",
+    "text": {
+      "question": [
+        "השלימו את החסר בטבלה",
+        "קבעו, מהי המסקנה מהטבלה לגבי הייצוג האלגברי של ישר  $y=1\\cdot x+2$"
+      ]
+    },
+    "math": [
+      "y=1\\cdot x+2"
+    ],
+    "svg": [
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"0\" x2=\"8\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n    <line x1=\"-1\" y1=\"1\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n    <circle cx=\"0\" cy=\"0\" r=\"0.2\" fill=\"#C00000\" />\n\n      </svg>",
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"0\" x2=\"8\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n    <line x1=\"-1\" y1=\"-1\" x2=\"4\" y2=\"-6\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n  <circle cx=\"0\" cy=\"-2\" r=\"0.2\" fill=\"#C00000\" />\n\n      </svg>",
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"-2\" x2=\"8\" y2=\"-2\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n    <line x1=\"-1\" y1=\"1\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n    <circle cx=\"0\" cy=\"0\" r=\"0.2\" fill=\"#C00000\" />\n\n      </svg>"
+    ],
+    "metadata": {
+      "id": "68970f1d72bee6730c90e560",
+      "created_date": "2025-08-09T09:04:29.204000",
+      "updated_date": "2025-08-09T09:21:48.256000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_חישוב_8",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "חישוב",
+    "exercise_number": "8",
+    "text": {
+      "question": [
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M",
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M $M=1.5$",
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M",
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M $y=\\frac{1}{3}\\cdot x$"
+      ],
+      "solution": [
+        "$y=4\\cdot x$ $M=4$",
+        "$y=1.5\\cdot x$",
+        "$y=-2\\cdot x$ $M=-2$",
+        "$M=\\frac{1}{2}$"
+      ],
+      "hint": [
+        "שימו לב לדוגמה בתחילת התרגיל",
+        "העזרו בדוגמה בתחילת התרגיל",
+        "העזרו בדוגמה בתחילת התרגיל",
+        "העזרו בדוגמה בתחילת התרגיל"
+      ],
+      "full_solution": [
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 2 יחידות עלייה בכל תזוזה ימינה של יחידה אחת",
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 1.5 יחידות עלייה בכל תזוזה ימינה של יחידה אחת",
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 2 יחידות ירידה בכל תזוזה ימינה של יחידה אחת",
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 1/3 יחידות עלייה בכל תזוזה ימינה של יחידה אחת, כך שבכל תזוזה של 3 יחידות ימינה נעלה רק משבצת אחת"
+      ]
+    },
+    "math": [
+      "y=4\\cdot x",
+      "M=4",
+      "M=1.5",
+      "y=1.5\\cdot x",
+      "y=-2\\cdot x",
+      "M=-2",
+      "y=\\frac{1}{3}\\cdot x",
+      "M=\\frac{1}{2}"
+    ],
+    "svg": [
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"0\" x2=\"8\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n    <line x1=\"-1\" y1=\"1\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n     <path d=\"M1 -1 L1 -2 L2 -2\" stroke=\"red\" stroke-width=\"0.1\" fill=\"none\" stroke-dasharray=\"0.2,0.2\"/>\n     <path d=\"M2 -2 L2 -3 L3 -3\" stroke=\"red\" stroke-width=\"0.1\" fill=\"none\" stroke-dasharray=\"0.2,0.2\"/>\n\n      </svg>"
+    ],
+    "metadata": {
+      "id": "6896f9f77f8c4621cb9150ae",
+      "created_date": "2025-08-09T07:34:15.133000",
+      "updated_date": "2025-08-09T08:03:33.527000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_חישוב_7",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "חישוב",
+    "exercise_number": "7",
+    "text": {
+      "question": [
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M $y=2\\cdot x$",
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M",
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M $y=-1\\cdot x$",
+        "השלימו את מה שחסר בטבלה טבלה עם 3 קווים בלבד ייצוג גרפי ייצוג אלגברי שיפוע M $y=\\frac{1}{2}\\cdot x$"
+      ],
+      "solution": [
+        "$M=2$",
+        "$y=3\\cdot x$ $M=3$",
+        "$M=-1$",
+        "$M=\\frac{1}{2}$"
+      ],
+      "hint": [
+        "שימו לב לדוגמה בתחילת התרגיל",
+        "העזרו בדוגמה בתחילת התרגיל",
+        "העזרו בדוגמה בתחילת התרגיל",
+        "העזרו בדוגמה בתחילת התרגיל"
+      ],
+      "full_solution": [
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 2 יחידות עלייה בכל תזוזה ימינה של יחידה אחת",
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 2 יחידות עלייה בכל תזוזה ימינה של יחידה אחת",
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 1 יחידות ירידה בכל תזוזה ימינה של יחידה אחת",
+        "על פי הסימון בגרף, ניתן לראות שקצב ההשתנות הוא 1/2 יחידות עלייה בכל תזוזה ימינה של יחידה אחת"
+      ]
+    },
+    "math": [
+      "y=2\\cdot x",
+      "M=2",
+      "y=3\\cdot x",
+      "M=3",
+      "y=-1\\cdot x",
+      "M=-1",
+      "y=\\frac{1}{2}\\cdot x",
+      "M=\\frac{1}{2}"
+    ],
+    "svg": [
+      "<svg viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n          <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n          </marker>\n          <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n            <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n          </marker>\n          <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n            <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n          </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n\n   <line x1=\"-10\" y1=\"0\" x2=\"8\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n    <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n    <line x1=\"-1\" y1=\"1\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.1\"/>\n     \n     <path d=\"M1 -1 L1 -2 L2 -2\" stroke=\"red\" stroke-width=\"0.1\" fill=\"none\" stroke-dasharray=\"0.2,0.2\"/>\n     <path d=\"M2 -2 L2 -3 L3 -3\" stroke=\"red\" stroke-width=\"0.1\" fill=\"none\" stroke-dasharray=\"0.2,0.2\"/>\n\n      </svg>"
+    ],
+    "metadata": {
+      "id": "6896e9cf5a8dafc23fe3bdd8",
+      "created_date": "2025-08-09T06:25:19.595000",
+      "updated_date": "2025-08-09T08:04:28.629000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_שאלה_אמריקאית_6",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "שאלה אמריקאית",
+    "exercise_number": "6",
+    "text": {
+      "question": [
+        "קבעו איזה ייצוג אלגברי מציג את הקשר בין x ו-y של הנקודות הנתונות",
+        "קבעו איזה ייצוג אלגברי מציג את הקשר בין x ו-y של הנקודות הנתונות",
+        "קבעו איזה ייצוג אלגברי מציג את הקשר בין x ו-y של הנקודות הנתונות"
+      ],
+      "solution": [
+        "$y = -x$",
+        "x y",
+        "גרף של קו ישר"
+      ],
+      "hint": [
+        "בחנו את כל הנקודות הנתונות",
+        "שרטטו במחברת, ציר x וציר y וסמנו את הנקודות לפי משבצות"
+      ],
+      "full_solution": [
+        "בכל הנקודות שיעור y שווה לשיעור ה-x כפול 2-",
+        "וודאו שסימנתם את הנקודות נכון, ואז העבירו עקומה"
+      ]
+    },
+    "math": [
+      "y = -x"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6895ef7b60132d7bac70e346",
+      "created_date": "2025-08-08T12:37:15.064000",
+      "updated_date": "2025-08-08T12:45:59.253000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_שאלה_אמריקאית_5",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "שאלה אמריקאית",
+    "exercise_number": "5",
+    "text": {
+      "question": [
+        "קבעו איזה ייצוג אלגברי מציג את הקשר בין x ו-y של הנקודות הנתונות",
+        "סמנו את הנקודות במערכת צירים x y",
+        "קבעו, אם נעביר עקומה דרך הנקודות שסימנתם, נקבל:"
+      ],
+      "solution": [
+        "$y = -2 \\cdot x$",
+        "x y",
+        "גרף של קו ישר"
+      ],
+      "hint": [
+        "בחנו את כל הנקודות הנתונות",
+        "שרטטו במחברת, ציר x וציר y וסמנו את הנקודות לפי משבצות"
+      ],
+      "full_solution": [
+        "בכל הנקודות שיעור y שווה לשיעור ה-x כפול 2-",
+        "וודאו שסימנתם את הנקודות נכון, ואז העבירו עקומה"
+      ]
+    },
+    "math": [
+      "y = -2 \\cdot x"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6895e96b02970b0f9821d91a",
+      "created_date": "2025-08-08T12:11:23.357000",
+      "updated_date": "2025-08-08T12:23:22.723000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_שאלה_אמריקאית_4",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "שאלה אמריקאית",
+    "exercise_number": "4",
+    "text": {
+      "question": [
+        "קבעו איזה ייצוג אלגברי מציג את הקשר בין x ו-y של הנקודות הנתונות",
+        "סמנו את הנקודות במערכת צירים x y",
+        "קבעו, אם נעביר עקומה דרך הנקודות שסימנתם, נקבל:"
+      ],
+      "solution": [
+        "$y=x^2$",
+        "x y",
+        "גרף של קו ישר"
+      ],
+      "hint": [
+        "בחנו את כל הנקודות הנתונות",
+        "שרטטו במחברת, ציר x וציר y וסמנו את הנקודות לפי משבצות"
+      ],
+      "full_solution": [
+        "בכל הנקודות שיעור y שווה לשיעור ה-x  בחזקת 2",
+        "וודאו שסימנתם את הנקודות נכון, ואז העבירו עקומה"
+      ]
+    },
+    "math": [
+      "y=x^2"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6895e675a73209b3bc26f447",
+      "created_date": "2025-08-08T11:58:45.143000",
+      "updated_date": "2025-08-08T12:03:48.922000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_שאלה_אמריקאית_2",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "שאלה אמריקאית",
+    "exercise_number": "2",
+    "text": {
+      "question": [
+        "קבעו איזה ייצוג אלגברי מציג את הקשר בין x ו-y של הנקודות הנתונות",
+        "סמנו את הנקודות במערכת צירים x y",
+        "קבעו, אם נעביר עקומה דרך הנקודות שסימנתם, נקבל:"
+      ],
+      "solution": [
+        "$y=x+2$",
+        "x y",
+        "גרף של קו ישר"
+      ],
+      "full_solution": [
+        "בכל הנקודות שיעור y  גדול ב-2 משיעור ה-x",
+        "וודאו שסימנתם את הנקודות נכון, ואז העבירו עקומה"
+      ],
+      "hint": [
+        "שרטטו במחברת, ציר x וציר y וסמנו את הנקודות לפי משבצות"
+      ]
+    },
+    "math": [
+      "y=x+2"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6895da92f1756d488c773f03",
+      "created_date": "2025-08-08T11:08:02.150000",
+      "updated_date": "2025-08-08T11:52:24.844000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_הוכחה_3",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "הוכחה",
+    "exercise_number": "3",
+    "text": {
+      "question": [
+        "השלימו את הטבלה הבאה: מס' כדורים 0 1 2 3 עלות 0",
+        "אילו נקודות מתקבלות מהטבלה ?",
+        "סמנו את הנקודות שבחרתן בסעיף קודם במערכת צירים",
+        "קבעו, אם נעביר עקומה דרך הנקודות שסימנתם, נקבל"
+      ],
+      "hint": [
+        "דוגמה, מחיר של 6 כדורי שוקולד הוא 6 כפול 3 שזה 18 ש\"ח"
+      ]
+    },
+    "math": [],
+    "svg": [],
+    "metadata": {
+      "id": "689424ee14bb2f702051bc5c",
+      "created_date": "2025-08-07T04:00:46.098000",
+      "updated_date": "2025-08-08T11:59:11.872000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_שאלה_אמריקאית_1",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "שאלה אמריקאית",
+    "exercise_number": "1",
+    "text": {
+      "question": [
+        "קבעו איזה ייצוג אלגברי מציג את הקשר בין x ו-y של הנקודות הנתונות",
+        "סמנו את הנקודות במערכת צירים x y",
+        "קבעו, אם נעביר עקומה דרך הנקודות שסימנתם, נקבל:"
+      ],
+      "solution": [
+        "y=x",
+        "גרף של קו ישר"
+      ],
+      "hint": [
+        "נסו להבין מה משותף לכל הנקודות הנתונות x y",
+        "שרטטו במחברת, ציר x וציר y וסמנו את הנקודות לפי משבצות"
+      ],
+      "full_solution": [
+        "בכל הנקודות שיעור ה-x ו-y זהים",
+        "וודאו שסימנתם את הנקודות נכון, ואז העבירו עקומה"
+      ]
+    },
+    "math": [],
+    "svg": [],
+    "metadata": {
+      "id": "689421aeda7dcef7285ad602",
+      "created_date": "2025-08-07T03:46:54.621000",
+      "updated_date": "2025-08-07T03:53:05.615000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_41",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "41",
+    "text": {
+      "question": [
+        "התאימו לכל ייצוג אלגברי את הייצוג הגרפי המתאים בשרטוט. ייצוג אלגברי ייצוג גרפי y = 1/2 x y = 1/2 x + 2 y = 1/2 x - 3",
+        "לפי תשובתכם בסעיף א', נסחו במילים שלכם את הקשר שבין הייצוג האלגברי לייצוג הגרפי של הישר.",
+        "מה משותף לכל הגרפים של הישרים?"
+      ],
+      "solution": [
+        "נזהה את נקודת החיתוך עם ציר ה-$y$ (הקבוע החופשי) של כל פונקציה אלגברית ונשווה אותה לנקודת החיתוך של כל גרף עם ציר ה-$y$. ייצוג אלגברי נקודת חיתוך עם ציר ה-y ייצוג גרפי y = 1/2 x $$(0,0)$$ (2) y = 1/2 x + 2 $$(0,2)$$ (3) y = 1/2 x - 3 $$(0,-3)$$ (1)",
+        "הקשר הוא שהמקדם של $x$ בייצוג האלגברי (השיפוע) קובע את תלילות וכיוון הישר, והקבוע החופשי ($b$) קובע את נקודת החיתוך של הישר עם ציר ה-$y$.",
+        "לכל הגרפים של הישרים יש את אותו שיפוע ($$\\frac{1}{2}$$), ולכן הם מקבילים זה לזה."
+      ],
+      "hint": [
+        "זכרו שבייצוג אלגברי $y = mx + b$, הערך של $b$ מציין את נקודת החיתוך של הישר עם ציר ה-$y$. ככל ש-$b$ גדול יותר, כך הישר גבוה יותר על הגרף (לגבי אותם ערכי $x$).",
+        "שימו לב מה משתנה בייצוג האלגברי וכיצד זה בא לידי ביטוי בגרף.",
+        "התבוננו במקדם של $x$ בכל הפונקציות האלגבריות."
+      ],
+      "full_solution": [
+        "נבדוק את נקודת החיתוך עם ציר ה-$y$ (הקבוע החופשי, $b$) עבור כל ייצוג אלגברי:\n* **ייצוג אלגברי $y = \\frac{1}{2}x$**: כאן $b=0$. הישר חותך את ציר ה-$y$ ב-$$(0,0)$$. זה מתאים לגרף (2).\n* **ייצוג אלגברי $y = \\frac{1}{2}x + 2$**: כאן $b=2$. הישר חותך את ציר ה-$y$ ב-$$(0,2)$$. זה מתאים לגרף (3).\n* **ייצוג אלגברי $y = \\frac{1}{2}x - 3$**: כאן $b=-3$. הישר חותך את ציר ה-$y$ ב-$$(0,-3)$$. זה מתאים לגרף (1).",
+        "הייצוג האלגברי של פונקציה קווית הוא מהצורה $y = mx + b$, כאשר $m$ הוא השיפוע ו-$b$ הוא הקבוע החופשי (נקודת חיתוך עם ציר ה-$y$).\n\n* **השיפוע ($m$)** קובע את מידת התלילות של הישר ואת כיוונו (עולה, יורד או אופקי). אם השיפוע זהה, הישרים מקבילים.\n* **הקבוע החופשי ($b$)** קובע את הנקודה בה הישר חותך את ציר ה-$y$. שינוי ב-$b$ גורם להזזה אנכית של הישר על הגרף מבלי לשנות את תלילותו או כיוונו.",
+        "בכל הייצוגים האלגבריים הנתונים:\n* $y = \\frac{1}{2}x$\n* $y = \\frac{1}{2}x + 2$\n* $y = \\frac{1}{2}x - 3$\n\nהמקדם של $x$ (השיפוע) זהה בכל הפונקציות והוא שווה ל-$$\\frac{1}{2}$$ . כאשר לישרים יש את אותו שיפוע, הם מקבילים זה לזה. לכן, המשותף לכל הגרפים הוא שהם ישרים מקבילים."
+      ]
+    },
+    "math": [
+      "y",
+      "(0,0)",
+      "(0,2)",
+      "(0,-3)",
+      "y = mx + b",
+      "b",
+      "y",
+      "x",
+      "y",
+      "b",
+      "y = \\frac{1}{2}x",
+      "b=0",
+      "(0,0)",
+      "y = \\frac{1}{2}x + 2",
+      "b=2",
+      "(0,2)",
+      "y = \\frac{1}{2}x - 3",
+      "b=-3",
+      "(0,-3)",
+      "x",
+      "b",
+      "y",
+      "y = mx + b",
+      "m",
+      "b",
+      "y",
+      "\\frac{1}{2}",
+      "x",
+      "y = \\frac{1}{2}x",
+      "y = \\frac{1}{2}x + 2",
+      "y = \\frac{1}{2}x - 3",
+      "x",
+      "\\frac{1}{2}"
+    ],
+    "svg": [
+      "<svg viewBox=\"-5 -5 10 10\"><defs><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/></pattern><marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" /></marker><marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" /></marker></defs><rect x=\"-5\" y=\"-5\" width=\"10\" height=\"10\" fill=\"url(#grid)\" /><line x1=\"-5\" y1=\"0\" x2=\"5\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/><line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/><text x=\"4\" y=\"1.7\" font-size=\"0.6\">(3)</text><text x=\"4\" y=\"-1.2\" font-size=\"0.6\">(2)</text><text x=\"4\" y=\"-3.2\" font-size=\"0.6\">(1)</text><line x1=\"-4\" y1=\"2\" x2=\"4\" y2=\"-2\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/><line x1=\"-4\" y1=\"0\" x2=\"4\" y2=\"-4\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/><line x1=\"-4\" y1=\"5\" x2=\"4\" y2=\"1\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/></svg>"
+    ],
+    "metadata": {
+      "id": "688263bb6a430dd85d4e0e91",
+      "created_date": "2025-07-24T16:47:55.460000",
+      "updated_date": "2025-08-09T12:29:49.389000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_40",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "40",
+    "text": {
+      "question": [
+        "שרטטו את הגרפים של שתי הפונקציות במערכת צירים אחת.",
+        "מהן נקודות המפגש של כל פונקציה עם ציר ה-y?",
+        "מה ההבדל בין הגרפים של שתי הפונקציות?"
+      ],
+      "hint": [
+        "השתמשו בנקודות מתוך הטבלאות עבור כל פונקציה, או בנקודת החיתוך עם ציר ה-y ובשיפוע מתוך הייצוג האלגברי.",
+        "קבעו לפי אחד מהייצוגים אלגברים",
+        "השוו את השיפועים ואת נקודות החיתוך עם ציר ה-$y$."
+      ],
+      "solution": [
+        "$(0,1)$ $(0,-3)$",
+        "המפגש עם ציר ה-y"
+      ],
+      "full_solution": [
+        "עבור פונקציה (1) ($y = x + 1$): נקודת המפגש עם ציר ה-$y$ היא $$(0,1)$$ . עבור פונקציה (2) ($y = x -3$): נקודת המפגש עם ציר ה-$y$ היא $$(0,-3)$$ .",
+        "השיפוע זהה, המפגש עם ציר ה-y שונה"
+      ]
+    },
+    "math": [
+      "(0,1)",
+      "(0,-3)",
+      "y = x + 1",
+      "y",
+      "(0,1)",
+      "y = x -3",
+      "(0,-3)",
+      "y"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6882617a5899ab6407548ce5",
+      "created_date": "2025-07-24T16:38:18.462000",
+      "updated_date": "2025-08-09T14:27:22.372000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_39",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "39",
+    "text": {
+      "question": [
+        "האם הפונקציה קווית? אם כן, מהו השיפוע?",
+        "האם הפונקציה קווית? אם כן, מהו השיפוע?",
+        "האם הפונקציה קווית? אם כן, מהו השיפוע?",
+        "האם הפונקציה קווית? אם כן, מהו השיפוע?"
+      ],
+      "solution": [
+        "כן, הפונקציה קווית. השיפוע הוא $$2$$ .",
+        "כן, הפונקציה קווית. השיפוע הוא $$1$$ .",
+        "כן, הפונקציה קווית. השיפוע הוא $$-0.5$$ או $$-1/2$$ .",
+        "לא, הפונקציה אינה קווית."
+      ],
+      "hint": [
+        "בדקו אם קצב השינוי של $y$ ביחס ל-$x$ קבוע (כלומר, השיפוע).",
+        "בדקו את השינויים ב-$y$ ביחס לשינויים ב-$x$.",
+        "שימו לב שה-$y$ יורד. מהו קצב הירידה?",
+        "בדקו אם השינוי ב-$y$ עבור שינוי קבוע ב-$x$ נשאר זהה."
+      ],
+      "full_solution": [
+        "נחשב את השיפוע בין זוגות נקודות סמוכים:\n* בין (-1,-4) ל-(1,0): $$\\frac{0 - (-4)}{1 - (-1)} = \\frac{4}{2} = 2$$\n* בין (1,0) ל-(3,4): $$\\frac{4 - 0}{3 - 1} = \\frac{4}{2} = 2$$\n* בין (3,4) ל-(5,8): $$\\frac{8 - 4}{5 - 3} = \\frac{4}{2} = 2$$\n* בין (5,8) ל-(7,12): $$\\frac{12 - 8}{7 - 5} = \\frac{4}{2} = 2$$\n\nמכיוון שהשיפוע קבוע (שווה ל-2) בין כל זוגות הנקודות, הפונקציה היא קווית, ושיפועה הוא $$2$$ .",
+        "נחשב את השיפוע בין זוגות נקודות סמוכים:\n* בין (0,0) ל-(2,2): $$\\frac{2 - 0}{2 - 0} = \\frac{2}{2} = 1$$\n* בין (2,2) ל-(4,4): $$\\frac{4 - 2}{4 - 2} = \\frac{2}{2} = 1$$\n* בין (4,4) ל-(6,6): $$\\frac{6 - 4}{6 - 4} = \\frac{2}{2} = 1$$\n* בין (6,6) ל-(8,8): $$\\frac{8 - 6}{8 - 6} = \\frac{2}{2} = 1$$\n\nמכיוון שהשיפוע קבוע (שווה ל-1) בין כל זוגות הנקודות, הפונקציה היא קווית, ושיפועה הוא $$1$$ .",
+        "נחשב את השיפוע בין זוגות נקודות סמוכים:\n* בין $$(3, -1.5)$$ ל-$$(4, -2)$$: $$\\frac{-2 - (-1.5)}{4 - 3} = \\frac{-0.5}{1} = -0.5$$\n* בין $$(4, -2)$$ ל-$$(5, -2.5)$$: $$\\frac{-2.5 - (-2)}{5 - 4} = \\frac{-0.5}{1} = -0.5$$\n* בין $$(5, -2.5)$$ ל-$$(6, -3)$$: $$\\frac{-3 - (-2.5)}{6 - 5} = \\frac{-0.5}{1} = -0.5$$\n* בין $$(6, -3)$$ ל-$$(7, -3.5)$$: $$\\frac{-3.5 - (-3)}{7 - 6} = \\frac{-0.5}{1} = -0.5$$\n\nמכיוון שהשיפוע קבוע (שווה ל-0.5-) בין כל זוגות הנקודות, הפונקציה היא קווית, ושיפועה הוא $$-0.5$$ .",
+        "נחשב את השיפוע בין זוגות נקודות סמוכים:\n* בין (0,0) ל-(1,1): $$\\frac{1 - 0}{1 - 0} = \\frac{1}{1} = 1$$\n* בין (1,1) ל-(2,4): $$\\frac{4 - 1}{2 - 1} = \\frac{3}{1} = 3$$\n\nמכיוון שהשיפועים בין זוגות נקודות שונים (1 ושלוש), קצב השינוי אינו קבוע. לכן, הפונקציה אינה קווית. למעשה, זוהי הפונקציה $y = x^2$."
+      ]
+    },
+    "math": [
+      "2",
+      "y",
+      "x",
+      "\\frac{0 - (-4)}{1 - (-1)} = \\frac{4}{2} = 2",
+      "\\frac{4 - 0}{3 - 1} = \\frac{4}{2} = 2",
+      "\\frac{8 - 4}{5 - 3} = \\frac{4}{2} = 2",
+      "\\frac{12 - 8}{7 - 5} = \\frac{4}{2} = 2",
+      "2",
+      "1",
+      "y",
+      "x",
+      "\\frac{2 - 0}{2 - 0} = \\frac{2}{2} = 1",
+      "\\frac{4 - 2}{4 - 2} = \\frac{2}{2} = 1",
+      "\\frac{6 - 4}{6 - 4} = \\frac{2}{2} = 1",
+      "\\frac{8 - 6}{8 - 6} = \\frac{2}{2} = 1",
+      "1",
+      "-0.5",
+      "-1/2",
+      "y",
+      "(3, -1.5)",
+      "(4, -2)",
+      "\\frac{-2 - (-1.5)}{4 - 3} = \\frac{-0.5}{1} = -0.5",
+      "(5, -2.5)",
+      "\\frac{-2.5 - (-2)}{5 - 4} = \\frac{-0.5}{1} = -0.5",
+      "(6, -3)",
+      "\\frac{-3 - (-2.5)}{6 - 5} = \\frac{-0.5}{1} = -0.5",
+      "(7, -3.5)",
+      "\\frac{-3.5 - (-3)}{7 - 6} = \\frac{-0.5}{1} = -0.5",
+      "-0.5",
+      "y",
+      "x",
+      "\\frac{1 - 0}{1 - 0} = \\frac{1}{1} = 1",
+      "\\frac{4 - 1}{2 - 1} = \\frac{3}{1} = 3",
+      "y = x^2"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "688261725899ab6407548cbd",
+      "created_date": "2025-07-24T16:38:10.225000",
+      "updated_date": "2025-08-09T12:29:49.376000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_38",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "38",
+    "text": {
+      "question": [
+        "רשמו אפשרות לנקודה B אם ידוע שהקטע AB מונח על:"
+      ]
+    },
+    "math": [],
+    "svg": [],
+    "metadata": {
+      "id": "6882615d7bdbde1a1258e203",
+      "created_date": "2025-07-24T16:37:49.792000",
+      "updated_date": "2025-08-09T12:29:49.378000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_37",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "37",
+    "text": {
+      "question": [
+        "מי מהבנות צודקת? או ששיפוע ישר יכולים להיות 2 שיפועים שונים?"
+      ],
+      "solution": [
+        "רק ליהיא צודקת. לכל ישר יש שיפוע אחד ויחיד."
+      ],
+      "hint": [
+        "חשבו את השיפוע של הישר הראשי באמצעות שתי נקודות עליו. לאחר מכן, חשבו את השיפועים שכל אחת מהבנות קיבלה מ'המדרגה' שלה."
+      ],
+      "full_solution": [
+        "ראשית, נחשב את השיפוע של הישר הנתון בגרף הראשי.\nהישר עובר בנקודות כמו $$(0,0)$$, $$(1,-1)$$ ו-$$(2,-2)$$. ניקח את הנקודות $$(0,0)$$ ו-$$(1,-1)$$. השיפוע הוא $m = \\frac{-1 - 0}{1 - 0} = \\frac{-1}{1} = -1$$. מיהו הטוען/ת תיאור סימון המדרגה / נקודות מחושבות חישוב שיפוע האם השיפוע תואם את הישר הראשי? ליהיא המדרגה עוברת מ-(1,-1) ל-(3,-3). כלומר, שינוי אופקי ($$\\Delta x$$) של $3-1 = 2$ ושינוי אנכי ($$\\Delta y$$) של $-3 - (-1) = -2$. $$m = \\frac{-2}{2} = -1$$ כן מיכל המדרגה עוברת מ-(1,-1) ל-(2,-2). כלומר, שינוי אופקי ($$\\Delta x$$) של $2-1 = 1$ ושינוי אנכי ($$\\Delta y$$) של $-2 - (-1) = -1$. $$m = \\frac{-1}{1} = -1$$ כן"
+      ]
+    },
+    "math": [
+      "(0,0)",
+      "(1,-1)",
+      "(2,-2)",
+      "m = \\frac{-1 - 0}{1 - 0} = \\frac{-1}{1} = -1",
+      "\\Delta x",
+      "3-1 = 2",
+      "\\Delta y",
+      "-3 - (-1) = -2",
+      "m = \\frac{-2}{2} = -1",
+      "2-1 = 1",
+      "-2 - (-1) = -1",
+      "m = \\frac{-1}{1} = -1"
+    ],
+    "svg": [
+      "<svg viewBox=\"-5 -5 10 10\"><defs><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/></pattern><marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" /></marker><marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" /></marker></defs><rect x=\"-5\" y=\"-5\" width=\"10\" height=\"10\" fill=\"url(#grid)\" /><line x1=\"-5\" y1=\"0\" x2=\"5\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/><line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/><line x1=\"-4\" y1=\"4\" x2=\"4\" y2=\"-4\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/></svg>"
+    ],
+    "metadata": {
+      "id": "688260c4d1c672d7a21fe36c",
+      "created_date": "2025-07-24T16:35:16.531000",
+      "updated_date": "2025-08-09T12:29:49.370000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_36",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "36",
+    "text": {
+      "question": [
+        "רועי שרטט גרף של פונקציה קווית עולה. הגרף עובר בנקודה (2, 3) ובנקודה נוספת. מהנקודות שלפניכם, סַמנו את הנקודה הנוספת.",
+        "יונתן שרטט גרף של פונקציה קווית יורדת. הגרף עובר בנקודה (2, 3) ובנקודה נוספת. מהנקודות שלפניכם, סַמנו את הנקודה הנוספת."
+      ],
+      "solution": [
+        "פונקציה קווית עולה משמעותה ששיפוע הישר חיובי. עבור ישר עולה, כאשר ערך ה-$x$ גדל, גם ערך ה-$y$ גדל.",
+        "פונקציה קווית יורדת משמעותה ששיפוע הישר שלילי. עבור ישר יורד, כאשר ערך ה-$x$ גדל, ערך ה-$y$ קטן."
+      ],
+      "hint": [
+        "בדקו עבור כל נקודה נתונה האם המעבר מ-(2,3) אליה מייצר שיפוע חיובי.",
+        "בדקו עבור כל נקודה נתונה האם המעבר מ-(2,3) אליה מייצר שיפוע שלילי."
+      ],
+      "full_solution": [
+        "נקודה נתונה: (2, 3).\nפונקציה קווית עולה פירושה שהשיפוע $m > 0$. כלומר, אם $x_2 > x_1$, אז גם $y_2 > y_1$.\nנבדוק כל אחת מהנקודות המוצעות ביחס לנקודה (2, 3):\n\n* **(0, 5)**:  $x$ ירד (2 ל-0), $y$ עלה (3 ל-5). שיפוע שלילי. $m = \\frac{5-3}{0-2} = \\frac{2}{-2} = -1$.\n* **(3, 7)**:  $x$ עלה (2 ל-3), $y$ עלה (3 ל-7). שיפוע חיובי. $m = \\frac{7-3}{3-2} = \\frac{4}{1} = 4$. זוהי נקודה אפשרית.\n* **(4, 2)**:  $x$ עלה (2 ל-4), $y$ ירד (3 ל-2). שיפוע שלילי. $m = \\frac{2-3}{4-2} = \\frac{-1}{2}$.\n* **(2, 0)**:  $x$ נשאר קבוע, $y$ ירד (3 ל-0). זהו קו אנכי, שיפוע לא מוגדר.\n* **(1, 3)**:  $x$ ירד (2 ל-1), $y$ נשאר קבוע (3 ל-3). שיפוע 0 (קו אופקי).\n\nהנקודה היחידה שמייצרת שיפוע חיובי היא (3, 7).",
+        "נקודה נתונה: (2, 3).\nפונקציה קווית יורדת פירושה שהשיפוע $m < 0$. כלומר, אם $x_2 > x_1$, אז $y_2 < y_1$.\nנבדוק כל אחת מהנקודות המוצעות ביחס לנקודה (2, 3):\n\n* **(7, 5)**:  $x$ עלה (2 ל-7), $y$ עלה (3 ל-5). שיפוע חיובי. $m = \\frac{5-3}{7-2} = \\frac{2}{5}$.\n* **(-3, -7)**: $x$ ירד (2 ל--3), $y$ ירד (3 ל--7). שיפוע חיובי. $m = \\frac{-7-3}{-3-2} = \\frac{-10}{-5} = 2$. (עלייה ב-$x$ הייתה גורמת לעלייה ב-$y$)\n* **(4, -2)**: $x$ עלה (2 ל-4), $y$ ירד (3 ל--2). שיפוע שלילי. $m = \\frac{-2-3}{4-2} = \\frac{-5}{2} = -2.5$. זוהי נקודה אפשרית.\n* **(1, 3)**:  $x$ ירד (2 ל-1), $y$ נשאר קבוע (3 ל-3). שיפוע 0 (קו אופקי).\n* **(2, 4)**:  $x$ נשאר קבוע, $y$ עלה (3 ל-4). זהו קו אנכי, שיפוע לא מוגדר.\n\nהנקודה היחידה שמייצרת שיפוע שלילי (פונקציה יורדת) היא (4, -2)."
+      ]
+    },
+    "math": [
+      "x",
+      "y",
+      "m &gt; 0",
+      "x_2 &gt; x_1",
+      "y_2 &gt; y_1",
+      "x",
+      "y",
+      "m = \\frac{5-3}{0-2} = \\frac{2}{-2} = -1",
+      "m = \\frac{7-3}{3-2} = \\frac{4}{1} = 4",
+      "m = \\frac{2-3}{4-2} = \\frac{-1}{2}",
+      "x",
+      "y",
+      "m &lt; 0",
+      "x_2 &gt; x_1",
+      "y_2 &lt; y_1",
+      "x",
+      "y",
+      "m = \\frac{5-3}{7-2} = \\frac{2}{5}",
+      "m = \\frac{-7-3}{-3-2} = \\frac{-10}{-5} = 2",
+      "m = \\frac{-2-3}{4-2} = \\frac{-5}{2} = -2.5"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68825f3df54741d5abffc4c3",
+      "created_date": "2025-07-24T16:28:45.119000",
+      "updated_date": "2025-08-09T12:29:49.364000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_35",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "35",
+    "text": {
+      "question": [
+        "קבעו על פי הנתונים בתרגיל, איזה משפט נכון בוודאות"
+      ],
+      "solution": [
+        "(2)"
+      ],
+      "hint": [
+        "סבו לבדוק ערכים שונים של n"
+      ],
+      "full_solution": [
+        "n טבעי, ולכן הוא יכול להיות 2, 3, 4, ..... לכן אם n=2 אז השיפוע יהיה 2 אבל אם נבדוק מספר גדול מ-2, נקבל שיפוע קטן יותר ולכן התשובה היא (2)"
+      ]
+    },
+    "math": [],
+    "svg": [
+      "<svg viewBox=\"-5 -5 10 10\" style=\"border: 1px solid #ccc; width: 250px; height: 250px;\">\n<defs><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n<path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/></pattern><marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n\n<polygon points=\"0 0.1, 0.25 0.25, 0 0.4\" fill=\"black\" />\n</marker><marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n<polygon points=\"0 0.4, 0 0.1, 0.25 0.25\" fill=\"black\" />\n</marker></defs><rect x=\"-5\" y=\"-5\" width=\"10\" height=\"10\" fill=\"url(#grid)\" />\n\n<line x1=\"-4\" y1=\"0\" x2=\"4\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n<line x1=\"0\" y1=\"4\" x2=\"0\" y2=\"-4\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n<line x1=\"-2\" y1=\"2\" x2=\"4\" y2=\"-4\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/>\n\n<circle cx=\"1\" cy=\"-1\" r=\"0.1\" fill=\"#9B2C2B\" />\n<text x=\"2.3\" y=\"-0.7\" fill=\"#9B2C2B\" font-size=\"0.6\">(1,1)</text>\n\n<circle cx=\"3\" cy=\"-3\" r=\"0.1\" fill=\"#9B2C2B\" />\n<text x=\"4.3\" y=\"-2.7\" fill=\"#9B2C2B\" font-size=\"0.6\">(n,3)</text>\n\n</svg>"
+    ],
+    "metadata": {
+      "id": "68825e2d18ca8f38a43294c3",
+      "created_date": "2025-07-24T16:24:13.469000",
+      "updated_date": "2025-08-09T14:07:37.604000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_34",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "34",
+    "text": {
+      "question": [
+        "מה ניתן לומר בוודאות (רק אחד מתאים):"
+      ],
+      "solution": [
+        "הישר עובר דרך הנקודות $$(0,0)$$, $$(1,n)$$ ו-$$(2,2)$$. מכיוון שהישר עובר דרך הנקודות $$(0,0)$$ ו-$$(2,2)$$, השיפוע של הישר הוא $$\\frac{2-0}{2-0} = \\frac{2}{2} = 1$$ ."
+      ],
+      "hint": [
+        "הישר עובר דרך ראשית הצירים ודרך הנקודה (2,2). חשבו את השיפוע על בסיס שתי נקודות אלו."
+      ],
+      "full_solution": [
+        "נתונות לנו שלוש נקודות על הישר: $$(0,0)$$ (ראשית הצירים), $$(1,n)$$ ו-$$(2,2)$$. \nכדי למצוא את שיפוע הישר, נשתמש בנוסחת השיפוע: $m = \\frac{y_2 - y_1}{x_2 - x_1}$.\nנבחר את הנקודות $$(0,0)$$ ו-$$(2,2)$$ שהן ידועות לחלוטין. \n$$m = \\frac{2 - 0}{2 - 0} = \\frac{2}{2} = 1$$ \n\nמכיוון שהשיפוע הוא 1, הנקודה $$(1,n)$$ חייבת להיות $$(1,1)$$ כדי שתהיה על אותו ישר. מכאן ש- $n=1$.\n\nלכן, מה שניתן לומר בוודאות על השיפוע הוא שהוא שווה ל-1."
+      ]
+    },
+    "math": [
+      "(0,0)",
+      "(1,n)",
+      "(2,2)",
+      "\\frac{2-0}{2-0} = \\frac{2}{2} = 1",
+      "(0,0)",
+      "(1,n)",
+      "(2,2)",
+      "m = \\frac{y_2 - y_1}{x_2 - x_1}",
+      "m = \\frac{2 - 0}{2 - 0} = \\frac{2}{2} = 1",
+      "(1,1)",
+      "n=1"
+    ],
+    "svg": [
+      "<svg viewBox=\"-5 -5 10 10\" style=\"border: 1px solid #ccc; width: 250px; height: 250px;\">\n<defs><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n<path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/></pattern><marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n\n<polygon points=\"0 0.1, 0.25 0.25, 0 0.4\" fill=\"black\" />\n</marker><marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n<polygon points=\"0 0.4, 0 0.1, 0.25 0.25\" fill=\"black\" />\n</marker></defs><rect x=\"-5\" y=\"-5\" width=\"10\" height=\"10\" fill=\"url(#grid)\" />\n\n<line x1=\"-5\" y1=\"0\" x2=\"4\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n<line x1=\"0\" y1=\"4\" x2=\"0\" y2=\"-4\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n<line x1=\"-3\" y1=\"3\" x2=\"3\" y2=\"-3\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/>\n\n<circle cx=\"1\" cy=\"-1\" r=\"0.1\" fill=\"#9B2C2B\" />\n<text x=\"1.3\" y=\"-0.7\" fill=\"#9B2C2B\" font-size=\"0.6\">(1,n)</text>\n\n<circle cx=\"2\" cy=\"-2\" r=\"0.1\" fill=\"#9B2C2B\" />\n<text x=\"2.2\" y=\"-1.7\" fill=\"#9B2C2B\" font-size=\"0.6\">(2,2)</text>\n\n</svg>"
+    ],
+    "metadata": {
+      "id": "68825e23f54741d5abffbb37",
+      "created_date": "2025-07-24T16:24:03.292000",
+      "updated_date": "2025-08-09T13:55:10.614000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_33",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "33",
+    "text": {
+      "question": [
+        "התאימו את השיפועים $-1, -\\frac{1}{2}, -2$ לישרים א, ב, ג בשרטוט."
+      ],
+      "solution": [
+        "ככל שהערך המוחלט של השיפוע השלילי גדול יותר, כך הישר תלול יותר (אך יורד). ישר שיפוע א $$-\\frac{1}{2}$$ ב $$-1$$ ג $$-2$$"
+      ],
+      "hint": [
+        "כל הישרים יורדים משמאל לימין. הישר התלול ביותר (היורד ביותר) מתאים לשיפוע עם הערך המוחלט הגדול ביותר. הישר הפחות תלול מתאים לשיפוע עם הערך המוחלט הקטן ביותר."
+      ],
+      "full_solution": [
+        "כל השיפועים הנתונים הם שליליים, כלומר כל הישרים יורדים משמאל לימין. מידת התלילות של ישר עם שיפוע שלילי גדלה ככל שהערך המוחלט של השיפוע גדול יותר.\n\n* **ישר ג'** הוא התלול ביותר (היורד ביותר) מבין השלושה, ולכן הוא מתאים לשיפוע עם הערך המוחלט הגדול ביותר: $$-2$$ (שכן $|-2| = 2$).\n* **ישר ב'** תלול פחות מישר ג' אך תלול יותר מישר א', ולכן הוא מתאים לשיפוע הביניים: $$-1$$ (שכן $|-1| = 1$).\n* **ישר א'** הוא הפחות תלול (היורד הכי פחות) מבין השלושה, ולכן הוא מתאים לשיפוע עם הערך המוחלט הקטן ביותר: $$- \\frac{1}{2}$$ (שכן $|-\\frac{1}{2}| = \\frac{1}{2}$)."
+      ]
+    },
+    "math": [
+      "-1, -\\frac{1}{2}, -2",
+      "-\\frac{1}{2}",
+      "-1",
+      "-2",
+      "-2",
+      "|-2| = 2",
+      "-1",
+      "|-1| = 1",
+      "- \\frac{1}{2}",
+      "|-\\frac{1}{2}| = \\frac{1}{2}"
+    ],
+    "svg": [
+      "<svg viewBox=\"-5 -5 10 10\" style=\"border: 1px solid #ccc; width: 250px; height: 250px;\"><defs><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/></pattern><marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" /></marker><marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" /></marker></defs><rect x=\"-5\" y=\"-5\" width=\"10\" height=\"10\" fill=\"url(#grid)\" /><line x1=\"-5\" y1=\"0\" x2=\"5\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/><line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/><line x1=\"-3\" y1=\"1.5\" x2=\"3\" y2=\"-1.5\" stroke=\"red\" stroke-width=\"0.1\" stroke-dasharray=\"0.2,0.2\"/><text x=\"2.5\" y=\"-1.3\" font-size=\"0.6\">א</text><line x1=\"-3\" y1=\"3\" x2=\"3\" y2=\"-3\" stroke=\"red\" stroke-width=\"0.1\"/><text x=\"2.5\" y=\"-2.8\" font-size=\"0.6\">ב</text><line x1=\"-1.5\" y1=\"4.5\" x2=\"1.5\" y2=\"-4.5\" stroke=\"red\" stroke-width=\"0.1\"/><text x=\"1\" y=\"-4.7\" font-size=\"0.6\">ג</text></svg>"
+    ],
+    "metadata": {
+      "id": "68825e13f1a28c41b0d0bc06",
+      "created_date": "2025-07-24T16:23:47.705000",
+      "updated_date": "2025-08-09T12:29:49.359000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_32",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "32",
+    "text": {
+      "question": [
+        "התאימו את השיפועים $1, \\frac{1}{2}, 3$ לישרים א, ב, ג בשרטוט."
+      ],
+      "solution": [
+        "ככל שהשיפוע החיובי גדול יותר, כך הישר תלול יותר. ישר שיפוע א $\\frac{1}{2}$ ב 1 ג 3"
+      ],
+      "hint": [
+        "הישר התלול ביותר מתאים לשיפוע הגדול ביותר. הישר הפחות תלול מתאים לשיפוע הקטן ביותר."
+      ],
+      "full_solution": [
+        "כל השיפועים הנתונים הם חיוביים, כלומר כל הישרים עולים משמאל לימין. מידת התלילות של ישר עם שיפוע חיובי גדלה ככל שהערך המספרי של השיפוע גדול יותר.\n\n* **ישר ג'** הוא התלול ביותר מבין השלושה, ולכן הוא מתאים לשיפוע הגדול ביותר: $3$.\n* **ישר ב'** תלול פחות מישר ג' אך תלול יותר מישר א', ולכן הוא מתאים לשיפוע הביניים: $1$.\n* **ישר א'** הוא הפחות תלול מבין השלושה, ולכן הוא מתאים לשיפוע הקטן ביותר: $$\\frac{1}{2}$$."
+      ]
+    },
+    "math": [
+      "1, \\frac{1}{2}, 3",
+      "\\frac{1}{2}",
+      "3",
+      "1",
+      "\\frac{1}{2}"
+    ],
+    "svg": [
+      "<svg viewBox=\"-5 -5 10 10\" style=\"border: 1px solid #ccc; width: 250px; height: 250px;\"><defs><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/></pattern><marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" /></marker><marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" /></marker></defs><rect x=\"-5\" y=\"-5\" width=\"10\" height=\"10\" fill=\"url(#grid)\" /><line x1=\"-5\" y1=\"0\" x2=\"5\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/><line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/><line x1=\"-3\" y1=\"-1.5\" x2=\"3\" y2=\"1.5\" stroke=\"red\" stroke-width=\"0.1\" stroke-dasharray=\"0.2,0.2\"/><text x=\"2.5\" y=\"1.7\" font-size=\"0.6\">א</text><line x1=\"-3\" y1=\"-3\" x2=\"3\" y2=\"3\" stroke=\"red\" stroke-width=\"0.1\"/><text x=\"2.5\" y=\"3.2\" font-size=\"0.6\">ב</text><line x1=\"-1.5\" y1=\"-4.5\" x2=\"1.5\" y2=\"4.5\" stroke=\"red\" stroke-width=\"0.1\"/><text x=\"1\" y=\"4.7\" font-size=\"0.6\">ג</text></svg>"
+    ],
+    "metadata": {
+      "id": "68825db6a33685fded1195ce",
+      "created_date": "2025-07-24T16:22:14.180000",
+      "updated_date": "2025-08-09T12:29:49.364000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_31",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "31",
+    "text": {
+      "question": [
+        "ללא שרטוט קבעו מהו השיפוע של הפונקציה.",
+        "ללא שרטוט קבעו מהי נקודת החיתוך של הפונקציה עם ציר ה-y.",
+        "בעזרת סעיפים א ו-ב שרטטו את הייצוג הגרפי של הפונקציה."
+      ],
+      "solution": [
+        "השיפוע של הפונקציה הוא המקדם של $x$, כלומר $$-3$$ .",
+        "נקודת החיתוך עם ציר ה-$y$ היא הערך הקבוע בפונקציה, כלומר $4$. הנקודה היא $$(0, 4)$$ .",
+        "על מנת לשרטט את גרף הפונקציה:\n1. סמנו את נקודת החיתוך עם ציר ה-$y$ שחישבתם בסעיף ב', שהיא $$(0, 4)$$ .\n2. השתמשו בשיפוע שחישבתם בסעיף א', שהוא $$-3$$ . שיפוע -3 אומר שכאשר $x$ עולה ביחידה אחת, $y$ יורד בשלוש יחידות. (לדוגמה: מ- (0,4) עבור ל- (1,1) ואז ל- (2,-2)).\n3. חברו את הנקודות בקו ישר.\n\nהגרף ייראה כך: x y"
+      ],
+      "hint": [
+        "בפונקציה קווית בצורת $y = mx + b$, $m$ הוא השיפוע.",
+        "בפונקציה קווית בצורת $y = mx + b$, $b$ הוא נקודת החיתוך עם ציר ה-$y$.",
+        "התחילו מסמון נקודת החיתוך עם ציר ה-$y$, ולאחר מכן השתמשו בשיפוע כדי למצוא נקודה נוספת ולשרטט את הקו."
+      ],
+      "full_solution": [
+        "הפונקציה נתונה בצורה $y = mx + b$, כאשר $m$ הוא השיפוע ו-$b$ הוא חיתוך עם ציר ה-$y$. בפונקציה $y = -3x + 4$, המקדם של $x$ הוא -3. לכן, השיפוע של הפונקציה הוא $$-3$$ .",
+        "נקודת החיתוך עם ציר ה-$y$ מתקבלת כאשר $x = 0$. נציב $x=0$ בפונקציה: $y = -3(0) + 4 = 4$. לכן, נקודת החיתוך עם ציר ה-$y$ היא $$(0, 4)$$ .",
+        "1. **סימון נקודת חיתוך עם ציר ה-$y$**: מצאנו בסעיף ב' שנקודת החיתוך היא $$(0, 4)$$ . נסמן נקודה זו על ציר ה-$y$.\n2. **שימוש בשיפוע**: מצאנו בסעיף א' שהשיפוע הוא $$-3$$ . משמעות הדבר היא שלכל יחידה אחת שמתקדמים ימינה על ציר ה-$x$ (כלומר, $$\\Delta x = 1$$), ערך ה-$y$ יורד בשלוש יחידות (כלומר, $$\\Delta y = -3$$). \n   * מנקודה $$(0, 4)$$ , נתקדם יחידה אחת ימינה ל-$x=1$ ונרד 3 יחידות למטה. נגיע לנקודה $$(1, 1)$$ .\n   * מנקודה $$(1, 1)$$ , נתקדם יחידה אחת ימינה ל-$x=2$ ונרד 3 יחידות למטה. נגיע לנקודה $$(2, -2)$$ .\n3. **שרטוט הקו**: נחבר את הנקודות $$(0, 4)$$, $$(1, 1)$$ ו-$$(2, -2)$$ באמצעות קו ישר. זהו הייצוג הגרפי של הפונקציה $y = -3x + 4$."
+      ]
+    },
+    "math": [
+      "x",
+      "-3",
+      "y = mx + b",
+      "m",
+      "y = mx + b",
+      "m",
+      "b",
+      "y",
+      "y = -3x + 4",
+      "x",
+      "-3",
+      "y",
+      "4",
+      "(0, 4)",
+      "y = mx + b",
+      "b",
+      "y",
+      "y",
+      "x = 0",
+      "x=0",
+      "y = -3(0) + 4 = 4",
+      "(0, 4)",
+      "y",
+      "(0, 4)",
+      "-3",
+      "x",
+      "y",
+      "y",
+      "(0, 4)",
+      "-3",
+      "x",
+      "\\Delta x = 1",
+      "\\Delta y = -3",
+      "x=1",
+      "(1, 1)",
+      "x=2",
+      "(2, -2)",
+      "y = -3x + 4"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68825da6476362cf6c7069a1",
+      "created_date": "2025-07-24T16:21:58.306000",
+      "updated_date": "2025-08-09T12:29:49.362000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_30",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "30",
+    "text": {
+      "question": [
+        "מהו השיפוע של ישר (א)?",
+        "מהו השיפוע של ישר (ב)?",
+        "מהו השיפוע של ישר (ג)?",
+        "מהו השיפוע של ישר (ד)?",
+        "מהו השיפוע של ישר (ה)?",
+        "מהו השיפוע של ישר (ו)?"
+      ],
+      "solution": [
+        "על פי הגרף, כאשר $x$ עולה ב-1, $y$ עולה ב-3. לכן, השיפוע הוא $$\\frac{3}{1} = 3$$ .",
+        "ישר (ב) הוא קו אופקי. שיפוע של קו אופקי הוא תמיד 0.",
+        "על פי הגרף, כאשר $x$ עולה ב-1, $y$ יורד ב-1. לכן, השיפוע הוא $$\\frac{-1}{1} = -1$$ .",
+        "על פי הגרף, כאשר $x$ עולה ב-1, $y$ יורד ב-3. לכן, השיפוע הוא $$\\frac{-3}{1} = -3$$ .",
+        "ישר (ה) הוא קו אופקי. שיפוע של קו אופקי הוא תמיד 0.",
+        "על פי הגרף, כאשר $x$ עולה ב-2, $y$ עולה ב-1. לכן, השיפוע הוא $$\\frac{1}{2} = 0.5$$ ."
+      ],
+      "hint": [
+        "בחרו שתי נקודות על הישר וחשבו את היחס בין השינוי בציר ה-$y$ לשינוי בציר ה-$x$.",
+        "איך משתנה ערך ה-$y$ כאשר $x$ משתנה על קו אופקי?",
+        "האם הישר עולה או יורד משמאל לימין? בכמה יחידות הוא משתנה אנכית עבור יחידה אחת אופקית?",
+        "שימו לב לתלילות הגדולה של הקו ולכיוונו היורד.",
+        "זהה כמו ישר (ב).",
+        "שימו לב שהישר עולה, אך לא בתלילות רבה."
+      ],
+      "full_solution": [
+        "נבחר שתי נקודות מהישר (א), למשל (-1.5, -4.5) ו-(1.5, 4.5). השינוי ב-$y$ הוא $4.5 - (-4.5) = 9$. השינוי ב-$x$ הוא $1.5 - (-1.5) = 3$. השיפוע הוא $$\\frac{\\Delta y}{\\Delta x} = \\frac{9}{3} = 3$$ .",
+        "ישר (ב) הוא ישר אופקי. עבור כל שתי נקודות על ישר אופקי, ערך ה-$y$ נשאר קבוע, כלומר השינוי ב-$y$ הוא 0. לכן, השיפוע הוא $$\\frac{\\Delta y}{\\Delta x} = \\frac{0}{\\Delta x} = 0$$ .",
+        "נבחר שתי נקודות מהישר (ג), למשל (0,2) ו-(2,0). השינוי ב-$y$ הוא $0 - 2 = -2$. השינוי ב-$x$ הוא $2 - 0 = 2$. השיפוע הוא $$\\frac{\\Delta y}{\\Delta x} = \\frac{-2}{2} = -1$$ .",
+        "נבחר שתי נקודות מהישר (ד), למשל (0,2) ו-(1,-1). השינוי ב-$y$ הוא $-1 - 2 = -3$. השינוי ב-$x$ הוא $1 - 0 = 1$. השיפוע הוא $$\\frac{\\Delta y}{\\Delta x} = \\frac{-3}{1} = -3$$ .",
+        "ישר (ה) הוא ישר אופקי. עבור כל שתי נקודות על ישר אופקי, ערך ה-$y$ נשאר קבוע, כלומר השינוי ב-$y$ הוא 0. לכן, השיפוע הוא $$\\frac{\\Delta y}{\\Delta x} = \\frac{0}{\\Delta x} = 0$$ .",
+        "נבחר שתי נקודות מהישר (ו), למשל (1,-0.5) ו-(3,1). השינוי ב-$y$ הוא $1 - (-0.5) = 1.5$. השינוי ב-$x$ הוא $3 - 1 = 2$. השיפוע הוא $$\\frac{\\Delta y}{\\Delta x} = \\frac{1.5}{2} = 0.75$$ . \n\n**תיקון על בסיס הנקודות המקוריות בתמונה:**\nאם נתבונן בתמונה המקורית של גרף (ו), נראה שהוא עובר בנקודות כמו (-2, -1) ו-(0, 0). לכן השיפוע הוא $$\\frac{0 - (-1)}{0 - (-2)} = \\frac{1}{2} = 0.5$$ . הישר ב-SVG נמצא בערך ב-$y = 0.5x - 0.5$. אם נבחר שתי נקודות עליו, למשל (1,0) ו-(3,1), השיפוע הוא $$\\frac{1-0}{3-1} = \\frac{1}{2} = 0.5$$ . השיפוע 0.75 קודם היה חישוב שגוי של נקודות מה-SVG. אם הנקודות מה-SVG הן ( -3,-2) ו-(3,1), אז השיפוע הוא: $\\frac{1-(-2)}{3-(-3)} = \\frac{3}{6} = 0.5$."
+      ]
+    },
+    "math": [
+      "x",
+      "y",
+      "\\frac{3}{1} = 3",
+      "y",
+      "x",
+      "y",
+      "4.5 - (-4.5) = 9",
+      "x",
+      "1.5 - (-1.5) = 3",
+      "\\frac{\\Delta y}{\\Delta x} = \\frac{9}{3} = 3",
+      "y",
+      "x",
+      "y",
+      "\\frac{\\Delta y}{\\Delta x} = \\frac{0}{\\Delta x} = 0",
+      "x",
+      "y",
+      "\\frac{-1}{1} = -1",
+      "y",
+      "0 - 2 = -2",
+      "x",
+      "2 - 0 = 2",
+      "\\frac{\\Delta y}{\\Delta x} = \\frac{-2}{2} = -1",
+      "x",
+      "y",
+      "\\frac{-3}{1} = -3",
+      "y",
+      "-1 - 2 = -3",
+      "x",
+      "1 - 0 = 1",
+      "\\frac{\\Delta y}{\\Delta x} = \\frac{-3}{1} = -3",
+      "y",
+      "\\frac{\\Delta y}{\\Delta x} = \\frac{0}{\\Delta x} = 0",
+      "x",
+      "y",
+      "\\frac{1}{2} = 0.5",
+      "y",
+      "1 - (-0.5) = 1.5",
+      "x",
+      "3 - 1 = 2",
+      "\\frac{\\Delta y}{\\Delta x} = \\frac{1.5}{2} = 0.75",
+      "\\frac{0 - (-1)}{0 - (-2)} = \\frac{1}{2} = 0.5",
+      "y = 0.5x - 0.5",
+      "\\frac{1-0}{3-1} = \\frac{1}{2} = 0.5",
+      "\\frac{1-(-2)}{3-(-3)} = \\frac{3}{6} = 0.5"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68825cca476362cf6c706494",
+      "created_date": "2025-07-24T16:18:18.853000",
+      "updated_date": "2025-08-09T12:29:49.379000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_29",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "29",
+    "text": {
+      "question": [
+        "רשמו במילים שלכם, מה ההבדל בייצוגים האלגבריים של 2 הפונקציות:",
+        "רשמו במילים שלכם, מה ההבדל בייצוגים הגרפיים של 2 הפונקציות:",
+        "רשמו את מסקנתכם מסעיפים א ו-ב:"
+      ],
+      "solution": [
+        "ההבדל בייצוגים האלגבריים הוא המקדם של $x$. בפונקציה הראשונה ($y = x$), המקדם של $x$ הוא 1. בפונקציה השנייה ($y = 3x$), המקדם של $x$ הוא 3.",
+        "ההבדל בייצוגים הגרפיים הוא תלילות הקו. גרף הפונקציה $y = 3x$ תלול יותר מגרף הפונקציה $y = x$. שני הגרפים עוברים דרך ראשית הצירים (0,0).",
+        "המסקנה היא שהמקדם של $x$ בייצוג האלגברי קובע את תלילות הישר בייצוג הגרפי. ככל שהמקדם גדול יותר (בערכו המוחלט), כך הישר תלול יותר."
+      ],
+      "hint": [
+        "התבוננו במקדמים של $x$ בכל אחת מהמשוואות.",
+        "השוו את מידת התלילות של שני הישרים.",
+        "קשרו בין המקדם של $x$ לייצוג האלגברי לבין התלילות של הגרף."
+      ],
+      "full_solution": [
+        "הייצוגים האלגבריים הם $y = x$ ו- $y = 3x$. ההבדל ביניהם הוא שהמקדם של $x$ בפונקציה הראשונה הוא 1, ואילו בפונקציה השנייה המקדם של $x$ הוא 3. מקדם זה מייצג את השיפוע של הישר.",
+        "הגרפים של שתי הפונקציות הם קווים ישרים העוברים דרך ראשית הצירים (0,0). ההבדל העיקרי ביניהם הוא התלילות (שיפוע) של הקווים. הגרף של $y = 3x$ תלול יותר, כלומר הוא 'עולה' מהר יותר ככל שמתקדמים ימינה על ציר ה-$x$. הגרף של $y = x$ פחות תלול.",
+        "מהשוואת סעיפים א' וב' אנו למדים שהמקדם של $x$ בייצוג האלגברי ($y = mx$) הוא למעשה השיפוע של הישר, והוא קובע את תלילות הגרף. ככל שערך מוחלט של השיפוע ($m$) גדול יותר, כך הישר תלול יותר. במקרה זה, שיפוע 3 עבור $y = 3x$ הופך את הישר לתלול יותר משיפוע 1 עבור $y = x$."
+      ]
+    },
+    "math": [
+      "x",
+      "y = x",
+      "y = 3x",
+      "x",
+      "y = x",
+      "y = 3x",
+      "x",
+      "y = 3x",
+      "y = x",
+      "y = 3x",
+      "x",
+      "y = x",
+      "x",
+      "x",
+      "x",
+      "y = mx",
+      "m",
+      "y = 3x",
+      "y = x"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68825caac995a2771a7c39e3",
+      "created_date": "2025-07-24T16:17:46.425000",
+      "updated_date": "2025-08-09T12:29:49.369000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_התאמה_28",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "התאמה",
+    "exercise_number": "28",
+    "text": {
+      "question": [
+        "קבעו איזה טבלת ערכים מתאימה לאיזה גרף. טבלה ערכי x ערכי y טבלה 2 0, 1, 2, 3, 4 0, 3, 6, 9, 12 טבלה 1 0, 1, 2, 3, 4 0, 1, 2, 3, 4 טבלה 4 0, 1, 2, 3, 4 5, 4, 3, 2, 1 טבלה 3 0, 1, 2, 3, 4 0, 1/2, 1, 1 1/2, 2"
+      ],
+      "solution": [
+        "כדי להתאים כל טבלה לגרף המתאים, נחשב את השיפוע של כל ישר מהטבלאות ונשווה אותו לשיפועים של הישרים בגרפים. טבלה שיפוע (m) גרף תואם טבלה 2 3 (2) טבלה 1 1 (4) טבלה 4 -1 (1) טבלה 3 0.5 (3)"
+      ],
+      "hint": [
+        "זכרו ששיפוע של ישר מוגדר כ- $$\\frac{\\text{שינוי ב-y}}{\\text{שינוי ב-x}}$$ . בדקו את השינויים בין נקודות עוקבות בכל טבלה ובחנו את השיפוע מהגרפים."
+      ],
+      "full_solution": [
+        "נחשב את השיפוע עבור כל טבלה:\n\n* **טבלה 2:** כאשר $x$ עולה ב-1, $y$ עולה ב-3 (לדוגמה: מ-(0,0) ל-(1,3)). לכן, השיפוע הוא $$\\frac{3}{1} = 3$$. הגרף המתאים הוא (2) (הישר עובר דרך (0,0) ובערך דרך (1,3)).\n* **טבלה 1:** כאשר $x$ עולה ב-1, $y$ עולה ב-1 (לדוגמה: מ-(0,0) ל-(1,1)). לכן, השיפוע הוא $$\\frac{1}{1} = 1$$. הגרף המתאים הוא (4) (הישר עובר דרך (0,0) ובערך דרך (1,1)).\n* **טבלה 4:** כאשר $x$ עולה ב-1, $y$ יורד ב-1 (לדוגמה: מ-(0,5) ל-(1,4)). לכן, השיפוע הוא $$\\frac{-1}{1} = -1$$. הגרף המתאים הוא (1) (הישר יורד ועובר דרך נקודות כמו (0,0) ו-(1,-1), או במקרה זה, דרך (0,3) ו-(3,0) מה-SVG).\n* **טבלה 3:** כאשר $x$ עולה ב-1, $y$ עולה ב-1/2 (לדוגמה: מ-(0,0) ל-(1, 1/2)). לכן, השיפוע הוא $$\\frac{0.5}{1} = 0.5$$. הגרף המתאים הוא (3) (הישר עולה ועובר דרך נקודות כמו (0,0) ו-(2,1)).\n\n**הערה לגבי הגרפים המצורפים ב-HTML:**\nהגרפים המצורפים ב-HTML אינם תואמים במדויק לגרפים שהוצגו בתמונה המקורית ששימשה לזיהוי. הפתרון לעיל מתבסס על ההתאמה הלוגית של שיפועי הטבלאות לגרפים כפי שהיו אמורים להיות מתוארים כדי שתהיה התאמה מלאה. במיוחד, השיפוע של גרף (1) ב-SVG הוא -1, ושיפוע גרף (3) ב-SVG הוא -0.5, בעוד שהתמונה המקורית הציגה שיפוע 1 עבור גרף (1) ושיפוע 0.5 עבור גרף (3) בהתאמה לטבלאות 1 ו-3. הפתרון משקף את ההתאמה הצפויה בתרגיל מסוג זה."
+      ]
+    },
+    "math": [
+      "\\frac{\\text{שינוי ב-y}}{\\text{שינוי ב-x}}",
+      "x",
+      "y",
+      "\\frac{3}{1} = 3",
+      "\\frac{1}{1} = 1",
+      "\\frac{-1}{1} = -1",
+      "\\frac{0.5}{1} = 0.5"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6882595bc995a2771a7c28ba",
+      "created_date": "2025-07-24T16:03:39.693000",
+      "updated_date": "2025-08-09T12:29:49.373000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_27",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "27",
+    "text": {
+      "question": [
+        "התאימו כל ייצוג אלגברי לייצוג הגרפי שלה"
+      ],
+      "solution": [
+        "חשבו לציון! השיפוע של ישר הוא למעשה המקדם של x בייצוג האלגברי. ייצוג אלגברי זיהוי גרף y = 2x (2) y = -x (3) y = 1/2 * x (1)"
+      ],
+      "hint": [
+        "זכרו שהשיפוע (m) במשוואה y = mx + b קובע את מידת התלילות וכיוון הקו. שיפוע חיובי מצביע על מגמה עולה משמאל לימין, שיפוע שלילי מצביע על מגמה יורדת, וערך מוחלט גדול יותר של השיפוע מצביע על קו תלול יותר."
+      ],
+      "full_solution": [
+        "1. עבור y = 2x, השיפוע הוא 2 (חיובי ותלול יותר מ-y=x). זה מתאים לגרף (2).\n2. עבור y = -x, השיפוע הוא -1 (שלילי). זה מתאים לגרף (3).\n3. עבור y = 1/2 * x, השיפוע הוא 1/2 (חיובי ופחות תלול מ-y=x). זה מתאים לגרף (1)."
+      ]
+    },
+    "math": [],
+    "svg": [
+      "<svg viewBox=\"-4 -5 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n                <defs>\n                    <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                        <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n                    </marker>\n                    <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                        <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n                    </marker>\n                    <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n                        <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n                    </pattern>\n                </defs>\n\n                <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n                <line x1=\"-10\" y1=\"0\" x2=\"6\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n                <line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n\n                <line x1=\"-3\" y1=\"-3\" x2=\"3\" y2=\"3\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/>\n\n            </svg>",
+      "<svg viewBox=\"-4 -5 11 8\" preserveAspectRatio=\"xMidYMid meet\">\n                <defs>\n                    <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                        <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n                    </marker>\n                    <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                        <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n                    </marker>\n                    <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n                        <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n                    </pattern>\n                </defs>\n\n                <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n                \n                <line x1=\"-10\" y1=\"0\" x2=\"5\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n                <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n\n                <line x1=\"-2\" y1=\"4\" x2=\"2\" y2=\"-4\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/>\n            \n                \n            </svg>",
+      "<svg viewBox=\"-4 -7 11 12\" preserveAspectRatio=\"xMidYMid meet\">\n                <defs>\n                    <marker id=\"arrowheadX\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                        <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n                    </marker>\n                    <marker id=\"arrowheadY\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                        <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n                    </marker>\n                    <pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n                        <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n                    </pattern>\n                </defs>\n\n                <rect x=\"-5\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid)\" />\n                <line x1=\"-3\" y1=\"0\" x2=\"6\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX)\"/>\n                <line x1=\"0\" y1=\"4\" x2=\"0\" y2=\"-6\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY)\"/>\n\n                <line x1=\"-2\" y1=\"1\" x2=\"5\" y2=\"-2.5\" stroke=\"#9B2C2B\" stroke-width=\"0.1\"/>\n                \n                \n            </svg>"
+    ],
+    "metadata": {
+      "id": "68824c30ea020edf8130650b",
+      "created_date": "2025-07-24T15:07:28.851000",
+      "updated_date": "2025-08-09T12:29:49.353000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_24",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "24",
+    "text": {
+      "question": [
+        "השלימו את הטבלה.",
+        "רשמו את הנקודות שהתקבלו מהטבלה.",
+        "סמנו את הנקודות המקבילות במערכת צירים.",
+        "מבין הגרפים הבאים, בחרו באיזה גרף של ישר עובר דרך הנקודות שהתקבלו בסעיף ב"
+      ],
+      "solution": [
+        "הטבלה שהושלמה:\n\nx | 1 | 2 | 3 | 4 | 5\n--|---|---|---|---|---\ny | 2 | 3 | 4 | 5 | 6 x 1 2 3 4 5 y 2 3 4 5 6",
+        "הנקודות הן: (1,2), (2,3), (3,4), (4,5), (5,6).",
+        "הנקודות סומנו בגרף המצורף לתיאור הבעיה, והקו הישר $y = x+1$ עובר דרכן.",
+        "הגרף שעובר דרך הנקודות הוא גרף iii ($y=x+3$)."
+      ],
+      "hint": [
+        "הציבו כל ערך של x במשוואה $y = x + 1$ כדי למצוא את ערך y המתאים.",
+        "רשמו כל זוג (x,y) כנקודה.",
+        "השתמשו בנקודות שרשמתם בסעיף ב' כדי לסמן אותן במערכת הצירים.",
+        "הציבו את הנקודות (1,2), (2,3), (3,4), (4,5), (5,6) במשוואות הישרים הנתונים ובדקו איזו משוואה מתקיימת עבור כל הנקודות."
+      ],
+      "full_solution": [
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי $y = x + 1$:\n\n* **עבור x = 1**: $y = 1 + 1 = 2$\n* **עבור x = 2**: $y = 2 + 1 = 3$\n* **עבור x = 3**: $y = 3 + 1 = 4$\n* **עבור x = 4**: $y = 4 + 1 = 5$\n* **עבור x = 5**: $y = 5 + 1 = 6$\n\nהטבלה שהושלמה:\n\nx | 1 | 2 | 3 | 4 | 5\n--|---|---|---|---|---\ny | 2 | 3 | 4 | 5 | 6 טענה נימוק",
+        "הנקודות שהתקבלו מהטבלה (כפי שהושלמה בסעיף א') הן:\n\n(1,2)\n(2,3)\n(3,4)\n(4,5)\n(5,6) טענה נימוק",
+        "הנקודות שרשמנו בסעיף ב' הן: (1,2), (2,3), (3,4), (4,5), (5,6).\n\nנשרטט את מערכת הצירים ונסמן את הנקודות הללו. מאחר שהפונקציה $y=x+1$ היא פונקציה קווית, הנקודות יסתדרו על קו ישר. טענה נימוק",
+        "הנקודות שהתקבלו בסעיף ב' הן: (1,2), (2,3), (3,4), (4,5), (5,6).\nנבדוק עבור כל גרף (ומשוואתו) אם הנקודות עוברות דרכו:\n\n1.  **גרף i ($y = -x + 1$):**\n    * עבור הנקודה (1,2): $2 = -1 + 1 \\Rightarrow 2 = 0$ (לא נכון). לכן, גרף i אינו מתאים.\n\n2.  **גרף ii ($y = x - 1$):**\n    * עבור הנקודה (1,2): $2 = 1 - 1 \\Rightarrow 2 = 0$ (לא נכון). לכן, גרף ii אינו מתאים.\n\n3.  **גרף iii ($y = x + 3$):**\n    * עבור הנקודה (1,2): $2 = 1 + 3 \\Rightarrow 2 = 4$ (לא נכון). \n    \n    **תיקון:** יש כאן אי-התאמה בין הנקודות (1,2),(2,3),(3,4),(4,5),(5,6) שחושבו בטבלה, לבין האופציות הגרפיות והאלגבריות המקוריות שסופקו בתמונה. הנקודות מהטבלה ($y=x+1$) צריכות להתאים לגרף כלשהו. נבדוק שוב את האופציות.\n\n    * **המשוואה הנכונה לנקודות הטבלה היא $y = x + 1$.**\n    * **נבדוק איזו אופציה (או גרף) עוברת דרך $y=x+1$:**\n        * גרף i ($y=-x+1$) - שיפוע -1, חיתוך (0,1). הנקודות שלנו (0,1), (1,2) וכו'. (0,1) מתאימה. (1,2) לא מתאימה (-1+1=0).\n        * גרף ii ($y=x-1$) - שיפוע 1, חיתוך (0,-1). הנקודות שלנו (0,1), (1,2) וכו'. (0,1) לא מתאימה.\n        * גרף iii ($y=x+3$) - שיפוע 1, חיתוך (0,3). הנקודות שלנו (0,1), (1,2) וכו'. (0,1) לא מתאימה.\n\n    * **מסקנה:** נראה שיש אי-התאמה בין הנקודות בטבלה (ששייכות ל-$y=x+1$) לבין האופציות של הגרפים והמשוואות שניתנו בסעיף ד'. אם הנקודות הן (1,2), (2,3), (3,4), (4,5), (5,6) הרי שהמשוואה שלהן היא $y=x+1$. משוואה זו אינה מופיעה כאופציה. הגרפים המסומנים באדום בתמונה שייכים למשוואות $y=-x+1$, $y=x-1$, ו-$y=x+3$ בהתאמה. \n    * **בהתבסס על הנתונים כפי שהוצגו, אף אחד מהגרפים אינו מתאים ישירות לנקודות שהתקבלו בטבלה ($y=x+1$).** \n    * **נניח ששאלת סעיף ד' מתייחסת לנקודות השייכות לאחת האופציות.** \n    * **נחזור לבדוק את התרגיל המקורי (image_554146.png) - הוא מציג טבלה עבור y=x+1. אז הפתרון הוא y=x+1.** \n    * **הפתרון יהיה: הגרף המתאים לנקודות שהתקבלו הוא גרף של $y=x+1$.** (זו לא אופציה מבין הגרפים הנתונים). \n    * **אם נבחר את הקרוב ביותר**: כל הגרפים הם בעלי שיפוע 1, מלבד גרף i. \n    * **הבעיה מצביעה על סתירה בנתונים.** אני אציין זאת בפתרון המלא.\n\n**פתרון מותאם לאי-התאמה בנתונים:**\n\n**נימוק:**\n1.  הנקודות שהתקבלו בסעיף ב' הן (1,2), (2,3), (3,4), (4,5), (5,6). משוואת הישר העובר דרך נקודות אלו היא $y = x + 1$.\n2.  כעת נבדוק את הגרפים והייצוגים האלגבריים שניתנו כבחירה:\n    * **גרף i ($y = -x + 1$):** שיפועו -1. הישר שלנו בעל שיפוע 1. לכן לא מתאים.\n    * **גרף ii ($y = x - 1$):** שיפועו 1, אך הוא חותך את ציר ה-y בנקודה (0,-1). הישר שלנו ($y = x + 1$) חותך את ציר ה-y בנקודה (0,1). לכן לא מתאים.\n    * **גרף iii ($y = x + 3$):** שיפועו 1, אך הוא חותך את ציר ה-y בנקודה (0,3). הישר שלנו ($y = x + 1$) חותך את ציר ה-y בנקודה (0,1). לכן לא מתאים.\n\n**מסקנה**: נראה שיש אי-התאמה בין הנקודות בטבלה (השייכות לפונקציה y = x + 1) לבין הגרפים והייצוגים האלגבריים שניתנו כאפשרויות בסעיף זה. אף אחד מהגרפים המוצגים אינו מתאים במדויק לנקודות שהתקבלו בטבלה.\n\n**לצורך השלמת המשימה, בהנחה שקיימת טעות בניסוח השאלה המקורית בסעיף ד', אנו נציין ששום גרף לא מתאים.** טענה נימוק"
+      ]
+    },
+    "math": [
+      "y = x + 1",
+      "y = x + 1",
+      "y = 1 + 1 = 2",
+      "y = 2 + 1 = 3",
+      "y = 3 + 1 = 4",
+      "y = 4 + 1 = 5",
+      "y = 5 + 1 = 6",
+      "y = x+1",
+      "y=x+1",
+      "y=x+3",
+      "y = -x + 1",
+      "2 = -1 + 1 \\Rightarrow 2 = 0",
+      "y = x - 1",
+      "2 = 1 - 1 \\Rightarrow 2 = 0",
+      "y = x + 3",
+      "2 = 1 + 3 \\Rightarrow 2 = 4",
+      "y=x+1",
+      "y = x + 1",
+      "y=-x+1",
+      "y=x-1",
+      "y=x+3"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "688227c37c6fb510b6d879ff",
+      "created_date": "2025-07-24T12:32:03.152000",
+      "updated_date": "2025-08-09T12:29:17.826000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_18",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "18",
+    "text": {
+      "question": [
+        "בחרו את הייצוג האלגברי לפונקציה המתאימה לערכי הטבלה"
+      ],
+      "solution": [
+        "הייצוג האלגברי המתאים הוא y=x."
+      ],
+      "hint": [
+        "התבוננו ביחס בין ערכי x לערכי y בטבלה. האם y שווה ל-x?"
+      ],
+      "full_solution": [
+        "נבחן את היחס בין ערכי x לערכי y בטבלה:\n\n* כאשר x=1, y=1\n* כאשר x=2, y=2\n* כאשר x=3, y=3\n* כאשר x=4, y=4\n* כאשר x=5, y=5\n\nבטבלה זו, ערך y תמיד שווה לערך x. לכן, הייצוג האלגברי המתאים הוא **y = x**. טענה נימוק"
+      ]
+    },
+    "math": [],
+    "svg": [],
+    "metadata": {
+      "id": "68822654c4013e8ae5654506",
+      "created_date": "2025-07-24T12:25:56.252000",
+      "updated_date": "2025-08-09T12:29:17.768000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_19",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "19",
+    "text": {
+      "question": [
+        "בחרו את הייצוג האלגברי לפונקציה המתאימה לערכי הטבלה"
+      ],
+      "solution": [
+        "הייצוג האלגברי המתאים הוא y=5+x."
+      ],
+      "hint": [
+        "נסו לראות איזה פעולה (חיבור, חיסור, כפל) מחברת בין ערך x לערך y בכל שורה בטבלה."
+      ],
+      "full_solution": [
+        "נבחן את היחס בין ערכי x לערכי y בטבלה:\n\n* עבור x=1, y=6 (y הוא x ועוד 5)\n* עבור x=2, y=7 (y הוא x ועוד 5)\n* עבור x=4, y=9 (y הוא x ועוד 5)\n* עבור x=5, y=10 (y הוא x ועוד 5)\n* עבור x=17, y=22 (y הוא x ועוד 5)\n\nבטבלה זו, ערך y תמיד גדול ב-5 מערך x. לכן, הייצוג האלגברי המתאים הוא **y = 5 + x**. טענה נימוק"
+      ]
+    },
+    "math": [],
+    "svg": [],
+    "metadata": {
+      "id": "68822654c4013e8ae5654507",
+      "created_date": "2025-07-24T12:25:56.252000",
+      "updated_date": "2025-08-09T12:29:17.713000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_20",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "20",
+    "text": {
+      "question": [
+        "קבעו מהו הייצוג אלגברי של הפונקציה הנתונה",
+        "ב. בנו טבלת ערכים חלקית של הפונקציה (5 ערכים)."
+      ],
+      "solution": [
+        "$y = x - 3$",
+        "טבלת ערכים עבור y = x - 3:\n\nx | 0 | 1 | 2 | 3 | 4\n--|---|---|---|---|---\ny | -3 | -2 | -1 | 0 | 1 x 0 1 2 3 4 y -3 -2 -1 0 1"
+      ],
+      "hint": [
+        "כאשר אומרים 'הקטן ב-3', משמעות הדבר היא 'פחות 3'.",
+        "בחרו חמישה ערכי x נוחים (לדוגמה, מספרים שלמים קטנים) והציבו אותם במשוואה y = x - 3."
+      ],
+      "full_solution": [
+        "הפונקציה מתאימה לכל ערך של x, ערך של y הקטן ב-3.\n\n* **טענה**: הייצוג האלגברי של הפונקציה הוא y = x - 3.\n* **נימוק**: נתון שערך y קטן ב-3 מערך x. לכן, y = x - 3.",
+        "נבחר חמישה ערכים של x (לדוגמה, 0, 1, 2, 3, 4) ונציב אותם בביטוי האלגברי $y = x - 3$:\n\n* **עבור x = 0**: $y = 0 - 3 = -3$\n* **עבור x = 1**: $y = 1 - 3 = -2$\n* **עבור x = 2**: $y = 2 - 3 = -1$\n* **עבור x = 3**: $y = 3 - 3 = 0$\n* **עבור x = 4**: $y = 4 - 3 = 1$\n\nטבלת הערכים החלקית:\n\nx | 0 | 1 | 2 | 3 | 4\n--|---|---|---|---|---\ny | -3 | -2 | -1 | 0 | 1"
+      ]
+    },
+    "math": [
+      "y = x - 3",
+      "y = x - 3",
+      "y = 0 - 3 = -3",
+      "y = 1 - 3 = -2",
+      "y = 2 - 3 = -1",
+      "y = 3 - 3 = 0",
+      "y = 4 - 3 = 1"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6882226fc4013e8ae5652b3b",
+      "created_date": "2025-07-24T12:09:19.639000",
+      "updated_date": "2025-08-09T12:29:17.913000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_23",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "23",
+    "text": {
+      "question": [
+        "א. רשמו את הנקודות המסומנות בטבלת ערכים הבאה והשלימו את השאר: x 4 3 2 1 0 y",
+        "ב. איזה הייצוג אלגברי מתאים להן?"
+      ],
+      "solution": [
+        "הטבלה שהושלמה:\n\nx | 4 | 3 | 2 | 1 | 0\n--|---|---|---|---|---\ny | 5 | 4 | 3 | 2 | 1 x 4 3 2 1 0 y 5 4 3 2 1",
+        "הייצוג האלגברי המתאים הוא $y = x + 1$."
+      ],
+      "hint": [
+        "קראו את הקואורדינטות של הנקודות מהגרף. חפשו את החוקיות בין ערכי x ו-y.",
+        "התבוננו בחוקיות שבין x ו-y בטבלה. מהי הפעולה שמחברת בין x ל-y?"
+      ],
+      "full_solution": [
+        "נרשום את הנקודות המסומנות מהגרף ונשלים את הטבלה לפי החוקיות:\n\nהנקודות המסומנות (בסדר מהשמאל לימין בגרף): (1,2), (2,3), (3,4).\n\nניתן לראות שהחוקיות היא $y = x + 1$.\n\nנשלים את הטבלה:\n\n* **עבור x = 0**: $y = 0 + 1 = 1$\n* **עבור x = 4**: $y = 4 + 1 = 5$\n\nהטבלה שהושלמה:\n\nx | 4 | 3 | 2 | 1 | 0\n--|---|---|---|---|---\ny | 5 | 4 | 3 | 2 | 1 טענה נימוק",
+        "מפתרון סעיף א', הנקודות מציגות חוקיות שבה ערך y תמיד גדול ב-1 מערך x.\n\n* **טענה**: הייצוג האלגברי המתאים הוא y = x + 1.\n* **נימוק**: עבור כל נקודה (x,y) בטבלה ובגרף, מתקיים y = x + 1. לדוגמה, עבור הנקודה (1,2), 2 = 1 + 1. עבור הנקודה (2,3), 3 = 2 + 1. טענה נימוק"
+      ]
+    },
+    "math": [
+      "y = x + 1",
+      "y = 0 + 1 = 1",
+      "y = 4 + 1 = 5",
+      "y = x + 1"
+    ],
+    "svg": [
+      "<svg id=\"normalizedCoordinateSystem\" viewBox=\"-2 -8 11 10\" preserveAspectRatio=\"xMidYMid meet\">\n        <defs>\n            <marker id=\"arrowheadX_norm\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"-0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                <polygon points=\"0 0, 0.5 0.25, 0 0.5\" fill=\"black\" />\n            </marker>\n\n            <marker id=\"arrowheadY_norm\" markerWidth=\"0.5\" markerHeight=\"0.5\" refX=\"0\" refY=\"0.25\" orient=\"auto\" markerUnits=\"userSpaceOnUse\">\n                <polygon points=\"0 0.5, 0 0, 0.5 0.25\" fill=\"black\" />\n            </marker>\n\n            <pattern id=\"smallGrid_norm\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n                <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"/>\n            </pattern>\n\n            <pattern id=\"grid_norm\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\">\n                <rect width=\"1\" height=\"1\" fill=\"url(#smallGrid_norm)\"/>\n                <path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#D5E9FF\" stroke-width=\"0.1\"/>\n            </pattern>\n        </defs>\n\n        <rect x=\"-10\" y=\"-10\" width=\"20\" height=\"20\" fill=\"url(#grid_norm)\" />\n\n        <line x1=\"-10\" y1=\"0\" x2=\"8\" y2=\"0\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadX_norm)\"/>\n        <line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"0.07\" marker-end=\"url(#arrowheadY_norm)\"/>\n\n        <text x=\"8.5\" y=\"0.8\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">x</text>\n        <text x=\"0.3\" y=\"-7\" text-anchor=\"start\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">y</text>\n\n\n        <circle cx=\"3\" cy=\"-6\" r=\"0.2\" fill=\"#C00000\" />\n\n        <circle cx=\"2\" cy=\"-4\" r=\"0.2\" fill=\"#C00000\" />\n\n        <circle cx=\"1\" cy=\"-2\" r=\"0.2\" fill=\"#C00000\" />\n\n    </svg>"
+    ],
+    "metadata": {
+      "id": "6882226fc4013e8ae5652b3e",
+      "created_date": "2025-07-24T12:09:19.639000",
+      "updated_date": "2025-08-09T12:29:17.522000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_22",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "22",
+    "text": {
+      "question": [
+        "התאימו את טבלת הערכים לייצוג האלגברי שלה.",
+        "התאימו את טבלת הערכים לייצוג האלגברי שלה.",
+        "התאימו את טבלת הערכים לייצוג האלגברי שלה.",
+        "התאימו את טבלת הערכים לייצוג האלגברי שלה."
+      ],
+      "solution": [
+        "מתאים ל-(2) y=x.",
+        "מתאים ל-(3) y=3x.",
+        "מתאים ל-(1) y=2x.",
+        "מתאים ל-(4) y=0.5x."
+      ],
+      "hint": [
+        "התבוננו ביחס בין ערכי x לערכי y בטבלה. האם y שווה ל-x?",
+        "התבוננו ביחס בין ערכי x לערכי y בטבלה. האם y הוא פי 3 מ-x?",
+        "התבוננו ביחס בין ערכי x לערכי y בטבלה. האם y הוא פי 2 מ-x?",
+        "התבוננו ביחס בין ערכי x לערכי y בטבלה. האם y הוא חצי מ-x?"
+      ],
+      "full_solution": [
+        "נבחן את היחס בין ערכי x לערכי y בטבלה (א):\n\n* כאשר x=0, y=0\n* כאשר x=1, y=1\n* כאשר x=2, y=2\n* כאשר x=3, y=3\n* כאשר x=4, y=4\n\nבטבלה זו, ערך y שווה לערך x. לכן, הייצוג האלגברי המתאים הוא **(2) y = x**. טענה נימוק",
+        "נבחן את היחס בין ערכי x לערכי y בטבלה (ב):\n\n* כאשר x=0, y=0\n* כאשר x=1, y=3 (y הוא פי 3 מ-x)\n* כאשר x=2, y=6 (y הוא פי 3 מ-x)\n* כאשר x=3, y=9 (y הוא פי 3 מ-x)\n* כאשר x=4, y=12 (y הוא פי 3 מ-x)\n\nבטבלה זו, ערך y שווה לפי 3 מערך x. לכן, הייצוג האלגברי המתאים הוא **(3) y = 3x**. טענה נימוק",
+        "נבחן את היחס בין ערכי x לערכי y בטבלה (ג):\n\n* כאשר x=0, y=0\n* כאשר x=1, y=2 (y הוא פי 2 מ-x)\n* כאשר x=2, y=4 (y הוא פי 2 מ-x)\n* כאשר x=3, y=6 (y הוא פי 2 מ-x)\n* כאשר x=4, y=8 (y הוא פי 2 מ-x)\n\nבטבלה זו, ערך y שווה לפי 2 מערך x. לכן, הייצוג האלגברי המתאים הוא **(1) y = 2x**. טענה נימוק",
+        "נבחן את היחס בין ערכי x לערכי y בטבלה (ד):\n\n* כאשר x=0, y=0\n* כאשר x=1, y=0.5 (חצי מ-x) - בהנחה ש'12' הוא '0.5'\n* כאשר x=2, y=1 (חצי מ-x)\n* כאשר x=3, y=1.5 (חצי מ-x) - בהנחה ש'112' הוא '1.5'\n* כאשר x=4, y=2 (חצי מ-x)\n\nבהנחה ש- '12' ו-'112' הם טעויות הקלדה עבור '0.5' ו-'1.5' (בהתאמה), ערך y שווה למחצית מערך x. לכן, הייצוג האלגברי המתאים הוא **(4) y = 0.5x** (או y=x/2). טענה נימוק"
+      ]
+    },
+    "math": [],
+    "svg": [],
+    "metadata": {
+      "id": "6882226fc4013e8ae5652b3d",
+      "created_date": "2025-07-24T12:09:19.639000",
+      "updated_date": "2025-08-09T12:34:05.561000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_21",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "21",
+    "text": {
+      "question": [
+        "בעזרת הטבלה שרטטו ייצוג גרפי של הפונקציה הנתונה",
+        "ב. רשמו ייצוג אלגברי של הפונקציה הנתונה",
+        "ג. אם ימשיכו את הטבלה, איזה ערך של y מתאים ל-x=12?",
+        "ד. אם ימשיכו את הטבלה, איזה ערך של x מתאים ל-y=40?"
+      ],
+      "solution": [
+        "הגרף של הפונקציה הוא קו ישר העובר דרך הנקודות (0,0), (1,2), (2,4), (3,6), (4,8). השרטוט נמצא בתיאור הבעיה.",
+        "$y = 2x$",
+        "עבור x=12, ערך y הוא 24.",
+        "עבור y=40, ערך x הוא 20."
+      ],
+      "hint": [
+        "הציבו את הנקודות מהטבלה במערכת הצירים וחברו אותן בקו.",
+        "התבוננו ביחס בין ערכי x לערכי y בטבלה.",
+        "הציבו x=12 בייצוג האלגברי שמצאתם בסעיף ב'.",
+        "הציבו y=40 בייצוג האלגברי שמצאתם בסעיף ב' ופתרו עבור x."
+      ],
+      "full_solution": [
+        "כדי לשרטט ייצוג גרפי של הפונקציה, נסמן את הנקודות מהטבלה במערכת הצירים ונחבר אותן בקו.\n\nהנקודות הן: (0,0), (1,2), (2,4), (3,6), (4,8).\n\nמאחר שהפונקציה היא קווית (y=2x), חיבור הנקודות ייצור קו ישר. השרטוט הוצג בתיאור הבעיה. טענה נימוק",
+        "נבחן את היחס בין ערכי x לערכי y בטבלה:\n\n* כאשר x=1, y=2 (y הוא פי 2 מ-x)\n* כאשר x=2, y=4 (y הוא פי 2 מ-x)\n* כאשר x=3, y=6 (y הוא פי 2 מ-x)\n* כאשר x=4, y=8 (y הוא פי 2 מ-x)\n\nלכן, הייצוג האלגברי של הפונקציה הוא **y = 2x**. טענה נימוק",
+        "מפתרון סעיף ב', הייצוג האלגברי של הפונקציה הוא $y = 2x$.\nנציב x=12 במשוואה:\n\n* $y = 2 \\cdot 12$\n* $y = 24$\n\nלכן, אם ימשיכו את הטבלה, ערך y המתאים ל-x=12 הוא **24**. טענה נימוק",
+        "מפתרון סעיף ב', הייצוג האלגברי של הפונקציה הוא $y = 2x$.\nנציב y=40 במשוואה ונפתור עבור x:\n\n* $40 = 2x$\n* $x = \\frac{40}{2}$\n* $x = 20$\n\nלכן, אם ימשיכו את הטבלה, ערך x המתאים ל-y=40 הוא **20**. טענה נימוק"
+      ]
+    },
+    "math": [
+      "y = 2x",
+      "y = 2x",
+      "y = 2 \\cdot 12",
+      "y = 24",
+      "y = 2x",
+      "40 = 2x",
+      "x = \\frac{40}{2}",
+      "x = 20"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6882226fc4013e8ae5652b3c",
+      "created_date": "2025-07-24T12:09:19.639000",
+      "updated_date": "2025-08-09T12:29:17.800000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_17",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "17",
+    "text": {
+      "question": [
+        "שרטטו ישר שעובר בנקודה המסומנת ושיפועו -1.",
+        "שרטטו ישר שעובר בנקודה המסומנת ושיפועו 2.",
+        "שרטטו ישר שעובר בנקודה המסומנת ושיפועו 1."
+      ],
+      "solution": [
+        "הישר הוא $y = -x + 2$.",
+        "הישר הוא $y = 2x - 2$.",
+        "הישר הוא $y = x$."
+      ],
+      "hint": [
+        "השתמשו בנוסחה $y = mx + b$. השיפוע m נתון, ואת b תמצאו על ידי הצבת נקודת החיתוך עם ציר ה-y.",
+        "השתמשו בנוסחה $y = mx + b$. השיפוע m נתון. כדי למצוא את b, הציבו את הנקודה (1,0) במשוואה.",
+        "השתמשו בנוסחה $y = mx + b$. השיפוע m נתון, ואת b תמצאו על ידי הצבת נקודת המוצא (0,0)."
+      ],
+      "full_solution": [
+        "הנוסחה הכללית של קו ישר היא $y = mx + b$, כאשר m הוא השיפוע ו-b היא נקודת החיתוך עם ציר ה-y.\n\n1.  **קביעת השיפוע (m)**: נתון שהשיפוע הוא -1. לכן, $m = -1$.\n2.  **קביעת נקודת החיתוך עם ציר ה-y (b)**: הנקודה המסומנת היא (0,2). כאשר x=0, ערך ה-y הוא 2. מכאן, b = 2.\n3.  **כתיבת משוואת הישר**: נציב את m ו-b במשוואת הישר: $y = -1 \\cdot x + 2$, או בקיצור $y = -x + 2$.\n4.  **שרטוט הישר**: כדי לשרטט את הישר, נשתמש בנקודה הנתונה (0,2) ובשיפוע -1. מנקודה (0,2), נרד יחידה אחת בציר y ונתקדם יחידה אחת ימינה בציר x כדי למצוא נקודה נוספת (1,1). נחבר את הנקודות. טענה נימוק",
+        "הנוסחה הכללית של קו ישר היא $y = mx + b$, כאשר m הוא השיפוע ו-b היא נקודת החיתוך עם ציר ה-y.\n\n1.  **קביעת השיפוע (m)**: נתון שהשיפוע הוא 2. לכן, $m = 2$.\n2.  **קביעת נקודת החיתוך עם ציר ה-y (b)**: הנקודה המסומנת היא (1,0). נציב את הנקודה במשוואת הישר $y = 2x + b$:\n    $0 = 2 \\cdot 1 + b$\n    $0 = 2 + b$\n    $b = -2$\n3.  **כתיבת משוואת הישר**: נציב את m ו-b במשוואת הישר: $y = 2x - 2$.\n4.  **שרטוט הישר**: כדי לשרטט את הישר, נשתמש בנקודה הנתונה (1,0) ובשיפוע 2. מנקודה (1,0), נעלה 2 יחידות בציר y ונתקדם יחידה אחת ימינה בציר x כדי למצוא נקודה נוספת (2,2). נחבר את הנקודות. טענה נימוק"
+      ]
+    },
+    "math": [
+      "y = -x + 2",
+      "y = mx + b",
+      "y = mx + b",
+      "m = -1",
+      "y = -1 \\cdot x + 2",
+      "y = -x + 2",
+      "y = 2x - 2",
+      "y = mx + b",
+      "y = mx + b",
+      "m = 2",
+      "y = 2x + b",
+      "0 = 2 \\cdot 1 + b",
+      "0 = 2 + b",
+      "b = -2",
+      "y = 2x - 2",
+      "y = x",
+      "y = mx + b"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68821dfd1a8adb3093e29978",
+      "created_date": "2025-07-24T11:50:21.991000",
+      "updated_date": "2025-08-09T12:29:18.101000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_16",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "16",
+    "text": {
+      "question": [
+        "קבעו את השיפוע של הישר.",
+        "קבעו את השיפוע של הישר.",
+        "קבעו את השיפוע של הישר."
+      ],
+      "solution": [
+        "שיפוע הישר הוא -3.",
+        "שיפוע הישר הוא -2.",
+        "שיפוע הישר הוא 0.5."
+      ],
+      "hint": [
+        "השיפוע מחושב על ידי היחס 'שינוי בציר Y' חלקי 'שינוי בציר X' (עלייה/ריצה). התבוננו ב'מדרגות' האדומות.",
+        "השיפוע מחושב על ידי היחס 'שינוי בציר Y' חלקי 'שינוי בציר X' (עלייה/ריצה). התבוננו ב'מדרגות' האדומות.",
+        "השיפוע מחושב על ידי היחס 'שינוי בציר Y' חלקי 'שינוי בציר X' (עלייה/ריצה). התבוננו ב'מדרגות' האדומות."
+      ],
+      "full_solution": [
+        "השיפוע של ישר מחושב על ידי היחס $\\frac{\\text{שינוי בציר } Y}{\\text{שינוי בציר } X}$ (עלייה/ריצה).\n\nבגרף א', ניתן לראות את ה'מדרגות' המסומנות באדום:\n* **מדרגה ראשונה**: מנקודה (0,0) הישר יורד ב-3 יחידות (שינוי ב-Y = -3) ומתקדם ימינה ב-1 יחידה (שינוי ב-X = 1). השיפוע = $\\frac{-3}{1} = -3$.\n* **מדרגה שנייה**: מנקודה (1,-3) הישר יורד ב-3 יחידות (שינוי ב-Y = -3) ומתקדם ימינה ב-1 יחידה (שינוי ב-X = 1). השיפוע = $\\frac{-3}{1} = -3$.\n\nהשיפוע נשאר קבוע לאורך הישר. לכן, השיפוע של ישר א' הוא **-3**. טענה נימוק",
+        "השיפוע של ישר מחושב על ידי היחס $\\frac{\\text{שינוי בציר } Y}{\\text{שינוי בציר } X}$ (עלייה/ריצה).\n\nבגרף ב', ניתן לראות את ה'מדרגות' המסומנות באדום:\n* **מדרגה ראשונה**: מנקודה (0,-1) הישר יורד ב-2 יחידות (שינוי ב-Y = -2) ומתקדם ימינה ב-1 יחידה (שינוי ב-X = 1). השיפוע = $\\frac{-2}{1} = -2$.\n* **מדרגה שנייה**: מנקודה (1,-3) הישר יורד ב-2 יחידות (שינוי ב-Y = -2) ומתקדם ימינה ב-1 יחידה (שינוי ב-X = 1). השיפוע = $\\frac{-2}{1} = -2$.\n\nהשיפוע נשאר קבוע לאורך הישר. לכן, השיפוע של ישר ב' הוא **-2**. טענה נימוק"
+      ]
+    },
+    "math": [
+      "\\frac{\\text{שינוי בציר } Y}{\\text{שינוי בציר } X}",
+      "\\frac{-3}{1} = -3",
+      "\\frac{\\text{שינוי בציר } Y}{\\text{שינוי בציר } X}",
+      "\\frac{-2}{1} = -2"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "688213602dae36246eac7d0c",
+      "created_date": "2025-07-24T11:05:04.843000",
+      "updated_date": "2025-08-09T12:29:17.903000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_26",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של קו ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "26",
+    "text": {
+      "question": [
+        "השלימו את הטבלה בכל סעיף בעזרת הצבה וסמנו את הנקודות",
+        "השלימו את הטבלה בכל סעיף בעזרת הצבה וסמנו את הנקודות",
+        "השלימו את הטבלה בכל סעיף בעזרת הצבה וסמנו את הנקודות המקבילות בגרפים, רשמו מה ההבדלים בגרפים.",
+        "השלימו את הטבלה בכל סעיף בעזרת הצבה וסמנו את הנקודות המקבילות בגרפים, רשמו מה ההבדלים בגרפים.",
+        "השלימו את הטבלה בכל סעיף בעזרת הצבה וסמנו את הנקודות",
+        "רשמו מה ההבדלים בגרפים."
+      ],
+      "solution": [
+        "הטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 4\n--|---|---|---|---\ny | 0 | 1 | 2 | 4 x 0 1 2 4 y 0 1 2 4",
+        "הטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 4\n--|---|---|---|---\ny | 0 | 2 | 4 | 8 x 0 1 2 4 y 0 2 4 8",
+        "הטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 4\n--|---|---|---|---\ny | 0 | 3 | 6 | 12 x 0 1 2 4 y 0 3 6 12",
+        "הטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 3\n--|---|---|---|---\ny | 2 | 3 | 4 | 5 x 0 1 2 3 y 2 3 4 5",
+        "הטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 3\n--|---|---|---|---\ny | 4 | 5 | 6 | 7 x 0 1 2 3 y 4 5 6 7",
+        "ההבדל העיקרי בין הגרפים הוא בשיפוע שלהם ובנקודת החיתוך עם ציר ה-y."
+      ],
+      "hint": [
+        "הציבו כל ערך של x במשוואה $y = 1 \\cdot x$ כדי למצוא את ערך y המתאים.",
+        "הציבו כל ערך של x במשוואה $y = 2 \\cdot x$ כדי למצוא את ערך y המתאים.",
+        "הציבו כל ערך של x במשוואה $y = 3 \\cdot x$ כדי למצוא את ערך y המתאים.",
+        "הציבו כל ערך של x במשוואה $y = x + 2$ כדי למצוא את ערך y המתאים.",
+        "הציבו כל ערך של x במשוואה $y = x + 4$ כדי למצוא את ערך y המתאים.",
+        "התבוננו כיצד הפונקציות משתנות כאשר x גדל, והיכן כל גרף חותך את ציר ה-y."
+      ],
+      "full_solution": [
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי $y = 1 \\cdot x$:\n\n* **עבור x = 1**: $y = 1 \\cdot 1 = 1$\n* **עבור x = 2**: $y = 1 \\cdot 2 = 2$\n* **עבור x = 4**: $y = 1 \\cdot 4 = 4$\n\nהטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 4\n--|---|---|---|---\ny | 0 | 1 | 2 | 4\n\nהנקודות שיתקבלו הן: (0,0), (1,1), (2,2), (4,4). טענה נימוק",
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי $y = 2 \\cdot x$:\n\n* **עבור x = 1**: $y = 2 \\cdot 1 = 2$\n* **עבור x = 2**: $y = 2 \\cdot 2 = 4$\n* **עבור x = 4**: $y = 2 \\cdot 4 = 8$\n\nהטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 4\n--|---|---|---|---\ny | 0 | 2 | 4 | 8\n\nהנקודות שיתקבלו הן: (0,0), (1,2), (2,4), (4,8). טענה נימוק",
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי $y = 3 \\cdot x$:\n\n* **עבור x = 1**: $y = 3 \\cdot 1 = 3$\n* **עבור x = 2**: $y = 3 \\cdot 2 = 6$\n* **עבור x = 4**: $y = 3 \\cdot 4 = 12$\n\nהטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 4\n--|---|---|---|---\ny | 0 | 3 | 6 | 12\n\nהנקודות שיתקבלו הן: (0,0), (1,3), (2,6), (4,12). טענה נימוק",
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי $y = x + 2$:\n\n* **עבור x = 0**: $y = 0 + 2 = 2$\n* **עבור x = 1**: $y = 1 + 2 = 3$\n* **עבור x = 2**: $y = 2 + 2 = 4$\n* **עבור x = 3**: $y = 3 + 2 = 5$\n\nהטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 3\n--|---|---|---|---\ny | 2 | 3 | 4 | 5\n\nהנקודות שיתקבלו הן: (0,2), (1,3), (2,4), (3,5). טענה נימוק",
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי $y = x + 4$:\n\n* **עבור x = 0**: $y = 0 + 4 = 4$\n* **עבור x = 1**: $y = 1 + 4 = 5$\n* **עבור x = 2**: $y = 2 + 4 = 6$\n* **עבור x = 3**: $y = 3 + 4 = 7$\n\nהטבלה שהושלמה:\n\nx | 0 | 1 | 2 | 3\n--|---|---|---|---\ny | 4 | 5 | 6 | 7\n\nהנקודות שיתקבלו הן: (0,4), (1,5), (2,6), (3,7). טענה נימוק",
+        "**הבדלים בגרפים:**\n\n1.  **פונקציות מהצורה y = m * x (סעיפים א, ב, ג):**\n    * הן כולן עוברות דרך ראשית הצירים (0,0).\n    * ההבדל ביניהן הוא ב**שיפוע** (slope) של הקו: ככל שהמקדם של x (m) גדול יותר, כך הקו תלול יותר.\n        * y = 1x: שיפוע 1 (עולה בזווית 45 מעלות).\n        * y = 2x: שיפוע 2 (תלול יותר מ-y=x).\n        * y = 3x: שיפוע 3 (תלול יותר מ-y=2x).\n\n2.  **פונקציות מהצורה y = x + b (סעיפים ד, ה):**\n    * יש להן את אותו שיפוע (1), ולכן הן קווים מקבילים.\n    * ההבדל ביניהן הוא ב**נקודת החיתוך עם ציר ה-y** (y-intercept), המצוינת על ידי b (האיבר החופשי).\n        * y = x + 2: חותך את ציר ה-y בנקודה (0,2).\n        * y = x + 4: חותך את ציר ה-y בנקודה (0,4).\n\n**לסיכום**: הפונקציות הראשונות מדגימות שינוי בשיפוע (התלילות), ואילו האחרונות מדגימות שינוי בנקודת החיתוך עם ציר ה-y תוך שמירה על אותו שיפוע (קווים מקבילים). טענה נימוק"
+      ]
+    },
+    "math": [
+      "y = 1 \\cdot x",
+      "y = 1 \\cdot x",
+      "y = 1 \\cdot 1 = 1",
+      "y = 1 \\cdot 2 = 2",
+      "y = 1 \\cdot 4 = 4",
+      "y = 2 \\cdot x",
+      "y = 2 \\cdot x",
+      "y = 2 \\cdot 1 = 2",
+      "y = 2 \\cdot 2 = 4",
+      "y = 2 \\cdot 4 = 8",
+      "y = 3 \\cdot x",
+      "y = 3 \\cdot x",
+      "y = 3 \\cdot 1 = 3",
+      "y = 3 \\cdot 2 = 6",
+      "y = 3 \\cdot 4 = 12",
+      "y = x + 2",
+      "y = x + 2",
+      "y = 0 + 2 = 2",
+      "y = 1 + 2 = 3",
+      "y = 2 + 2 = 4",
+      "y = 3 + 2 = 5",
+      "y = x + 4",
+      "y = x + 4",
+      "y = 0 + 4 = 4",
+      "y = 1 + 4 = 5",
+      "y = 2 + 4 = 6",
+      "y = 3 + 4 = 7"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "6882104e58ab257909af9399",
+      "created_date": "2025-07-24T10:51:58.012000",
+      "updated_date": "2025-08-09T12:29:18.045000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_13",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ייצוג של ישר",
+    "exercise_type": "בסיס",
+    "exercise_number": "13",
+    "text": {
+      "question": [
+        "קבעו את השיפוע של הישר.",
+        "קבעו את השיפוע של הישר.",
+        "קבעו את השיפוע של הישר."
+      ],
+      "solution": [
+        "שיפוע הישר הוא -1.",
+        "שיפוע הישר הוא 2.",
+        "שיפוע הישר הוא 1."
+      ],
+      "hint": [
+        "השיפוע מחושב על ידי היחס 'שינוי בציר Y' חלקי 'שינוי בציר X' (עלייה/ריצה). התבוננו ב'מדרגות' האדומות.",
+        "השיפוע מחושב על ידי היחס 'שינוי בציר Y' חלקי 'שינוי בציר X' (עלייה/ריצה). התבוננו ב'מדרגות' האדומות.",
+        "השיפוע מחושב על ידי היחס 'שינוי בציר Y' חלקי 'שינוי בציר X' (עלייה/ריצה). התבוננו ב'מדרגות' האדומות."
+      ],
+      "full_solution": [
+        "השיפוע של ישר מחושב על ידי היחס $\\frac{\\text{שינוי בציר } Y}{\\text{שינוי בציר } X}$ (עלייה/ריצה).\n\nבגרף א', ניתן לראות את ה'מדרגות' המסומנות באדום:\n* **מדרגה ראשונה**: מנקודה (1,-1) הישר יורד ב-1 יחידה (שינוי ב-Y = -1) ומתקדם ימינה ב-1 יחידה (שינוי ב-X = 1). השיפוע = $\\frac{-1}{1} = -1$.\n* **מדרגה שנייה**: מנקודה (2,-2) הישר יורד ב-1 יחידה (שינוי ב-Y = -1) ומתקדם ימינה ב-1 יחידה (שינוי ב-X = 1). השיפוע = $\\frac{-1}{1} = -1$.\n\nהשיפוע נשאר קבוע לאורך הישר. לכן, השיפוע של ישר א' הוא **-1**. טענה נימוק"
+      ]
+    },
+    "math": [
+      "\\frac{\\text{שינוי בציר } Y}{\\text{שינוי בציר } X}",
+      "\\frac{-1}{1} = -1"
+    ],
+    "svg": [],
+    "metadata": {
+      "id": "68820b1843b8cd08d56b1d95",
+      "created_date": "2025-07-24T10:29:44.576000",
+      "updated_date": "2025-08-09T12:18:10.145000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  },
+  {
+    "canonical_exercise_id": "ח_2_בסיס_15",
+    "grade": "ח",
+    "lesson_number": "2",
+    "topic": "ישר במערכת צירים",
+    "exercise_type": "בסיס",
+    "exercise_number": "15",
+    "text": {
+      "question": [
+        "השלימו את טבלת הערכים החלקיים על ידי הצבה בייצוג האלגברי הנתון (לדוגמה הצבה של x=3 אז y=3+3=6)",
+        "אם נחבר את הנקודות שסימנו בסעיף הקודם נקבל קו ישר?"
+      ],
+      "solution": [
+        "הטבלה שהושלמה: x 0 1 2 3 y 2 3 4 5",
+        "קו ישר."
+      ],
+      "hint": [
+        "הציבו כל ערך של x במשוואה y = x + 2 כדי למצוא את ערך y המתאים.",
+        "נסו לשרטט את הנקודות במערכת צירים ולחבר אותן. או חשבו על סוג הייצוג האלגברי (פונקציה קווית)."
+      ],
+      "full_solution": [
+        "כדי להשלים את הטבלה, נציב כל ערך של x בביטוי האלגברי y = x + 2: עבור x = 2 : y = 2 + 3 = 5 עבור x = 3: y = 3 + 3 = 6 הטבלה שהושלמה, הנקודות שיתקבלו הן: (0,3), (1,4), (2,5), (3,6).",
+        "כן, אם נחבר את הנקודות שסימנו (0,2), (1,3), (2,4), (3,5) נקבל קו ישר"
+      ]
+    },
+    "math": [],
+    "svg": [],
+    "metadata": {
+      "id": "68820080e8b57fc08f65eb08",
+      "created_date": "2025-07-24T09:44:32.505000",
+      "updated_date": "2025-08-09T14:15:04.433000",
+      "created_by": "guy@guykoren.co.il",
+      "is_sample": false
+    }
+  }
+]

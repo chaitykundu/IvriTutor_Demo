@@ -1,0 +1,867 @@
+[
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 15,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">קבעו מבין המשוואות הבאות לאיזו משוואה הפתרון הוא x=-1</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">בדקו את המשוואות הבאות:</p>",
+        "question_options": [
+          "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-1=-2</p>",
+          "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2=3-x</p>",
+          "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-6x=-6</p>"
+        ],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-1=-2</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הציבו x=-1 בכל משוואה ובדקו איזו משוואה מתקיימת</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נציב x=-1 בכל משוואה:\n\n1) x-1=-2: (-1)-1=-2 → -2=-2 ✓ נכון\n\n2) 2=3-x: 2=3-(-1) → 2=3+1 → 2=4 ✗ לא נכון\n\n3) -6x=-6: -6×(-1)=-6 → 6=-6 ✗ לא נכון\n\nאם כן, רק המשוואה הראשונה x-1=-2 מתקיימת כאשר x=-1</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e778296d",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 2,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נתונות הנקודות הבאות: (-3, 2), (-4,-3), (1,1), (2,-2), (0,-5). רשמו ליד כל נקודה את השיעורים שלה</p>\n\n<svg width=\"1021\" height=\"859\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" overflow=\"hidden\"><g transform=\"translate(-144 -1581)\"><path d=\"M0 0 936.007 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 184.5 2141.5)\"/><path d=\"M182.5 2365.5 1120.64 2365.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M211.5 1591.5 211.5 2421.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M288.5 1599.5 288.5 2429.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M365.5 1593.5 365.5 2423.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M442.5 1603.5 442.5 2433.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M519.5 1591.5 519.5 2421.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M596.5 1603.5 596.5 2433.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M673.5 1597.5 673.5 2427.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M749.5 1607.5 749.5 2437.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M826.5 1597.5 826.5 2427.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M903.5 1593.5 903.5 2423.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M980.5 1587.5 980.5 2417.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M0 0 946.128 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 174.5 1680.5)\"/><path d=\"M0 0 938.034 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 182.5 1757.5)\"/><path d=\"M0 0 948.151 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 172.5 1833.5)\"/><path d=\"M0 0 946.127 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 174.5 1912.5)\"/><path d=\"M0 0 946.127 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 174.5 1989.5)\"/><path d=\"M0 0 936.01 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 184.5 2065.5)\"/><path d=\"M0 0 919.823 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 200.5 2218.5)\"/><path d=\"M0 0 946.127 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 174.5 2295.5)\"/><path d=\"M1.14583-5.87326e-07 1.14619 694.91-1.14548 694.91-1.14583 5.87326e-07ZM0.000356194 694.91 9.16702 685.743 0.000360892 704.076-9.16632 685.743Z\" transform=\"matrix(1 0 0 -1 673 2363.08)\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 1073.95 1961)\">x</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 715.052 1655)\">y</text><path d=\"M223 1914.85 1063.69 1914.85 1063.69 1917.15 223 1917.15ZM1063.69 1916 1054.52 1906.83 1072.86 1916 1054.52 1925.17Z\"/><path d=\"M1050.5 1584.5 1050.5 2414.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1120.5 1581.5 1120.5 2411.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M357 2137.5C357 2132.25 361.03 2128 366 2128 370.971 2128 375 2132.25 375 2137.5 375 2142.75 370.971 2147 366 2147 361.03 2147 357 2142.75 357 2137.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M665 2291.5C665 2286.25 669.253 2282 674.5 2282 679.747 2282 684 2286.25 684 2291.5 684 2296.75 679.747 2301 674.5 2301 669.253 2301 665 2296.75 665 2291.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 342.178 2209)\">E(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 385.445 2209)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 400.708 2209)\">4</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 423.624 2209)\">,__)</text><path d=\"M431 1754C431 1749.03 435.029 1745 440 1745 444.971 1745 449 1749.03 449 1754 449 1758.97 444.971 1763 440 1763 435.029 1763 431 1758.97 431 1754Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 418.405 1717)\">C(__,__)</text><path d=\"M741 1832C741 1827.03 745.03 1823 750 1823 754.971 1823 759 1827.03 759 1832 759 1836.97 754.971 1841 750 1841 745.03 1841 741 1836.97 741 1832Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 762.139 1828)\">B(__,__)</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 693.663 2298)\">D(___,</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 822.226 2298)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 837.488 2298)\">3</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 860.405 2298)\">)</text><path d=\"M815 2055C815 2050.03 819.253 2046 824.5 2046 829.747 2046 834 2050.03 834 2055 834 2059.97 829.747 2064 824.5 2064 819.253 2064 815 2059.97 815 2055Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 840.84 2066)\">A(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 889.194 2066)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 904.456 2066)\">1,2</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 961.748 2066)\">)</text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 1022.89 1657)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 999.193 1657)\">1</text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 259.19 1658)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 235.494 1658)\">2</text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 249.127 2364)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 225.431 2364)\">3</text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 1038.94 2385)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 1015.24 2385)\">4</text></g></svg>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">התאימו בין הנקודות הנתונות לנקודות המסומנות במערכת הצירים A, B, C, D, E</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">A(2,-1), B(1,2), C(-3,5), D(0,-3), E(-4,-3)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">בדקו את הרביע של כל נקודה ואת המרחק מהצירים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">התאמת הנקודות:\n\nמהנקודות הנתונות:\n• (-3, 2) - רביע 2 (x שלילי, y חיובי)\n• (-4, -3) - רביע 3 (x שלילי, y שלילי) - מתאים לנקודה E\n• (1, 1) - רביע 1 (x חיובי, y חיובי)\n• (2, -2) - רביע 4 (x חיובי, y שלילי)\n• (0, -5) - על ציר y השלילי\n\nמהתבוננות במערכת הצירים:\n• נקודה A - ברביע 1, לכן A(2, -1) [תיקון: נראה שיש טעות בנתון המקורי]\n• נקודה B - ברביע 1, לכן B(1, 2)\n• נקודה C - ברביע 2, לכן C(-3, 5)\n• נקודה D - על ציר y השלילי, לכן D(0, -3)\n• נקודה E - ברביע 3 עם x=-4 (נתון), לכן E(-4, -3)\n\nהתאמה סופית:\n• נקודה E מתאימה ל-(-4, -3)\n• שאר הנקודות צריך להתאים לפי המיקום במערכת הצירים</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782961",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 13,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פתרו את המשוואות הבאות, בדקו על ידי הצבה את הפתרון שהתקבל</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-2=5</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=7</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, הוסיפו 2 לשני אגפי המשוואה</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-2=5\nנוסיף 2 לשני אגפי המשוואה:\nx-2+2=5+2\nx=7\nבדיקה על ידי הצבה:\n7-2=5 ✓</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2x=6</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, חלקו את שני אגפי המשוואה ב-2</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2x=6\nנחלק את שני אגפי המשוואה ב-2:\n2x÷2=6÷2\nx=3\nבדיקה על ידי הצבה:\n2·3=6 ✓</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2+x=8</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=6</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, חסרו 2 משני אגפי המשוואה</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2+x=8\nנחסיר 2 משני אגפי המשוואה:\n2+x-2=8-2\nx=6\nבדיקה על ידי הצבה:\n2+6=8 ✓</p>"
+      },
+      {
+        "section_number": "ד'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3·x-3=0</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=1</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">תחילה הוסיפו 3 לשני אגפי המשוואה, ואחר כך חלקו ב-3</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3·x-3=0\nנוסיף 3 לשני אגפי המשוואה:\n3x-3+3=0+3\n3x=3\nנחלק את שני אגפי המשוואה ב-3:\n3x÷3=3÷3\nx=1\nבדיקה על ידי הצבה:\n3·1-3=3-3=0 ✓</p>"
+      },
+      {
+        "section_number": "ה'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">½x=3</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=6</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, הכפילו את שני אגפי המשוואה ב-2</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">½x=3\nנכפיל את שני אגפי המשוואה ב-2:\n2·½x=2·3\nx=6\nבדיקה על ידי הצבה:\n½·6=3 ✓</p>"
+      },
+      {
+        "section_number": "ו'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">6x=2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=1/3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, חלקו את שני אגפי המשוואה ב-6</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">6x=2\nנחלק את שני אגפי המשוואה ב-6:\n6x÷6=2÷6\nx=2/6=1/3\nבדיקה על ידי הצבה:\n6·(1/3)=6/3=2 ✓</p>"
+      },
+      {
+        "section_number": "ז'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">7x=-1</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-1/7</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, חלקו את שני אגפי המשוואה ב-7</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">7x=-1\nנחלק את שני אגפי המשוואה ב-7:\n7x÷7=(-1)÷7\nx=-1/7\nבדיקה על ידי הצבה:\n7·(-1/7)=-7/7=-1 ✓</p>"
+      },
+      {
+        "section_number": "ח'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2+3x=11</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">תחילה חסרו 2 משני אגפי המשוואה, ואחר כך חלקו ב-3</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2+3x=11\nנחסיר 2 משני אגפי המשוואה:\n2+3x-2=11-2\n3x=9\nנחלק את שני אגפי המשוואה ב-3:\n3x÷3=9÷3\nx=3\nבדיקה על ידי הצבה:\n2+3·3=2+9=11 ✓</p>"
+      },
+      {
+        "section_number": "ט'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3x=-12</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-4</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, חלקו את שני אגפי המשוואה ב-3</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3x=-12\nנחלק את שני אגפי המשוואה ב-3:\n3x÷3=(-12)÷3\nx=-4\nבדיקה על ידי הצבה:\n3·(-4)=-12 ✓</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e778296b",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 3,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הקטעים AB ו-CD מקבילים לצירים\nענו נכון או לא נכון</p>\n\n<svg width=\"1020\" height=\"859\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" overflow=\"hidden\"><g transform=\"translate(-172 -347)\"><path d=\"M0 0 936.007 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 212.5 907.5)\"/><path d=\"M210.5 1131.5 1148.64 1131.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M239.5 357.5 239.5 1187.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M316.5 365.5 316.5 1195.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M393.5 359.5 393.5 1189.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M469.5 369.5 469.5 1199.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M546.5 357.5 546.5 1187.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M623.5 369.5 623.5 1199.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M700.5 363.5 700.5 1193.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M777.5 373.5 777.5 1203.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M854.5 363.5 854.5 1193.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M931.5 359.5 931.5 1189.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1008.5 353.5 1008.5 1183.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M0 0 946.128 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 202.5 446.5)\"/><path d=\"M0 0 938.034 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 210.5 523.5)\"/><path d=\"M0 0 948.151 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 200.5 599.5)\"/><path d=\"M0 0 946.127 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 202.5 678.5)\"/><path d=\"M0 0 946.127 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 202.5 755.5)\"/><path d=\"M0 0 936.01 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 212.5 831.5)\"/><path d=\"M0 0 919.823 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 228.5 984.5)\"/><path d=\"M0 0 946.127 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 202.5 1061.5)\"/><path d=\"M1.14583-5.87326e-07 1.14619 694.91-1.14548 694.91-1.14583 5.87326e-07ZM0.000356194 694.91 9.16702 685.743 0.000360892 704.076-9.16632 685.743Z\" transform=\"matrix(1 0 0 -1 546 1131.08)\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 1081.56 877)\">x</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 571.13 438)\">y</text><path d=\"M241 828.854 1081.69 828.855 1081.69 831.146 241 831.146ZM1081.69 830.001 1072.52 820.834 1090.86 830.001 1072.52 839.167Z\"/><path d=\"M1078.5 350.5 1078.5 1180.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1148.5 347.5 1148.5 1177.21\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M996.797 519.5 633.5 519.5\" stroke=\"#000000\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M0 0 0.000360892 402.389\" stroke=\"#000000\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(-1 0 0 1 391.5 582.5)\"/><path d=\"M383 978C383 973.029 387.253 969 392.5 969 397.747 969 402 973.029 402 978 402 982.971 397.747 987 392.5 987 387.253 987 383 982.971 383 978Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M615 519C615 514.03 619.029 510 624 510 628.97 510 633 514.03 633 519 633 523.971 628.97 528 624 528 619.029 528 615 523.971 615 519Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M381 595C381 590.03 385.029 586 390 586 394.971 586 399 590.03 399 595 399 599.971 394.971 604 390 604 385.029 604 381 599.971 381 595Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 410.998 610)\">C</text><path d=\"M769 517.5C769 512.253 773.029 508 778 508 782.97 508 787 512.253 787 517.5 787 522.747 782.97 527 778 527 773.029 527 769 522.747 769 517.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 994.272 583)\">B</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 416.364 992)\">D</text><path d=\"M916 517.5C916 512.253 920.03 508 925 508 929.971 508 934 512.253 934 517.5 934 522.747 929.971 527 925 527 920.03 527 916 522.747 916 517.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 1050.39 423)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 1026.69 423)\">1</text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 286.69 424)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 262.994 424)\">2</text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 276.627 1130)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 252.931 1130)\">3</text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" direction=\"rtl\" writing-mode=\"rl-tb\" transform=\"matrix(1 0 0 1 1066.44 1151)\" x=\"93.2479\">רביע </text><text fill=\"#C00000\" font-family=\"Heebo,Heebo_MSFontService,sans-serif\" font-weight=\"700\" font-size=\"41\" transform=\"matrix(1 0 0 1 1042.74 1151)\">4</text><path d=\"M384 669C384 664.029 388.253 660 393.5 660 398.747 660 403 664.029 403 669 403 673.97 398.747 678 393.5 678 388.253 678 384 673.97 384 669Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M383 824.5C383 819.253 387.253 815 392.5 815 397.747 815 402 819.253 402 824.5 402 829.747 397.747 834 392.5 834 387.253 834 383 829.747 383 824.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M994 519C994 514.03 998.03 510 1003 510 1007.97 510 1012 514.03 1012 519 1012 523.971 1007.97 528 1003 528 998.03 528 994 523.971 994 519Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 606.772 576)\">A</text></g></svg>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">שיעור y של כל הנקודות על הקטע AB הוא 4</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">בדוק את מיקום הנקודות A ו-B בגרף וראה איזה שיעור y יש להן</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון. הקטע AB מקביל לציר x, כלומר כל הנקודות עליו באותו גובה. מהגרף ניתן לראות שהנקודות A ו-B נמצאות בגובה y=4, לכן כל הנקודות על הקטע AB יש להן שיעור y=4</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">שיעור y של כל הנקודות על הקטע CD הוא 3</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">לא נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">בדוק את מיקום הנקודות C ו-D בגרף וראה איזה שיעור y יש להן</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">לא נכון. הקטע CD מקביל לציר y, כלומר כל הנקודות עליו באותו שיעור x ולא באותו שיעור y. הנקודה C נמצאת בגובה y=2 והנקודה D נמצאת בגובה y=-2, לכן שיעור y משתנה לאורך הקטע CD</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">שיעור y של כל הנקודות על הקטע CD הוא 2-</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">לא נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הקטע CD מקביל לאיזה ציר? מה זה אומר על השיעורים של הנקודות עליו?</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">לא נכון. כמו בסעיף הקודם, הקטע CD מקביל לציר y ולכן שיעור y משתנה לאורך הקטע. הערך y=(-2) הוא רק של הנקודה D, ולא של כל הנקודות על הקטע</p>"
+      },
+      {
+        "section_number": "ד'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">שיעור y של כל הנקודות על ציר ה-x הוא 0</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">איפה נמצא ציר x במערכת הצירים? איזה גובה יש לכל נקודה עליו?</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון. ציר x הוא הקו האופקי שעובר דרך הנקודה (0,0). כל נקודה על ציר x נמצאת בגובה אפס, כלומר שיעור y שלה הוא 0</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782962",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 17,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פתרו את המשוואות הבאות</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3-2a-4+7a=13+4a-8-2a</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">a = 4</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">צרפו איברים דומים בכל צד של המשוואה</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3-2a-4+7a = 13+4a-8-2a\n-1+5a = 5+2a\n5a-2a = 5+1\n3a = 6\na = 2</p>"
+      },
+      {
+        "section_number": "ב",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">10x-3-40=-48+5x+5</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x = 0</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פשטו כל צד של המשוואה בנפרד</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">10x-3-40 = -48+5x+5\n10x-43 = -43+5x\n10x-5x = -43+43\n5x = 0\nx = 0</p>"
+      },
+      {
+        "section_number": "ג",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">7m+6+2m=11-6m-5</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">m = 0</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">צרפו איברי m בכל צד</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">7m+6+2m = 11-6m-5\n9m+6 = 6-6m\n9m+6m = 6-6\n15m = 0\nm = 0</p>"
+      },
+      {
+        "section_number": "ד",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4b-4=-3b-5+6b-1</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">b = -2</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">צרפו את כל איברי b בצד הימני</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4b-4 = -3b-5+6b-1\n4b-4 = 3b-6\n4b-3b = -6+4\nb = -2</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e778296f",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 1,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">בציור נתונה נקודה A. דוגמה: שיעורי הנקודה הם A(-1, 2). השלימו את שיעורי הנקודות החסרות.</p>\n\n<svg width=\"961\" height=\"867\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" overflow=\"hidden\"><g transform=\"translate(-213 -567)\"><path d=\"M0 0 944.969 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 225.5 1132.5)\"/><path d=\"M223.5 1359.5 1170.62 1359.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M253.5 577.5 253.5 1414.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M330.5 585.5 330.5 1422.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M408.5 579.5 408.5 1416.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M485.5 589.5 485.5 1426.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M563.5 577.5 563.5 1414.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M641.5 589.5 641.5 1426.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M718.5 583.5 718.5 1420.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M796.5 593.5 796.5 1430.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M874.5 583.5 874.5 1420.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M951.5 579.5 951.5 1416.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1029.5 573.5 1029.5 1410.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M0 0 955.187 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 215.5 667.5)\"/><path d=\"M0 0 947.016 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 223.5 744.5)\"/><path d=\"M0 0 957.229 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 213.5 822.5)\"/><path d=\"M0 0 955.186 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 215.5 901.501)\"/><path d=\"M0 0 955.186 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 215.5 978.501)\"/><path d=\"M0 0 944.972 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 225.5 1056.5)\"/><path d=\"M0 0 928.63 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 242.5 1210.5)\"/><path d=\"M0 0 955.186 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 215.5 1288.5)\"/><path d=\"M1.14583-5.8187e-07 1.14619 701.511-1.14548 701.511-1.14583 5.8187e-07ZM0.000356237 701.511 9.16702 692.345 0.000360892 710.678-9.16632 692.345Z\" transform=\"matrix(1 0 0 -1 718 1356.68)\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 1117.38 1165)\">x</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 762.46 641)\">y</text><path d=\"M253 1128.85 1101.83 1128.85 1101.83 1131.15 253 1131.15ZM1101.83 1130 1092.66 1120.83 1110.99 1130 1092.66 1139.17Z\"/><path d=\"M1100.5 570.5 1100.5 1407.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1170.5 567.5 1170.5 1404.99\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M400 1128.5C400 1123.25 404.03 1119 409 1119 413.971 1119 418 1123.25 418 1128.5 418 1133.75 413.971 1138 409 1138 404.03 1138 400 1133.75 400 1128.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M866 1355.5C866 1350.25 870.029 1346 875 1346 879.971 1346 884 1350.25 884 1355.5 884 1360.75 879.971 1365 875 1365 870.029 1365 866 1360.75 866 1355.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 384.762 1200)\">E(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 428.028 1200)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 443.291 1200)\">4</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 466.207 1200)\">,__)</text><path d=\"M322 745.5C322 740.253 326.253 736 331.5 736 336.747 736 341 740.253 341 745.5 341 750.747 336.747 755 331.5 755 326.253 755 322 750.747 322 745.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 340.626 746)\">C(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 386.459 746)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 401.722 746)\">4</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 424.639 746)\">,___)</text><path d=\"M788 820C788 815.029 792.029 811 797 811 801.971 811 806 815.029 806 820 806 824.971 801.971 829 797 829 792.029 829 788 824.971 788 820Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 808.169 816)\">B(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 854.003 816)\">1</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 876.919 816)\">,___)</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 839.048 1299)\">D(___,</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 967.611 1299)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 982.873 1299)\">3</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 1005.79 1299)\">)</text><path d=\"M637 969C637 964.03 641.253 960 646.5 960 651.747 960 656 964.03 656 969 656 973.971 651.747 978 646.5 978 641.253 978 637 973.971 637 969Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 642.265 1003)\">A(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 690.619 1003)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 705.881 1003)\">1,2</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 763.173 1003)\">)</text></g></svg>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">השלימו את השיעורים החסרים של הנקודות B, C, D, E</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">B(1, 4), C(-4, 6), D(2, -3), E(-4, 0)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כל משבצת במערכת הצירים מייצגת יחידה אחת. ספרו משבצות מהראשית</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מהתבוננות במערכת הצירים:\n\nנקודה B:\n• שיעור x: 1 (משבצת אחת ימינה מהראשית)\n• שיעור y: 4 (ארבע משבצות למעלה מהראשית)\n• B(1, 4)\n\nנקודה C:\n• שיעור x: -4 (ארבע משבצות שמאלה מהראשית)\n• שיעור y: 6 (שש משבצות למעלה מהראשית)\n• C(-4, 6)\n\nנקודה D:\n• שיעור x: 2 (שתי משבצות ימינה מהראשית)\n• שיעור y: -3 (נתון)\n• D(2, -3)\n\nנקודה E:\n• שיעור x: -4 (נתון)\n• שיעור y: 0 (על ציר x)\n• E(-4, 0)</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782960",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 10,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">בכל סעיף קבעו האם הפתרון שרשום מימין למשוואה נכון או לא</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2x+1=5, x=2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הציבו x=2 במשוואה ובדקו האם שני האגפים שווים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נציב x=2 במשוואה:\n2·2+1 = 4+1 = 5\nהאגף השמאלי: 5\nהאגף הימני: 5\nמכיוון ש-5 = 5, הפתרון x=2 נכון</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3=x+5, x=-2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הציבו x=-2 במשוואה ובדקו האם שני האגפים שווים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נציב x=-2 במשוואה:\nהאגף השמאלי: 3\nהאגף הימני: (-2)+5 = 3\nמכיוון ש-3 = 3, הפתרון x=-2 נכון</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3·x-1=5, x=1</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">לא נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הציבו x=1 במשוואה ובדקו האם שני האגפים שווים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נציב x=1 במשוואה:\n3·1-1 = 3-1 = 2\nהאגף השמאלי: 2\nהאגף הימני: 5\nמכיוון ש-2 ≠ 5, הפתרון x=1 לא נכון\n(הפתרון הנכון הוא x=2)</p>"
+      },
+      {
+        "section_number": "ד'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">7-2x=1, x=3</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הציבו x=3 במשוואה ובדקו האם שני האגפים שווים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נציב x=3 במשוואה:\n7-2·3 = 7-6 = 1\nהאגף השמאלי: 1\nהאגף הימני: 1\nמכיוון ש-1 = 1, הפתרון x=3 נכון</p>"
+      },
+      {
+        "section_number": "ה'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2·x=1, x=1/2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הציבו x=1/2 במשוואה ובדקו האם שני האגפים שווים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נציב x=1/2 במשוואה:\n2·(1/2) = 1\nהאגף השמאלי: 1\nהאגף הימני: 1\nמכיוון ש-1 = 1, הפתרון x=1/2 נכון</p>"
+      },
+      {
+        "section_number": "ו'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3·x=1, x=-1/3</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">לא נכון</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הציבו x=-1/3 במשוואה ובדקו האם שני האגפים שווים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נציב x=-1/3 במשוואה:\n3·(-1/3) = -1\nהאגף השמאלי: -1\nהאגף הימני: 1\nמכיוון ש-(-1) ≠ 1, הפתרון x=-1/3 לא נכון\n(הפתרון הנכון הוא x=1/3)</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782968",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "מורכב",
+    "exercise_number": 16,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פתרו את המשוואות הבאות, בדקו על ידי הצבה את הפתרון שהתקבל</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">7=2x-1</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=4</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">העבירו את -1 לאגף השמאלי</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">7=2x-1\n7+1=2x\n8=2x\nx=4\nבדיקה: 7=2×4-1 → 7=8-1 → 7=7 ✓</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3+3x=17+5x</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-7</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">העבירו את כל ה-x לצד אחד והמספרים לצד השני</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3+3x=17+5x\n3x-5x=17-3\n-2x=14\nx=-7\nבדיקה: 3+3×(-7)=17+5×(-7) → 3-21=17-35 → -18=-18 ✓</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">6x+1=23-5x</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=2</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">העבירו את -5x לאגף השמאלי ואת 1 לאגף הימני</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">6x+1=23-5x\n6x+5x=23-1\n11x=22\nx=2\nבדיקה: 6×2+1=23-5×2 → 12+1=23-10 → 13=13 ✓</p>"
+      },
+      {
+        "section_number": "ד'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">1+2x=-2x-3</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-1</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">העבירו את -2x לאגף השמאלי ואת 1 לאגף הימני</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">1+2x=-2x-3\n2x+2x=-3-1\n4x=-4\nx=-1\nבדיקה: 1+2×(-1)=-2×(-1)-3 → 1-2=2-3 → -1=-1 ✓</p>"
+      },
+      {
+        "section_number": "ה'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">9x=3(x-2)</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-1</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פתחו את הסוגריים בצד הימני</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">9x=3(x-2)\n9x=3x-6\n9x-3x=-6\n6x=-6\nx=-1\nבדיקה: 9×(-1)=3×(-1-2) → -9=3×(-3) → -9=-9 ✓</p>"
+      },
+      {
+        "section_number": "ו'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4(x+3)=28</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=4</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">חלקו את שני האגפים ב-4 או פתחו את הסוגריים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4(x+3)=28\nx+3=7\nx=4\nבדיקה: 4×(4+3)=28 → 4×7=28 → 28=28 ✓</p>"
+      },
+      {
+        "section_number": "ז'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2x=-2x</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=0</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">העבירו את -2x לאגף השמאלי</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2x=-2x\n2x+2x=0\n4x=0\nx=0\nבדיקה: 2×0=-2×0 → 0=0 ✓</p>"
+      },
+      {
+        "section_number": "ח'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2x+5=5(x+1)</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=0</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פתחו את הסוגריים בצד הימני</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">2x+5=5(x+1)\n2x+5=5x+5\n2x-5x=5-5\n-3x=0\nx=0\nבדיקה: 2×0+5=5×(0+1) → 5=5×1 → 5=5 ✓</p>"
+      },
+      {
+        "section_number": "ט'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4x=-x</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=0</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">העבירו את -x לאגף השמאלי</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4x=-x\n4x+x=0\n5x=0\nx=0\nבדיקה: 4×0=-0 → 0=0 ✓</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e778296e",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 14,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נתונה המשוואה: 0.44x + 0.6 = 7\nסמנו איזו מהמשוואות שלפניכם שקולה למשוואה הנתונה.</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">בחרו את המשוואה השקולה:</p>",
+        "question_options": [
+          "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">44x + 60 = 7</p>",
+          "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">44x + 60 = 70</p>",
+          "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">44x + 60 = 700</p>"
+        ],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">44x + 60 = 700</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הכפילו את המשוואה המקורית ב-100 כדי להיפטר מהעשרוניות</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי למצוא משוואה שקולה, נכפיל את המשוואה המקורית 0.44x + 0.6 = 7 ב-100:\n100 × (0.44x + 0.6) = 100 × 7\n44x + 60 = 700\nלכן המשוואה השקולה היא: 44x + 60 = 700</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e778296c",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 4,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נתונים שעורי הנקודות P, M ו-N.\nכמו כן ידוע שהקטעים PM ו-MN מקבילים לצירים.</p>\n\n<svg width=\"937\" height=\"771\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" overflow=\"hidden\"><g transform=\"translate(-172 -1344)\"><path d=\"M193.5 1846.5 1105.78 1846.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M193.5 2048.5 1105.78 2048.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M289.5 1353.5 289.5 2097.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M358.5 1360.5 358.5 2104.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M427.5 1355.5 427.5 2099.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M496.5 1364.5 496.5 2108.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M565.5 1353.5 565.5 2097.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M634.5 1364.5 634.5 2108.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M703.5 1358.5 703.501 2102.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M772.5 1367.5 772.5 2111.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M841.5 1358.5 841.5 2102.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M910.5 1355.5 910.5 2099.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M979.5 1349.5 979.5 2093.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M0 0 849.174 0.000360892\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 256.5 1433.5)\"/><path d=\"M172.5 1502.5 1105.6 1502.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M172.5 1570.5 1105.65 1570.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M172.5 1641.5 1105.65 1641.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M193.5 1710.5 1105.78 1710.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M172.5 1778.5 1105.65 1778.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M193.5 1916.5 1105.78 1916.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M193.5 1984.5 1105.78 1984.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1.14583-6.52847e-07 1.14619 624.247-1.14548 624.247-1.14583 6.52847e-07ZM0.00035567 624.247 9.16702 615.08 0.000360892 633.414-9.16632 615.08Z\" transform=\"matrix(1 0 0 -1 565 2049.41)\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 1040.46 1826)\">x</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 581.854 1432)\">y</text><path d=\"M204 1774.85 1033.54 1774.85 1033.54 1777.15 204 1777.15ZM1033.54 1776 1024.37 1766.83 1042.7 1776 1024.37 1785.17Z\"/><path d=\"M1042.5 1346.5 1042.5 2090.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1105.5 1344.5 1105.5 2088.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M910.574 1574.49 427.5 1572.5\" stroke=\"#000000\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" stroke-dasharray=\"18.3333 13.75\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M426.5 1572.5 426.5 2035.25\" stroke=\"#000000\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" stroke-dasharray=\"18.3333 13.75\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M222.5 1364.5 222.5 2108.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M419 2041C419 2036.58 422.582 2033 427 2033 431.418 2033 435 2036.58 435 2041 435 2045.42 431.418 2049 427 2049 422.582 2049 419 2045.42 419 2041Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M417 1566.5C417 1561.81 420.582 1558 425 1558 429.418 1558 433 1561.81 433 1566.5 433 1571.19 429.418 1575 425 1575 420.582 1575 417 1571.19 417 1566.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M902 1573C902 1568.58 905.806 1565 910.5 1565 915.194 1565 919 1568.58 919 1573 919 1577.42 915.194 1581 910.5 1581 905.806 1581 902 1577.42 902 1573Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 909.309 1636)\">P(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 950.055 1636)\">5</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 972.972 1636)\">,__)</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 435.109 1540)\">P(</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 475.855 1540)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 491.118 1540)\">2</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 514.034 1540)\">,__)</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 445.378 2046)\">N(__,</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 551.024 2046)\">-</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 566.287 2046)\">4</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 589.203 2046)\">)</text></g></svg>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">השלימו את שעורי הנקודות החסרים\nP(-2,__), M(5,__), N(__,-4)</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">P(-2,2), M(5,2), N(-2,-4)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">קטע המקביל לציר x יש לכל הנקודות עליו אותו שיעור y. קטע המקביל לציר y יש לכל הנקודות עליו אותו שיעור x</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מכיון שהקטע PM מקביל לציר x, לנקודות P ו-M יש אותו שיעור y. מהגרף ניתן לראות ש-y=2. לכן P(-2,2) ו-M(5,2). מכיון שהקטע MN מקביל לציר y, לנקודות M ו-N יש אותו שיעור x. מכיון ש-M(5,2), אז N(5,-4). אבל מהגרף רואים ש-N נמצאת ב-x=-2, לכן N(-2,-4)</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">חשבו את אורכי הקטעים PM ו-MN</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">אורך הקטע PM = 7 יחידות, אורך הקטע MN = 6 יחידות</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">לקטע המקביל לציר x, האורך הוא ההפרש בין שיעורי x. לקטע המקביל לציר y, האורך הוא ההפרש בין שיעורי y</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">אורך הקטע PM: מכיון שהקטע מקביל לציר x, האורך הוא |5-(-2)|=|5+2|=7 יחידות.\nאורך הקטע MN: מכיון שהקטע מקביל לציר y, האורך הוא |2-(-4)|=|2+4|=6 יחידות</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782963",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "מורכב",
+    "exercise_number": 6,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הקטעים PM ו-MN מקבילים לצירים ושווים באורכם.\nנתון: P(4,5), M(-6,__), N(__,__)</p>\n\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"500px\" height=\"500px\" viewBox=\"-10 -10 20 20\"><defs><marker id=\"arrowheadX\" markerWidth=\"0.3\" markerHeight=\"0.3\" refX=\"0.15\" refY=\"0.15\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.3 0.15, 0 0.3\" fill=\"black\"></polygon></marker><marker id=\"arrowheadY\" markerWidth=\"0.3\" markerHeight=\"0.3\" refX=\"0.1\" refY=\"0.15\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.3 0.15, 0 0.3\" fill=\"black\"></polygon></marker><pattern id=\"smallGrid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"></path></pattern><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><rect width=\"1\" height=\"1\" fill=\"url(#smallGrid)\"></rect><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#D5E9FF\" stroke-width=\"0.1\"></path></pattern></defs><line x1=\"-10\" y1=\"0\" x2=\"9.5\" y2=\"0\" stroke=\"black\" stroke-width=\"0.049\" marker-end=\"url(#arrowheadX)\"></line><line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-9.5\" stroke=\"black\" stroke-width=\"0.049\" marker-end=\"url(#arrowheadY)\"></line><text x=\"9.5\" y=\"0.8\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">x</text><text x=\"0.5\" y=\"-9.5\" text-anchor=\"start\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">y</text><text x=\"0.2\" y=\"0.8\" text-anchor=\"start\" fill=\"black\" font-size=\"0.6\" font-family=\"Times New Roman\">(0,0)</text><line x1=\"-6\" y1=\"-5\" x2=\"4\" y2=\"-5\" stroke=\"red\" stroke-width=\"0.049\" stroke-dasharray=\"0.3,0.3\"></line><line x1=\"-6\" y1=\"-5\" x2=\"-6\" y2=\"4\" stroke=\"red\" stroke-width=\"0.049\" stroke-dasharray=\"0.3,0.3\"></line><circle cx=\"-6\" cy=\"-5\" r=\"0.2\" fill=\"black\"></circle><text x=\"-5.75\" y=\"-4.6\" font-size=\"0.8px\" fill=\"#333\" font-family=\"Times New Roman\">M (-6, ___)</text><circle cx=\"4\" cy=\"-5\" r=\"0.2\" fill=\"black\"></circle><text x=\"4.25\" y=\"-4.6\" font-size=\"0.8px\" fill=\"#333\" font-family=\"Times New Roman\">P (4, 5)</text><circle cx=\"-6\" cy=\"4\" r=\"0.2\" fill=\"black\"></circle><text x=\"-5.75\" y=\"4.4\" font-size=\"0.8px\" fill=\"#333\" font-family=\"Times New Roman\">N (___, ___)</text></svg>\n\n",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מצאו את שעורי הנקודות M ו-N</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">M(-6,5), N(-6,-5)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">PM מקביל לציר x, אז לנקודות P ו-M יש אותו שיעור y. MN מקביל לציר y ושווה באורך ל-PM</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מהגרף רואים ש-PM מקביל לציר x, לכן לנקודות P ו-M יש אותו שיעור y=5. אז M(-6,5). אורך PM = |4-(-6)| = 10. מכיון ש-MN מקביל לציר y ושווה באורך ל-PM, אז MN=10. מהגרף N נמצאת מתחת ל-M, לכן N(-6, 5-10) = N(-6,-5)</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">חשבו את אורכי הקטעים MN ו-MP</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">אורך MN = 10 יחידות, אורך MP = 10 יחידות</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">השתמש בנתון שהקטעים שווים באורכם ובחישוב שעשית בסעיף הקודם</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">אורך MP: מכיון ש-PM מקביל לציר x, האורך הוא |4-(-6)| = 10 יחידות.\nאורך MN: מכיון ש-MN מקביל לציר y, האורך הוא |5-(-5)| = 10 יחידות.\nכפי שנתון, הקטעים שווים באורכם</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">קיימת נקודה L כך ש-PMNL הוא מלבן</p>",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מה שעורי נקודה L</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">L(4,-5)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">במלבן הצלעות הנגדיות מקבילות ושוות. השתמש בשיעורי הנקודות הידועות</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">במלבן PMNL הצלעות הנגדיות מקבילות ושוות. P(4,5), M(-6,5), N(-6,-5). כדי שיווצר מלבן, הנקודה L צריכה להיות כך ש-NL מקביל ל-PM ו-PL מקביל ל-MN. לכן L(4,-5)</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782965",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "מורכב",
+    "exercise_number": 5,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הקטעים AB ו-AC מקבילים לצירים.\nאורך הקטע AC הוא 8 ואורך הקטע AB הוא 5\nנתון: A(4,5), B(__,__), C(__,__)</p>\n\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"500px\" height=\"500px\" viewBox=\"-10 -10 20 20\"><defs><marker id=\"arrowheadX\" markerWidth=\"0.3\" markerHeight=\"0.3\" refX=\"0.15\" refY=\"0.15\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.3 0.15, 0 0.3\" fill=\"black\"></polygon></marker><marker id=\"arrowheadY\" markerWidth=\"0.3\" markerHeight=\"0.3\" refX=\"0.1\" refY=\"0.15\" orient=\"auto\" markerUnits=\"userSpaceOnUse\"><polygon points=\"0 0, 0.3 0.15, 0 0.3\" fill=\"black\"></polygon></marker><pattern id=\"smallGrid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#ccc\" stroke-width=\"0.05\"></path></pattern><pattern id=\"grid\" width=\"1\" height=\"1\" patternUnits=\"userSpaceOnUse\"><rect width=\"1\" height=\"1\" fill=\"url(#smallGrid)\"></rect><path d=\"M 1 0 L 0 0 0 1\" fill=\"none\" stroke=\"#D5E9FF\" stroke-width=\"0.1\"></path></pattern></defs><line x1=\"-10\" y1=\"0\" x2=\"9.5\" y2=\"0\" stroke=\"black\" stroke-width=\"0.049\" marker-end=\"url(#arrowheadX)\"></line><line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"-9.5\" stroke=\"black\" stroke-width=\"0.049\" marker-end=\"url(#arrowheadY)\"></line><text x=\"9.5\" y=\"0.8\" text-anchor=\"end\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">x</text><text x=\"0.5\" y=\"-9.5\" text-anchor=\"start\" fill=\"black\" font-size=\"0.8\" font-family=\"Times New Roman\">y</text><text x=\"0.2\" y=\"0.8\" text-anchor=\"start\" fill=\"black\" font-size=\"0.6\" font-family=\"Times New Roman\">(0,0)</text><line x1=\"4\" y1=\"-6\" x2=\"-4\" y2=\"-6\" stroke=\"red\" stroke-width=\"0.049\" stroke-dasharray=\"0.3,0.3\"></line><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"-1\" stroke=\"red\" stroke-width=\"0.049\" stroke-dasharray=\"0.3,0.3\"></line><line x1=\"4\" y1=\"-1\" x2=\"-4\" y2=\"-6\" stroke=\"red\" stroke-width=\"0.049\" stroke-dasharray=\"0.3,0.3\"></line><circle cx=\"4\" cy=\"-6\" r=\"0.2\" fill=\"black\"></circle><text x=\"4.25\" y=\"-5.6\" font-size=\"0.8px\" fill=\"#333\" font-family=\"Times New Roman\">A (4, ___)</text><circle cx=\"4\" cy=\"-1\" r=\"0.2\" fill=\"black\"></circle><text x=\"4.25\" y=\"-0.6\" font-size=\"0.8px\" fill=\"#333\" font-family=\"Times New Roman\">B (___, 1)</text><circle cx=\"-4\" cy=\"-6\" r=\"0.2\" fill=\"black\"></circle><text x=\"-3.75\" y=\"-5.6\" font-size=\"0.8px\" fill=\"#333\" font-family=\"Times New Roman\">C (___, ___)</text></svg>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מצאו את שעורי הנקודות B ו-C</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">B(4,-1), C(-4,5) או B(4,10), C(4,-3)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">קטע המקביל לציר x יש לכל הנקודות עליו אותו שיעור y. קטע המקביל לציר y יש לכל הנקודות עליו אותו שיעור x. השתמש באורכים הנתונים</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מהגרף רואים ש-AB מקביל לציר y ו-AC מקביל לציר x. AB מקביל לציר y: לכן לנקודות A ו-B יש אותו שיעור x=4. אורך AB=5, אז B(4, 5±5). מהגרף B נמצאת מתחת ל-A, לכן B(4,0) או B(4,-1). AC מקביל לציר x: לכן לנקודות A ו-C יש אותו שיעור y=5. מהגרף C משמאל ל-A ואורך AC=8, לכן C(4-8,5)=C(-4,5)</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">רשמו נקודה נוספת הנמצאת על הקטע AB</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">דוגמה: (4,3) או (4,2) או (4,1)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כל נקודה על הקטע AB צריכה להיות באותו שיעור x כמו A ו-B, ובין שיעורי ה-y שלהם</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הקטע AB מחבר בין A(4,5) ל-B(4,0). כל נקודה על הקטע תהיה בצורה (4,t) כאשר 0≤t≤5. דוגמאות: (4,1), (4,2), (4,3), (4,4)</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">חשבו את שטח משולש ABC</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">שטח המשולש ABC = 20 יחידות שטח</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">המשולש הוא משולש ישר זווית. השתמש בנוסחה: שטח = ½ × בסיס × גובה</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">המשולש ABC הוא משולש ישר זווית עם זווית ישרה בנקודה A. AB הוא הגובה (אורך 5) ו-AC הוא הבסיס (אורך 8). שטח = ½ × AC × AB = ½ × 8 × 5 = 20 יחידות שטח</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782964",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "מנחה",
+    "exercise_number": 11,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פתרו את המשוואות הבאות על ידי החסרה או הוספה משני אגפי המשוואה</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x+2=5</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך להסיר את 2 מהאגף השמאלי</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x+2=5\nנחסיר 2 משני אגפי המשוואה:\nx+2-2=5-2\nx=3\nבדיקה: 3+2=5 ✓</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4+x=7</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך להסיר את 4 מהאגף השמאלי</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4+x=7\nנחסיר 4 משני אגפי המשוואה:\n4+x-4=7-4\nx=3\nבדיקה: 4+3=7 ✓</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-3=8</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=11</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך להוסיף 3 לשני אגפי המשוואה</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-3=8\nנוסיף 3 לשני אגפי המשוואה:\nx-3+3=8+3\nx=11\nבדיקה: 11-3=8 ✓</p>"
+      },
+      {
+        "section_number": "ד'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x+7=7</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=0</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך להסיר את 7 מהאגף השמאלי</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x+7=7\nנחסיר 7 משני אגפי המשוואה:\nx+7-7=7-7\nx=0\nבדיקה: 0+7=7 ✓</p>"
+      },
+      {
+        "section_number": "ה'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">1/2+x=2½</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=2</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך להסיר את 1/2 מהאגף השמאלי. זכרו ש-2½ = 5/2</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">1/2+x=2½\nנכתוב 2½ כשבר: 2½ = 5/2\n1/2+x=5/2\nנחסיר 1/2 משני אגפי המשוואה:\n1/2+x-1/2=5/2-1/2\nx=4/2=2\nבדיקה: 1/2+2=1/2+4/2=5/2=2½ ✓</p>"
+      },
+      {
+        "section_number": "ו'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-1/3=2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=7/3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך להוסיף 1/3 לשני אגפי המשוואה</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x-1/3=2\nנוסיף 1/3 לשני אגפי המשוואה:\nx-1/3+1/3=2+1/3\nx=2+1/3=6/3+1/3=7/3\nבדיקה: 7/3-1/3=6/3=2 ✓</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782969",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "מנחה",
+    "exercise_number": 12,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">פתרו את המשוואות הבאות על ידי חילוק או הכפלה של שני אגפי המשוואה</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3x=6</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=2</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-3</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">3x=6\nנחלק את שני אגפי המשוואה ב-3:\n3x÷3=6÷3\nx=2\nבדיקה: 3·2=6 ✓</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4x=4</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=1</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-4</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">4x=4\nנחלק את שני אגפי המשוואה ב-4:\n4x÷4=4÷4\nx=1\nבדיקה: 4·1=4 ✓</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-2x=8</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-4</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-(-2)</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-2x=8\nנחלק את שני אגפי המשוואה ב-(-2):\n-2x÷(-2)=8÷(-2)\nx=-4\nבדיקה: -2·(-4)=8 ✓</p>"
+      },
+      {
+        "section_number": "ד'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-6x=2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-1/3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-(-6)</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-6x=2\nנחלק את שני אגפי המשוואה ב-(-6):\n-6x÷(-6)=2÷(-6)\nx=-2/6=-1/3\nבדיקה: -6·(-1/3)=6/3=2 ✓</p>"
+      },
+      {
+        "section_number": "ה'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">5x=0</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=0</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-5</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">5x=0\nנחלק את שני אגפי המשוואה ב-5:\n5x÷5=0÷5\nx=0\nבדיקה: 5·0=0 ✓</p>"
+      },
+      {
+        "section_number": "ו'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-x=2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-2</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-(-1)</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-x=2\nנחלק את שני אגפי המשוואה ב-(-1):\n-x÷(-1)=2÷(-1)\nx=-2\nבדיקה: -(-2)=2 ✓</p>"
+      },
+      {
+        "section_number": "ז'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">½x=4</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=8</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-½ או להכפיל ב-2</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">½x=4\nנכפיל את שני אגפי המשוואה ב-2:\n2·½x=2·4\nx=8\nבדיקה: ½·8=4 ✓</p>"
+      },
+      {
+        "section_number": "ח'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-⅓x=1</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-(-⅓) או להכפיל ב-(-3)</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-⅓x=1\nנכפיל את שני אגפי המשוואה ב-(-3):\n(-3)·(-⅓x)=(-3)·1\nx=-3\nבדיקה: -⅓·(-3)=1 ✓</p>"
+      },
+      {
+        "section_number": "ט'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-⅔x=2</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">x=-3</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כדי לבודד את x, צריך לחלק את שני אגפי המשוואה ב-(-⅔) או להכפיל ב-(-3/2)</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">-⅔x=2\nנכפיל את שני אגפי המשוואה ב-(-3/2):\n(-3/2)·(-⅔x)=(-3/2)·2\nx=-3\nבדיקה: -⅔·(-3)=2 ✓</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e778296a",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "בסיס",
+    "exercise_number": 7,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">ענו על הסעיפים הבאים</p>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">רשמו שיעורי 2 נקודות הנמצאות על ציר ה-y ומרחקן מציר ה-x הוא 3</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">(0,3) ו-(0,-3)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נקודות על ציר y הן מהצורה (0,y). המרחק מציר x הוא |y|</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נקודות הנמצאות על ציר ה-y הן מהצורה (0,y).\nהמרחק של נקודה מציר ה-x שווה לערך המוחלט של שיעור ה-y שלה.\nאם המרחק הוא 3, אז |y| = 3, כלומר y = 3 או y = -3.\nלכן שתי הנקודות הן: (0,3) ו-(0,-3).</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">רשמו שיעורי 2 נקודות הנמצאות על ציר ה-x והמרחק ביניהן הוא 7 יח&#039;</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">(0,0) ו-(7,0) או כל זוג נקודות (a,0) ו-(a+7,0)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נקודות על ציר x הן מהצורה (x,0). המרחק בין שתי נקודות על ציר x הוא |x₂-x₁|</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נקודות הנמצאות על ציר ה-x הן מהצורה (x,0).\nאם יש לנו שתי נקודות (x₁,0) ו-(x₂,0), המרחק ביניהן הוא |x₂-x₁|.\nאם המרחק הוא 7, אז |x₂-x₁| = 7, כלומר x₂-x₁ = 7 או x₂-x₁ = -7.\nדוגמאות אפשריות:\n• (0,0) ו-(7,0)\n• (1,0) ו-(8,0)\n• (-2,0) ו-(5,0)\n• (3,0) ו-(-4,0)</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782966",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  },
+  {
+    "grade": "ח",
+    "lesson_number": "1",
+    "topic": "מערכת צירים ומשוואות (חזרה)",
+    "exercise_type": "מורכב",
+    "exercise_number": 8,
+    "data_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">נתונות הנקודות A, B, G, P ו-N במערכת הצירים הבאה.</p>\n\n<svg width=\"845\" height=\"698\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" overflow=\"hidden\"><g transform=\"translate(-144 -1650)\"><path d=\"M163.5 2102.5 965.224 2102.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M0 0 781.865 1.96289\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\" transform=\"matrix(1 0 0 -1 163.5 2286.46)\"/><path d=\"M252.5 1650.5 252.501 2332.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M315.5 1657.5 315.5 2339.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M378.5 1652.5 378.5 2334.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M441.5 1660.5 441.5 2342.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M504.5 1650.5 504.5 2332.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M567.5 1660.5 567.5 2342.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M630.5 1655.5 630.5 2337.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M693.5 1663.5 693.5 2345.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M756.5 1655.5 756.5 2337.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M819.5 1652.5 819.5 2334.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M883.5 1660.5 883.5 2328.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M162.5 1729.5 963.476 1729.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M144.5 1780.5 965.317 1791.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M144.5 1849.5 965.303 1849.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M144.5 1914.5 945.444 1914.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M163.5 1977.5 900.46 1977.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M144.5 2040.5 965.303 2040.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M163.5 2165.5 945.366 2165.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M163.5 2228.5 945.366 2228.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M1.14583-6.64819e-07 1.14619 612.841-1.14548 612.841-1.14583 6.64819e-07ZM0.000355574 612.841 9.16702 603.674 0.000360892 622.007-9.16632 603.674Z\" transform=\"matrix(1 0 0 -1 630 2328.01)\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 935.848 2025)\">x</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-style=\"italic\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 654.286 1712)\">y</text><path d=\"M195 1977.85 928.455 1977.85 928.455 1980.15 195 1980.15ZM928.454 1979 919.288 1969.83 937.621 1979 919.288 1988.17Z\"/><path d=\"M190.5 1660.5 190.5 2342.1\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M945.5 1657.5 945.501 2325.86\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M184.5 1666.5 985.476 1666.5\" stroke=\"#DAE3F3\" stroke-width=\"4.58333\" stroke-miterlimit=\"8\" fill=\"none\" fill-rule=\"evenodd\"/><path d=\"M309 2276.5C309 2272.36 312.358 2269 316.5 2269 320.642 2269 324 2272.36 324 2276.5 324 2280.64 320.642 2284 316.5 2284 312.358 2284 309 2280.64 309 2276.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M311 2032.5C311 2028.36 314.358 2025 318.5 2025 322.642 2025 326 2028.36 326 2032.5 326 2036.64 322.642 2040 318.5 2040 314.358 2040 311 2036.64 311 2032.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 427.087 1774)\">A</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 276.176 2049)\">B</text><path d=\"M434 1719.5C434 1715.36 437.358 1712 441.5 1712 445.642 1712 449 1715.36 449 1719.5 449 1723.64 445.642 1727 441.5 1727 437.358 1727 434 1723.64 434 1719.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M812 2280.5C812 2276.36 815.358 2273 819.5 2273 823.642 2273 827 2276.36 827 2280.5 827 2284.64 823.642 2288 819.5 2288 815.358 2288 812 2284.64 812 2280.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><path d=\"M877 1854.5C877 1850.36 880.358 1847 884.5 1847 888.642 1847 892 1850.36 892 1854.5 892 1858.64 888.642 1862 884.5 1862 880.358 1862 877 1858.64 877 1854.5Z\" fill=\"#C00000\" fill-rule=\"evenodd\"/><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 340.705 2277)\">G</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 827.999 2258)\">P</text><text font-family=\"Times New Roman,Times New Roman_MSFontService,sans-serif\" font-weight=\"400\" font-size=\"46\" transform=\"matrix(1 0 0 1 874.485 1832)\">N</text></g></svg>",
+    "additional_data_html": "",
+    "sections": [
+      {
+        "section_number": "א'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">רשמו שיעורי נקודה ששיעור ה-x שלה זהה לשיעור ה-x לנקודה A ושיעור ה-y שלה זהה לשיעור ה-y של נקודה N</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">(4, 3)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">קראו את שיעורי הנקודות A ו-N מהגרף</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מתוך הגרף:\nנקודה A נמצאת בשיעורים (4, -2)\nנקודה N נמצאת בשיעורים (8, 3)\nהנקודה החדשה תהיה בשיעורים:\nx כמו A = 4\ny כמו N = 3\nלכן הנקודה היא (4, 3)</p>"
+      },
+      {
+        "section_number": "ב'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">הוסיפו את הנקודה C לשרטוט כך שהתקבל מלבן BGPC</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">יש להוסיף נקודה C בשיעורים (2, 3)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">במלבן, הצלעות הנגדיות מקבילות ושוות</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מתוך הגרף:\nB = (2, 0)\nG = (2, 6)\nP = (6, 6)\nכדי ליצור מלבן BGPC, נקודה C צריכה להיות כך שהצלעות יהיו מקבילות לצירים.\nמכיוון ש-B ו-G על אותו x=2, ו-G ו-P על אותו y=6,\nנקודה C צריכה להיות על x=6 (כמו P) ועל y=0 (כמו B).\nלכן C = (6, 0)</p>"
+      },
+      {
+        "section_number": "ג'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מה שיעורי הנקודה C</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">(6, 0)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">השתמשו בתוצאה מסעיף ב&#039;</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">כפי שחישבנו בסעיף ב&#039;, כדי ליצור מלבן BGPC:\nB = (2, 0), G = (2, 6), P = (6, 6)\nנקודה C צריכה להיות ב-(6, 0) כדי להשלים את המלבן.</p>"
+      },
+      {
+        "section_number": "ד'",
+        "section_data_html": "",
+        "question_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">מצאו את נקודת מפגש של אלכסוני המלבן BGPC</p>",
+        "question_options": [],
+        "solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">(4, 3)</p>",
+        "hint_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">האלכסונים במלבן נפגשים באמצע המלבן</p>",
+        "full_solution_html": "<p data-filename=\"pages/BulkActions\" data-linenumber=\"73\" data-visual-selector-id=\"pages/BulkActions73\">האלכסונים במלבן הם BG ו-PC.\nהאלכסונים נפגשים בנקודת האמצע של המלבן.\nנקודת האמצע בין B(2,0) ו-P(6,6):\nx = (2+6)/2 = 4\ny = (0+6)/2 = 3\nלכן נקודת המפגש היא (4, 3)\nבדיקה: נקודת האמצע בין G(2,6) ו-C(6,0):\nx = (2+6)/2 = 4, y = (6+0)/2 = 3 ✓</p>"
+      }
+    ],
+    "id": "689b11008fcb3b01e7782967",
+    "created_date": "2025-08-12T10:01:36.812000",
+    "updated_date": "2025-08-12T10:01:36.812000",
+    "created_by_id": "685ce06e8ce2d3a098d92155",
+    "created_by": "guy@guykoren.co.il",
+    "is_sample": false
+  }
+]
