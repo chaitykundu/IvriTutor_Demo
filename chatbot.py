@@ -1,9 +1,10 @@
-# dialogue_english_only.py
+# dialogue_english_only_rag_chat.py
 import os
 import json
 import random
 from pathlib import Path
 from enum import Enum, auto
+from google import genai
 
 # -----------------------------
 # CONFIG
@@ -11,6 +12,12 @@ from enum import Enum, auto
 PARSED_INPUT_FILE = Path("parsed_outputs/all_parsed.json")
 SVG_OUTPUT_DIR = Path("svg_outputs")
 SVG_OUTPUT_DIR.mkdir(exist_ok=True)
+
+# -----------------------------
+# GenAI Chat Client
+# -----------------------------
+client = genai.Client()
+chat = client.chats.create(model="gemini-2.5-flash")
 
 # -----------------------------
 # Localization (English only)
@@ -56,6 +63,14 @@ def load_json(p: Path):
     with open(p, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def genai_chat_answer(message: str) -> str:
+    """Send a message to Gemini chat and get answer."""
+    try:
+        response = chat.send_message(message)
+        return response.text
+    except Exception as e:
+        return f"❌ GenAI Error: {str(e)}"
+
 # -----------------------------
 # Dialogue FSM
 # -----------------------------
@@ -77,11 +92,11 @@ class DialogueFSM:
         self.current_hint_index = 0
 
     def _get_current_question(self):
-        q= self.current_exercise["text"]["question"][self.current_question_index]
+        q = self.current_exercise["text"]["question"][self.current_question_index]
         return q.replace("$", "")
 
     def _get_current_solution(self):
-        s= self.current_exercise["text"]["solution"][self.current_question_index]
+        s = self.current_exercise["text"]["solution"][self.current_question_index]
         return s.replace("$", "")
 
     def _get_current_hint(self):
@@ -127,13 +142,16 @@ class DialogueFSM:
                     return f"{I18N['hint_prefix']} {hint}"
                 else:
                     return f"{I18N['hint_prefix']} No more hints available."
+
             elif text.lower() in {"solution", "pass"}:
                 solution = self._get_current_solution()
                 self._pick_new_exercise()
                 if self.current_exercise:
                     return f"{I18N['solution_prefix']} {solution}\n\nNext question:\n{self._get_current_question()}"
                 else:
-                    return f"{I18N['solution_prefix']} {solution}\nNo more exercises."
+                    genai_resp = genai_chat_answer(self.topic)
+                    return f"{I18N['solution_prefix']} {solution}\n\nGenAI says:\n{genai_resp}\nNo more exercises."
+
             else:
                 correct_answer = self._get_current_solution().strip().lower()
                 if text.strip().lower() == correct_answer:
@@ -141,9 +159,11 @@ class DialogueFSM:
                     if self.current_exercise:
                         return f"✅ Correct!\n\nNext question:\n{self._get_current_question()}"
                     else:
-                        return "✅ Correct!\nNo more exercises."
+                        genai_resp = genai_chat_answer(self.topic)
+                        return f"✅ Correct!\nGenAI suggests:\n{genai_resp}\nNo more exercises."
                 else:
-                    return I18N["wrong_answer"]
+                    genai_resp = genai_chat_answer(text)
+                    return f"{I18N['wrong_answer']}\nGenAI suggests:\n{genai_resp}"
 
         return "?"
 
@@ -165,7 +185,7 @@ def main():
         except (KeyboardInterrupt, EOFError):
             print("\n👋 Bye!")
             break
-        if user_input.lower() in {"exit","quit","done"}:
+        if user_input.lower() in {"exit", "quit", "done"}:
             print("👋 Bye!")
             break
         A_GUY = fsm.transition(user_input)
