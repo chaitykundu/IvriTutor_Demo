@@ -14,4 +14,9 @@ LLM: Gemini, Cohere, or Hugging Face models
 Math Verification: SymPy (CAS checks)
 Geometry Validation: Custom logic for SVG parameters
 
+pip install langchain-core langchain-google-genai google-generativeai
+pip install google-generativeai cohere pinecone
+
+
+
 
