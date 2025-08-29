@@ -1,5 +1,9 @@
 # Import necessary components from the LangChain and Python libraries.
 import os
+import json
+import random
+from pathlib import Path
+from enum import Enum, auto
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import AIMessage, HumanMessage
@@ -8,6 +12,8 @@ from langchain_core.messages import AIMessage, HumanMessage
 # Replace 'your-api-key' with your actual Google API key.
 # It's best practice to use environment variables for API keys.
 os.environ["GOOGLE_API_KEY"] = "AIzaSyAdKYyRoN1R7G9KERy2HuQZ2Pabs4mSOkY"
+
+PARSED_INPUT_FILE = Path("parsed_outputs/7th_grade_lesson_9_parsed.json")
 
 # Initialize the LLM. We'll use the ChatGoogleGenerativeAI model with 'gemini-pro'.
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")

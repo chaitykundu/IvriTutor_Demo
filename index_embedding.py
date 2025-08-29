@@ -7,12 +7,16 @@ from typing import Dict, Any, List, Generator
 from pinecone import Pinecone, ServerlessSpec
 import logging
 import numpy as np
+from dotenv import load_dotenv  # Add this import
+
+# Load environment variables from .env file
+load_dotenv()  # Add this line
 
 # ---------- CONFIG ----------
-PARSED_INPUT_FILE = Path("parsed_outputs/all_parsed.json")
-EMB_INPUT_FILE = Path("parsed_outputs/all_embeddings.json")
-INDEX_NAME = "math-exercises-multilingual"
-EMBED_DIM = 1024  # Cohere embed-multilingual-v3.0; set to 384 for paraphrase-multilingual-mpnet-base-v2, 768 for LaBSE
+PARSED_INPUT_FILE = Path("parsed_outputs/8th_grade_lesson_2_parsed.json")
+EMB_INPUT_FILE = Path("parsed_outputs/8th_grade_lesson_2_embeddings.json")
+INDEX_NAME = "mathtutor-e5-large" # Changed index name to reflect new model
+EMBED_DIM = 1024  # multilingual-e5-large has 1024 dimensions
 CLOUD = "aws"
 REGION = "us-east-1"  # Must match Pinecone serverless region
 BATCH_SIZE = 100  # Pinecone recommends batches of 100-1000 for upserts
@@ -32,7 +36,7 @@ def load_json(p: Path) -> List[Dict[str, Any]]:
         raise FileNotFoundError(f"Missing or invalid {p}")
 
 def build_meta_lookup(parsed_records: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
-    """Map exercise_id → metadata fields."""
+    """Map exercise_id → metadata fields with enhanced information."""
     try:
         lut = {}
         for ex in parsed_records:
@@ -42,8 +46,11 @@ def build_meta_lookup(parsed_records: List[Dict[str, Any]]) -> Dict[str, Dict[st
                 "topic": ex.get("topic", "unknown"),
                 "lesson_number": ex.get("lesson_number", "unknown"),
                 "exercise_type": ex.get("exercise_type", "unknown"),
-                "difficulty": ex.get("difficulty", "unknown"),
-                "svg_exists": bool(ex.get("svg", False))
+                "exercise_number": ex.get("exercise_number", "unknown"),
+                "difficulty": ex.get("exercise_type", "unknown"),  # Map exercise_type to difficulty
+                "svg_exists": bool(ex.get("svg", [])),
+                "has_hints": bool(ex.get("text", {}).get("hint", [])),
+                "mathematical_concept": ex.get("topic", "unknown")
             }
         logger.info(f"Built metadata lookup for {len(lut)} exercises")
         return lut
@@ -142,16 +149,22 @@ def main():
             hash_prefix = hashlib.md5(ex_id.encode("utf-8")).hexdigest()[:12]
             vec_id = f"{hash_prefix}::{i:06d}"
 
+            # Enhanced metadata with pedagogical information
             metadata = {
                 "exercise_id": ex_id,
                 "chunk_type": ch.get("chunk_type", "unknown"),
+                "content_type": ch.get("content_type", "unknown"),
                 "grade": md.get("grade", "unknown"),
                 "topic": md.get("topic", "unknown"),
                 "lesson_number": md.get("lesson_number", "unknown"),
                 "exercise_type": md.get("exercise_type", "unknown"),
+                "exercise_number": md.get("exercise_number", "unknown"),
                 "difficulty": md.get("difficulty", "unknown"),
+                "mathematical_concept": md.get("mathematical_concept", "unknown"),
                 "svg_exists": md.get("svg_exists", False),
-                "text": ch.get("text", "")[:1500]  # Truncated for hybrid search
+                "has_hints": md.get("has_hints", False),
+                "retrieval_priority": ch.get("retrieval_priority", 0.5),
+                "text": ch.get("text", "")[:2000]  # Increased truncation limit for better context
             }
 
             vectors.append({
@@ -178,6 +191,18 @@ def main():
         if skipped_chunks > 0:
             logger.warning(f"Skipped {skipped_chunks} chunks. Regenerate embeddings with a valid API key.")
         logger.info(f"✅ Finished upserting {total} vectors into '{INDEX_NAME}'.")
+
+        # Log indexing summary
+        chunk_type_counts = {}
+        content_type_counts = {}
+        for vector in vectors:
+            chunk_type = vector["metadata"].get("chunk_type", "unknown")
+            content_type = vector["metadata"].get("content_type", "unknown")
+            chunk_type_counts[chunk_type] = chunk_type_counts.get(chunk_type, 0) + 1
+            content_type_counts[content_type] = content_type_counts.get(content_type, 0) + 1
+        
+        logger.info(f"Chunk type distribution: {chunk_type_counts}")
+        logger.info(f"Content type distribution: {content_type_counts}")
 
     except Exception as e:
         logger.error(f"Error in indexing process: {str(e)}")
