@@ -1,4 +1,4 @@
-# chatbot.py (Logging Reduced)
+# chatbot.py (AI-Based Small Talk)
 import os
 import json
 import random
@@ -22,8 +22,6 @@ load_dotenv(dotenv_path=Path(".env"))
 # Change to logging.INFO if you need to debug again
 logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-# Explicitly set the logger level if needed (though basicConfig should handle it)
-# logger.setLevel(logging.WARNING)
 
 # -----------------------------
 # CONFIG
@@ -58,21 +56,82 @@ rag_prompt = ChatPromptTemplate.from_messages([
 ])
 rag_chain = rag_prompt | llm
 
+# Prompt template for AI-based small talk
+small_talk_prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are a friendly Math AI tutor starting a casual conversation with a student. 
+    
+    Your personality:
+    - Warm, encouraging, and approachable
+    - Enthusiastic about helping with math
+    - Casual but professional tone
+    - Show genuine interest in the student
+    
+    Guidelines:
+    - Keep responses short and conversational (1-2 sentences max)
+    - Be friendly but don't be overly familiar
+    - You can reference general school topics, but keep it light
+    - Examples of good small talk: asking how they're doing, mentioning it's nice to see them, asking about their day
+    - Avoid being too specific about personal details
+    - Always respond in English
+    - Don't immediately jump into math - this is just friendly chat
+    
+    Here are some example conversation starters you can draw inspiration from (but create your own):
+    - "Hey, hey! How are you?"
+    - "Did you watch the game yesterday?"
+    - "Hey! How's everything today?"
+    - "Hey! How's my dear Shila doing?"
+    
+    Generate a natural, friendly greeting or small talk response."""),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("user", "{input}"),
+])
+small_talk_chain = small_talk_prompt | llm
+
+# Prompt template for AI-based personal follow-up
+personal_followup_prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are a friendly Math AI tutor continuing a casual conversation with a student before moving to math topics.
+    
+    Your role:
+    - Continue the friendly conversation naturally
+    - Show interest in their response to your previous message
+    - Keep it casual and brief (1-2 sentences)
+    - Gradually transition toward academic topics, but still keep it conversational
+    
+    Guidelines:
+    - Acknowledge what they said in a friendly way
+    - Ask a follow-up question or make a casual comment
+    - You can reference school, learning, or recent activities in general terms
+    - Keep the tone warm and encouraging
+    - Always respond in English
+    
+    Here are some example follow-up prompts you can draw inspiration from (but create your own based on the conversation):
+    - "So, what do you think about Siena's victory yesterday?"
+    - "Which topic did you enjoy the most recently?"
+    - "Was your last lesson easy or challenging?"
+    - "So, have you finished all the preparations for the Passover camp?"
+    
+    Generate a natural follow-up response that builds on the conversation."""),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("user", "{input}"),
+])
+personal_followup_chain = personal_followup_prompt | llm
+
 # -----------------------------
 # Localization (English only for prompts)
 # -----------------------------
 I18N = {
     "choose_language": "Choose language:\n1) English (default)",
-    "small_talk_prompts": [
+    # Keep some example prompts for reference, but they won't be used directly
+    "small_talk_examples": [
         "Hey, hey! How are you?",
-        "Did you watch the game yesterday?",
+        "Did you watch the game yesterday?", 
         "Hey! How's everything today?",
-        "Hey! How’s my dear Shila doing?",
+        "Hey! How's my dear Shila doing?",
     ],
-    "personal_followup_prompts": [
-        "So, what do you think about Siena’s victory yesterday?",
+    "personal_followup_examples": [
+        "So, what do you think about Siena's victory yesterday?",
         "Which topic did you enjoy the most recently?",
-        "Was your last lesson easy or challenging?",
+        "Was your last lesson easy or challenging?", 
         "So, have you finished all the preparations for the Passover camp?",
     ],
     "ask_grade": "Nice! Before we start, what grade are you in? (e.g., 7, 8)",
@@ -80,11 +139,11 @@ I18N = {
     "ready_for_question": "Awesome! Let's start with the next exercise:",
     "hint_prefix": "💡 Hint: ",
     "solution_prefix": "✅ Solution: ",
-    "wrong_answer": "Good attempt, but that’s not correct. Would you like to try again or see a hint?",
+    "wrong_answer": "Good attempt, but that's not correct. Would you like to try again or see a hint?",
     "no_exercises": "No exercises found for grade {grade} and topic {topic}.",
     "no_more_hints": "No more hints available.",
     "no_relevant_exercises": "I couldn't find any relevant exercises for your query. Please try a different topic or question.",
-    "ask_for_solution": "Would you like to see the solution? (Type 'solution' to view)",
+    "ask_for_solution": "Would you like to see the solution to view?",
     "irrelevant_msg": "I can only help with math exercises and related questions."
 }
 
@@ -217,11 +276,46 @@ class DialogueFSM:
         self.incorrect_attempts_count = 0
         self.recently_asked_exercise_ids = []
         self.RECENTLY_ASKED_LIMIT = 5
+        self.small_talk_turns = 0  # Track small talk turns
 
     @staticmethod
     def _translate_grade_to_hebrew(grade_num: str) -> str:
         grade_map = {"7": "ז", "8": "ח", "9": "ט", "10": "י"}
         return grade_map.get(grade_num, grade_num)
+
+    def _generate_ai_small_talk(self, user_input: str = "") -> str:
+        """Generate AI-based small talk response."""
+        try:
+            # Handle empty input for initial greeting
+            if not user_input.strip():
+                user_input = "Hello"
+            
+            response = small_talk_chain.invoke({
+                "chat_history": self.chat_history[-3:],  # Keep recent context
+                "input": user_input
+            })
+            return response.content.strip()
+        except Exception as e:
+            logger.error(f"Error generating AI small talk: {e}")
+            # Fallback to example prompts if AI fails
+            return random.choice(I18N["small_talk_examples"])
+
+    def _generate_ai_personal_followup(self, user_input: str = "") -> str:
+        """Generate AI-based personal follow-up response."""
+        try:
+            # Handle empty input
+            if not user_input.strip():
+                user_input = "That's nice"
+                
+            response = personal_followup_chain.invoke({
+                "chat_history": self.chat_history[-3:],  # Keep recent context
+                "input": user_input
+            })
+            return response.content.strip()
+        except Exception as e:
+            logger.error(f"Error generating AI personal follow-up: {e}")
+            # Fallback to example prompts if AI fails
+            return random.choice(I18N["personal_followup_examples"])
 
     def _get_exercise_by_id(self, exercise_id: str) -> Optional[Dict[str, Any]]:
         return next((ex for ex in self.exercises_data if ex.get("canonical_exercise_id") == exercise_id), None)
@@ -327,7 +421,6 @@ class DialogueFSM:
         final_english_question = translate_text_to_english(q_text)
         return final_english_question
 
-
     def _get_current_solution(self) -> str:
         if (self.current_exercise and
             self.current_exercise.get("text", {}).get("solution") and
@@ -387,12 +480,9 @@ class DialogueFSM:
             if not self.current_exercise:
                 self.state = State.EXERCISE_SELECTION
                 return f"\n\n{I18N['no_relevant_exercises']}\n\nPlease choose another topic:"
-                #self.state = State.END
-                #return f"\n\n{I18N['no_relevant_exercises']}"
 
             # Successfully found a new exercise
             return f"\n\nNext exercise:\n{self._get_current_question()}"
-
 
     def transition(self, user_input: str) -> str:
         text_lower = (user_input or "").strip().lower()
@@ -404,15 +494,25 @@ class DialogueFSM:
         # --- State Transitions ---
         if self.state == State.START:
             self.state = State.SMALL_TALK
-            return random.choice(I18N["small_talk_prompts"])
+            self.small_talk_turns = 1
+            # Generate AI-based small talk
+            ai_response = self._generate_ai_small_talk(user_input)
+            self.chat_history.append(AIMessage(content=ai_response))
+            return ai_response
 
         elif self.state == State.SMALL_TALK:
             self.state = State.PERSONAL_FOLLOWUP
-            return random.choice(I18N["personal_followup_prompts"])
+            self.small_talk_turns += 1
+            # Generate AI-based personal follow-up
+            ai_response = self._generate_ai_personal_followup(user_input)
+            self.chat_history.append(AIMessage(content=ai_response))
+            return ai_response
 
         elif self.state == State.PERSONAL_FOLLOWUP:
             self.state = State.ASK_GRADE
-            return I18N["ask_grade"]
+            response_text = I18N["ask_grade"]
+            self.chat_history.append(AIMessage(content=response_text))
+            return response_text
 
         elif self.state == State.ASK_GRADE:
             self.grade = user_input.strip()
@@ -423,7 +523,9 @@ class DialogueFSM:
                 if ex.get("grade") == self.hebrew_grade
             ))
             topics_str = ", ".join(available_topics[:5]) if available_topics else "Any topic"
-            return I18N["ask_topic"].format(grade=self.grade, topics=topics_str)
+            response_text = I18N["ask_topic"].format(grade=self.grade, topics=topics_str)
+            self.chat_history.append(AIMessage(content=response_text))
+            return response_text
 
         elif self.state == State.EXERCISE_SELECTION:
             self.topic = user_input.strip()
@@ -438,13 +540,15 @@ class DialogueFSM:
 
             if not self.current_exercise:
                 self.state = State.EXERCISE_SELECTION
-                return (I18N["no_exercises"].format(grade=self.grade, topic=self.topic) + "\n" +
+                response_text = (I18N["no_exercises"].format(grade=self.grade, topic=self.topic) + "\n" +
                         I18N["no_relevant_exercises"] + "\n\nPlease choose another topic:")
-                #self.state = State.END
-                #return I18N["no_exercises"].format(grade=self.grade, topic=self.topic) + "\n" + I18N["no_relevant_exercises"]
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
 
             self.state = State.QUESTION_ANSWER
-            return f"{I18N['ready_for_question']}\n{self._get_current_question()}"
+            response_text = f"{I18N['ready_for_question']}\n{self._get_current_question()}"
+            self.chat_history.append(AIMessage(content=response_text))
+            return response_text
 
         elif self.state == State.QUESTION_ANSWER:
             # --- Irrelevant Question Handling ---
@@ -460,8 +564,14 @@ class DialogueFSM:
                 self.chat_history.append(AIMessage(content=response_text))
                 return response_text
         
-            # --- Handle Explicit Commands ---
-            if text_lower == "hint":
+            # --- Handle Help Requests and Explicit Commands ---
+            # Check for hint requests in various forms
+            hint_keywords = ["hint", "help", "clue", "tip", "stuck", "don't know", "not sure", "confused"]
+            if (text_lower == "hint" or 
+                any(keyword in text_lower for keyword in hint_keywords) or
+                ("give" in text_lower and any(keyword in text_lower for keyword in ["hint", "help", "clue"])) or
+                ("can you" in text_lower and any(keyword in text_lower for keyword in ["hint", "help"]))):
+                
                 hint = self._get_current_hint()
                 if hint:
                     response_text = f"{I18N['hint_prefix']} {hint}"
@@ -470,7 +580,16 @@ class DialogueFSM:
                 self.chat_history.append(AIMessage(content=response_text))
                 return response_text
 
-            elif text_lower in {"solution", "pass"}:
+            # Check for solution requests in various forms
+            solution_keywords = ["solution", "answer", "pass", "skip", "give up"]
+            if (text_lower in {"solution", "pass"} or
+                any(keyword in text_lower for keyword in solution_keywords) or
+                ("give me" in text_lower and any(keyword in text_lower for keyword in ["solution", "answer", "full solution"])) or
+                ("show me" in text_lower and any(keyword in text_lower for keyword in ["solution", "answer"])) or
+                ("what is the" in text_lower and any(keyword in text_lower for keyword in ["solution", "answer"])) or
+                ("full solution" in text_lower) or
+                ("correct answer" in text_lower)):
+                
                 solution = self._get_current_solution()
                 response_text = f"{I18N['solution_prefix']} {solution}"
                 response_text += self._move_to_next_exercise_or_question()
