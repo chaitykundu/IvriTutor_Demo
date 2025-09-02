@@ -13,8 +13,8 @@ from dotenv import load_dotenv  # Add this import
 load_dotenv()  # Add this line
 
 # ---------- CONFIG ----------
-PARSED_INPUT_FILE = Path("parsed_outputs/8th_grade_lesson_2_parsed.json")
-EMB_INPUT_FILE = Path("parsed_outputs/8th_grade_lesson_2_embeddings.json")
+PARSED_INPUT_FILE = Path("parsed_outputs/all_parsed.json")
+EMB_INPUT_FILE = Path("parsed_outputs/all_parsed_embedding.json")
 INDEX_NAME = "mathtutor-e5-large" # Changed index name to reflect new model
 EMBED_DIM = 1024  # multilingual-e5-large has 1024 dimensions
 CLOUD = "aws"

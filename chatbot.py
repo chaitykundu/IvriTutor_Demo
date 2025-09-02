@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 # -----------------------------
 # CONFIG
 # -----------------------------
-PARSED_INPUT_FILE = Path("parsed_outputs/8th_grade_lesson_2_parsed.json")
+PARSED_INPUT_FILE = Path("parsed_outputs/all_parsed.json")
 SVG_OUTPUT_DIR = Path("svg_outputs")
 SVG_OUTPUT_DIR.mkdir(exist_ok=True)
 
@@ -800,6 +800,7 @@ class DialogueFSM:
         elif self.state == State.DOUBT_CLEARING:
             # Check if user has more doubts or wants to end
             no_doubt_indicators = ["no", "nope", "nothing", "i'm good", "all clear", "no more", "that's all", "thanks"]
+            doubt_indicators = ["yes", "yeah", "yep", "i have", "question", "doubt", "confused", "don't understand"]
             topic_name = self.topic or "this topic"
             
             if any(indicator in text_lower for indicator in no_doubt_indicators):
@@ -871,7 +872,6 @@ class DialogueFSM:
         response_text = "I'm not sure how to proceed. Type 'exit' to quit."
         self.chat_history.append(AIMessage(content=response_text))
         return response_text
-
 # -----------------------------
 # MAIN
 # -----------------------------

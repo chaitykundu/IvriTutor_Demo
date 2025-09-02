@@ -7,8 +7,8 @@ from typing import List, Dict
 import logging
 
 # ---------- CONFIG ----------
-PARSED_INPUT_FILE = Path("parsed_outputs/8th_grade_lesson_2_parsed.json")
-EMBEDDINGS_OUTPUT_FILE = Path("parsed_outputs/8th_grade_lesson_2_embeddings.json")
+PARSED_INPUT_FILE = Path("parsed_outputs/all_parsed.json")
+EMBEDDINGS_OUTPUT_FILE = Path("parsed_outputs/all_parsed_embedding.json")
 MODEL_NAME = "intfloat/multilingual-e5-large"
 BATCH_SIZE = 32
 
