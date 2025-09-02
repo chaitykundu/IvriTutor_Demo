@@ -1,4 +1,4 @@
-# chatbot.py (AI-Based Small Talk)
+# chatbot.py (AI-Based Small Talk with Doubt Clearing)
 import os
 import json
 import random
@@ -144,7 +144,16 @@ I18N = {
     "no_more_hints": "No more hints available.",
     "no_relevant_exercises": "I couldn't find any relevant exercises for your query. Please try a different topic or question.",
     "ask_for_solution": "Would you like to see the solution to view?",
-    "irrelevant_msg": "I can only help with math exercises and related questions."
+    "irrelevant_msg": "I can only help with math exercises and related questions.",
+    # New entries for doubt clearing and session ending
+    "ask_for_doubts": "Great work! You've completed several exercises on {topic}. Do you have any questions or doubts about this topic?",
+    "no_doubts_response": "Perfect! It looks like you understand {topic} well. Great job today!",
+    "doubt_clearing_intro": "I'm here to help! Let me address your question about {topic}:",
+    "ask_more_doubts": "Do you have any other questions or doubts about {topic}?",
+    "session_ending": "Excellent work today! You've done really well with {topic} exercises and I'm glad I could help clear up any questions. Keep practicing and you'll continue to improve! This topic session is now complete. See you next time! 👋",
+    "doubt_answer_complete": "I hope that helps clarify things about {topic} for you!",
+    "final_goodbye": "Thank you for the great {topic} session! Feel free to start a new session anytime for more math practice. Goodbye! 👋",
+    "topic_session_complete": "🎉 Topic session for '{topic}' is now complete! You can start a new session with a different topic anytime."
 }
 
 # -----------------------------
@@ -157,6 +166,9 @@ class State(Enum):
     ASK_GRADE = auto()
     EXERCISE_SELECTION = auto()
     QUESTION_ANSWER = auto()
+    ASK_FOR_DOUBTS = auto()        # New state
+    DOUBT_CLEARING = auto()        # New state
+    SESSION_END = auto()           # New state
     END = auto()
 
 # -----------------------------
@@ -276,7 +288,14 @@ class DialogueFSM:
         self.incorrect_attempts_count = 0
         self.recently_asked_exercise_ids = []
         self.RECENTLY_ASKED_LIMIT = 5
-        self.small_talk_turns = 0  # Track small talk turns
+        self.small_talk_turns = 0
+        
+        # New attributes for doubt clearing functionality
+        self.completed_exercises_count = 0      # Track completed exercises per topic
+        self.doubt_questions_count = 0          # Track doubt questions asked
+        self.MAX_DOUBT_QUESTIONS = 2            # Maximum doubt questions allowed
+        self.EXERCISES_BEFORE_DOUBT_CHECK = 4   # Number of exercises before asking for doubts
+        self.topic_exercises_count = 0          # Track exercises completed in current topic
 
     @staticmethod
     def _translate_grade_to_hebrew(grade_num: str) -> str:
@@ -316,6 +335,70 @@ class DialogueFSM:
             logger.error(f"Error generating AI personal follow-up: {e}")
             # Fallback to example prompts if AI fails
             return random.choice(I18N["personal_followup_examples"])
+
+    def _generate_doubt_clearing_response(self, user_question: str) -> str:
+        """Generate response to clear student's doubts using RAG."""
+        try:
+            # Translate the question if it's in Hebrew
+            translated_question = translate_text_to_english(user_question)
+            
+            # Retrieve relevant context for the doubt
+            retrieved_context = retrieve_relevant_chunks(
+                translated_question,
+                self.pinecone_index,
+                grade=self.hebrew_grade,
+                topic=self.topic if self.topic and self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
+            )
+            
+            context_str = "\n".join([c.get("text", "") for c in retrieved_context if c.get("text")])
+            
+            # Create a doubt-clearing prompt
+            doubt_clearing_prompt = ChatPromptTemplate.from_messages([
+                ("system", """You are a helpful Math AI tutor addressing a student's doubt or question. 
+                
+                Your role:
+                - Provide clear, detailed explanations
+                - Use the context to give accurate information
+                - Be patient and encouraging
+                - Break down complex concepts into simple steps
+                - Always respond in English
+                - If the context doesn't contain relevant information, acknowledge this and provide general guidance
+                
+                Guidelines:
+                - Start with encouragement ("Great question!")
+                - Give a clear, step-by-step explanation
+                - Use examples from the context when available
+                - End with a confirmation question like "Does this make sense?" or "Is this clear?"
+                """),
+                MessagesPlaceholder(variable_name="chat_history"),
+                ("user", "Student's Question: {question}\n\nRelevant Context: {context}"),
+            ])
+            
+            doubt_clearing_chain = doubt_clearing_prompt | llm
+            response = doubt_clearing_chain.invoke({
+                "chat_history": self.chat_history[-5:],  # Recent context
+                "question": translated_question,
+                "context": context_str
+            })
+            
+            topic_name = self.topic or "this topic"
+            return f"{I18N['doubt_clearing_intro'].format(topic=topic_name)}\n\n{response.content.strip()}\n\n{I18N['doubt_answer_complete'].format(topic=topic_name)}"
+            
+        except Exception as e:
+            logger.error(f"Error generating doubt clearing response: {e}")
+            return "I'd be happy to help with your question, but I'm having trouble processing it right now. Could you try asking it in a different way?"
+
+    def _reset_for_new_topic(self):
+        """Reset counters and state for a new topic session."""
+        self.topic = None
+        self.topic_exercises_count = 0
+        self.doubt_questions_count = 0
+        self.current_exercise = None
+        self.current_question_index = 0
+        self.current_hint_index = 0
+        self.incorrect_attempts_count = 0
+        self.current_svg_description = None
+        self.recently_asked_exercise_ids.clear()  # Clear to allow fresh exercises for new topic
 
     def _get_exercise_by_id(self, exercise_id: str) -> Optional[Dict[str, Any]]:
         return next((ex for ex in self.exercises_data if ex.get("canonical_exercise_id") == exercise_id), None)
@@ -441,7 +524,7 @@ class DialogueFSM:
         return None
 
     def _move_to_next_exercise_or_question(self) -> str:
-        """Handles logic for moving to the next question or exercise."""
+        """Enhanced version that tracks completed exercises and triggers doubt checking per topic."""
 
         # 1. Check if there are more questions in the CURRENT exercise
         if (self.current_exercise and
@@ -457,8 +540,23 @@ class DialogueFSM:
             return f"\n\nNext question:\n{self._get_current_question()}"
 
         else:
-            # 2. Current exercise is finished, need a NEW exercise
+            # Current exercise is finished - increment counters
+            self.completed_exercises_count += 1
+            self.topic_exercises_count += 1
             
+            # Check if we should ask for doubts after completing enough exercises for this topic
+            if self.topic_exercises_count >= self.EXERCISES_BEFORE_DOUBT_CHECK:
+                # Transition to doubt checking state for this topic
+                self.state = State.ASK_FOR_DOUBTS
+                self.current_exercise = None
+                self.current_question_index = 0
+                self.current_hint_index = 0
+                self.incorrect_attempts_count = 0
+                self.current_svg_description = None
+                topic_name = self.topic or "this topic"
+                return f"\n\n{I18N['ask_for_doubts'].format(topic=topic_name)}"
+            
+            # Otherwise, continue with normal exercise flow for the same topic
             # Clear state related to the old exercise
             self.current_exercise = None
             self.current_question_index = 0
@@ -466,7 +564,7 @@ class DialogueFSM:
             self.incorrect_attempts_count = 0
             self.current_svg_description = None
 
-            # Construct query for a new exercise
+            # Construct query for a new exercise in the same topic
             query = f"Next exercise for grade {self.hebrew_grade}"
             topic_for_query = None
             if self.topic and self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"]:
@@ -476,10 +574,12 @@ class DialogueFSM:
             # Try to find a new exercise
             self._pick_new_exercise_rag(query=query, grade=self.hebrew_grade, topic=topic_for_query)
 
-            # Handle case where no new exercise is found
+            # Handle case where no new exercise is found for this topic
             if not self.current_exercise:
-                self.state = State.EXERCISE_SELECTION
-                return f"\n\n{I18N['no_relevant_exercises']}\n\nPlease choose another topic:"
+                # No more exercises for this topic - trigger doubt checking
+                self.state = State.ASK_FOR_DOUBTS
+                topic_name = self.topic or "this topic"
+                return f"\n\n{I18N['ask_for_doubts'].format(topic=topic_name)}"
 
             # Successfully found a new exercise
             return f"\n\nNext exercise:\n{self._get_current_question()}"
@@ -529,6 +629,11 @@ class DialogueFSM:
 
         elif self.state == State.EXERCISE_SELECTION:
             self.topic = user_input.strip()
+            
+            # Reset topic-specific counters when starting a new topic
+            self.topic_exercises_count = 0
+            self.doubt_questions_count = 0
+            
             query = f"Find an exercise for grade {self.hebrew_grade} on topic {self.topic}"
             topic_for_picking = self.topic if self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
             self._pick_new_exercise_rag(query=query, grade=self.hebrew_grade, topic=topic_for_picking)
@@ -651,6 +756,112 @@ class DialogueFSM:
 
                     self.chat_history.append(AIMessage(content=response_text))
                     return response_text
+
+        # NEW STATE: ASK_FOR_DOUBTS
+        elif self.state == State.ASK_FOR_DOUBTS:
+            # Check if user has doubts
+            no_doubt_indicators = ["no", "nope", "nothing", "i'm good", "all clear", "no doubts", "no questions", "i understand"]
+            doubt_indicators = ["yes", "yeah", "yep", "i have", "question", "doubt", "confused", "don't understand"]
+            
+            topic_name = self.topic or "this topic"
+            
+            if any(indicator in text_lower for indicator in no_doubt_indicators):
+                # Student has no doubts - move to session end for this topic
+                self.state = State.SESSION_END
+                response_text = I18N["no_doubts_response"].format(topic=topic_name)
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
+            
+            elif any(indicator in text_lower for indicator in doubt_indicators) or "?" in user_input:
+                # Student has doubts - move to doubt clearing
+                self.state = State.DOUBT_CLEARING
+                self.doubt_questions_count = 1
+                
+                # Extract the actual question if present
+                if "?" in user_input:
+                    doubt_response = self._generate_doubt_clearing_response(user_input)
+                else:
+                    doubt_response = f"I'm ready to help! What would you like me to explain or clarify about {topic_name}?"
+                
+                doubt_response += f"\n\n{I18N['ask_more_doubts'].format(topic=topic_name)}"
+                self.chat_history.append(AIMessage(content=doubt_response))
+                return doubt_response
+            
+            else:
+                # Treat as a doubt/question
+                self.state = State.DOUBT_CLEARING
+                self.doubt_questions_count = 1
+                doubt_response = self._generate_doubt_clearing_response(user_input)
+                doubt_response += f"\n\n{I18N['ask_more_doubts'].format(topic=topic_name)}"
+                self.chat_history.append(AIMessage(content=doubt_response))
+                return doubt_response
+
+        # NEW STATE: DOUBT_CLEARING
+        elif self.state == State.DOUBT_CLEARING:
+            # Check if user has more doubts or wants to end
+            no_doubt_indicators = ["no", "nope", "nothing", "i'm good", "all clear", "no more", "that's all", "thanks"]
+            topic_name = self.topic or "this topic"
+            
+            if any(indicator in text_lower for indicator in no_doubt_indicators):
+                # No more doubts - end session for this topic
+                self.state = State.SESSION_END
+                response_text = I18N["session_ending"].format(topic=topic_name)
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
+            
+            elif self.doubt_questions_count >= self.MAX_DOUBT_QUESTIONS:
+                # Max doubts reached - end session for this topic
+                doubt_response = self._generate_doubt_clearing_response(user_input)
+                self.state = State.SESSION_END
+                response_text = f"{doubt_response}\n\n{I18N['session_ending'].format(topic=topic_name)}"
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
+            
+            else:
+                # Handle another doubt question
+                self.doubt_questions_count += 1
+                doubt_response = self._generate_doubt_clearing_response(user_input)
+                
+                if self.doubt_questions_count >= self.MAX_DOUBT_QUESTIONS:
+                    # This was the last allowed doubt question for this topic
+                    response_text = f"{doubt_response}\n\n{I18N['session_ending'].format(topic=topic_name)}"
+                    self.state = State.SESSION_END
+                else:
+                    # Still can ask more doubts about this topic
+                    response_text = f"{doubt_response}\n\n{I18N['ask_more_doubts'].format(topic=topic_name)}"
+                
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
+
+        # NEW STATE: SESSION_END (Per Topic)
+        elif self.state == State.SESSION_END:
+            # Topic session is complete - offer to start new topic or end completely
+            topic_name = self.topic or "this topic"
+            
+            # Check if user wants to start a new topic
+            new_topic_indicators = ["new topic", "another topic", "different topic", "next topic", "change topic"]
+            if any(indicator in text_lower for indicator in new_topic_indicators):
+                # Reset for new topic session
+                self._reset_for_new_topic()
+                self.state = State.EXERCISE_SELECTION
+                
+                # Get available topics for the grade
+                available_topics = list(set(
+                    ex.get("topic", "Unknown") for ex in self.exercises_data
+                    if ex.get("grade") == self.hebrew_grade
+                ))
+                topics_str = ", ".join(available_topics[:5]) if available_topics else "Any topic"
+                
+                response_text = f"Great! Let's work on a new topic. Which topic would you like to practice? (e.g., {topics_str})"
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
+            
+            else:
+                # Any other input ends the complete session
+                response_text = I18N["final_goodbye"].format(topic=topic_name)
+                self.state = State.END
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
 
         # --- End State ---
         elif self.state == State.END:
