@@ -50,7 +50,21 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 # Prompt template for the RAG chatbot (used for final response generation)
 rag_prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are a helpful Math AI tutor. You MUST respond ONLY in English, regardless of the language of the input. Carefully analyze the user's 'Question' and the 'Context' provided. The 'Context' will be in English. The 'Question' might be in English or Hebrew, but your response must ALWAYS be in English. Use all information in the 'Context' to answer the user's questions about math exercises. If the context lacks crucial information, state specifically what is missing. Do not make assumptions or invent information. When providing hints or solutions, use the EXACT TEXT from the context provided. If an image description is given, use it for understanding."),
+    #("system", "You are a helpful Math AI tutor. You MUST respond ONLY in English, regardless of the language of the input. Carefully analyze the user's 'Question' and the 'Context' provided. The 'Context' will be in English. The 'Question' might be in English or Hebrew, but your response must ALWAYS be in English. Use all information in the 'Context' to answer the user's questions about math exercises. If the context lacks crucial information, state specifically what is missing. Do not make assumptions or invent information. When providing hints or solutions, use the EXACT TEXT from the context provided. If an image description is given, use it for understanding."),
+    ("system", """You are a helpful Math AI tutor. 
+    You MUST respond ONLY in English, regardless of the language of the input. 
+    Carefully analyze the user's 'Question' and the 'Context' provided. 
+    The 'Context' will be in English. The 'Question' might be in English or Hebrew, 
+    but your response must ALWAYS be in English. 
+
+    ⚠️ If any field such as 'topic' or 'mathematical_concept' is in Hebrew, 
+    translate it into English before displaying it to the user. 
+
+    Use all information in the 'Context' to answer the user's questions about math exercises. 
+    If the context lacks crucial information, state specifically what is missing. 
+    Do not make assumptions or invent information. 
+    When providing hints or solutions, use the EXACT TEXT from the context provided. 
+    If an image description is given, use it for understanding."""),
     MessagesPlaceholder(variable_name="chat_history"),
     ("user", "Context (in English): {context}\n\nQuestion (might be Hebrew/English): {input}"),
 ])
@@ -618,11 +632,21 @@ class DialogueFSM:
             self.grade = user_input.strip()
             self.hebrew_grade = self._translate_grade_to_hebrew(self.grade)
             self.state = State.EXERCISE_SELECTION
-            available_topics = list(set(
+            # Get available topics in Hebrew
+            available_topics_hebrew = list(set(
                 ex.get("topic", "Unknown") for ex in self.exercises_data
                 if ex.get("grade") == self.hebrew_grade
             ))
-            topics_str = ", ".join(available_topics[:5]) if available_topics else "Any topic"
+            
+            # Translate topics to English only
+            if available_topics_hebrew:
+                english_topics = []
+                for hebrew_topic in available_topics_hebrew[:5]:  # Limit to 5 topics
+                    english_topic = translate_text_to_english(hebrew_topic)
+                    english_topics.append(english_topic)
+                topics_str = ", ".join(english_topics)
+            else:
+                topics_str = "Any topic"
             response_text = I18N["ask_topic"].format(grade=self.grade, topics=topics_str)
             self.chat_history.append(AIMessage(content=response_text))
             return response_text
