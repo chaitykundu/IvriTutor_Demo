@@ -52,10 +52,17 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 rag_prompt = ChatPromptTemplate.from_messages([
     #("system", "You are a helpful Math AI tutor. You MUST respond ONLY in English, regardless of the language of the input. Carefully analyze the user's 'Question' and the 'Context' provided. The 'Context' will be in English. The 'Question' might be in English or Hebrew, but your response must ALWAYS be in English. Use all information in the 'Context' to answer the user's questions about math exercises. If the context lacks crucial information, state specifically what is missing. Do not make assumptions or invent information. When providing hints or solutions, use the EXACT TEXT from the context provided. If an image description is given, use it for understanding."),
     ("system", """You are a helpful Math AI tutor. 
-    You MUST respond ONLY in English, regardless of the language of the input. 
+    You MUST respond ONLY in Hebrew and English, regardless of the language of the input. 
     Carefully analyze the user's 'Question' and the 'Context' provided. 
-    The 'Context' will be in English. The 'Question' might be in English or Hebrew, 
-    but your response must ALWAYS be in English. 
+    The 'Context' may be in English or Hebrew. 
+    The 'Question' may also be in English or Hebrew. 
+
+    ✅ If the 'Question' is in Hebrew → respond in Hebrew.  
+    ✅ If the 'Question' is in English → respond in English.  
+
+    ⚠️ If the 'Context' is in a different language than the 'Question', 
+    first translate the relevant parts of the context into the language of the 'Question', 
+    then answer accordingly.   
 
     ⚠️ If any field such as 'topic' or 'mathematical_concept' is in Hebrew, 
     translate it into English before displaying it to the user. 
@@ -66,7 +73,8 @@ rag_prompt = ChatPromptTemplate.from_messages([
     When providing hints or solutions, use the EXACT TEXT from the context provided. 
     If an image description is given, use it for understanding."""),
     MessagesPlaceholder(variable_name="chat_history"),
-    ("user", "Context (in English): {context}\n\nQuestion (might be Hebrew/English): {input}"),
+    ("user", "Context: {context}\n\nQuestion: {input}")
+    #("user", "Context (in English): {context}\n\nQuestion (might be Hebrew/English): {input}"),
 ])
 rag_chain = rag_prompt | llm
 
@@ -164,10 +172,10 @@ I18N = {
     "no_doubts_response": "Perfect! It looks like you understand {topic} well. Great job today!",
     "doubt_clearing_intro": "I'm here to help! Let me address your question about {topic}:",
     "ask_more_doubts": "Do you have any other questions or doubts about {topic}?",
-    "session_ending": "Excellent work today! You've done really well with {topic} exercises and I'm glad I could help clear up any questions. Keep practicing and you'll continue to improve! This topic session is now complete. See you next time! 👋",
+    #"session_ending": "Excellent work today! You've done really well with {topic} exercises and I'm glad I could help clear up any questions. Keep practicing and you'll continue to improve! This topic session is now complete. See you next time! 👋",
     "doubt_answer_complete": "I hope that helps clarify things about {topic} for you!",
-    "final_goodbye": "Thank you for the great {topic} session! Feel free to start a new session anytime for more math practice. Goodbye! 👋",
-    "topic_session_complete": "🎉 Topic session for '{topic}' is now complete! You can start a new session with a different topic anytime."
+    #"final_goodbye": "Thank you for the great {topic} session! Feel free to start a new session anytime for more math practice. Goodbye! 👋",
+    #"topic_session_complete": "🎉 Topic session for '{topic}' is now complete! You can start a new session with a different topic anytime."
 }
 
 # -----------------------------
@@ -182,7 +190,7 @@ class State(Enum):
     QUESTION_ANSWER = auto()
     ASK_FOR_DOUBTS = auto()        # New state
     DOUBT_CLEARING = auto()        # New state
-    SESSION_END = auto()           # New state
+    #SESSION_END = auto()           # New state
     END = auto()
 
 # -----------------------------
@@ -301,14 +309,14 @@ class DialogueFSM:
         self.current_svg_description = None
         self.incorrect_attempts_count = 0
         self.recently_asked_exercise_ids = []
-        self.RECENTLY_ASKED_LIMIT = 5
+        self.RECENTLY_ASKED_LIMIT = 0
         self.small_talk_turns = 0
         
         # New attributes for doubt clearing functionality
         self.completed_exercises_count = 0      # Track completed exercises per topic
         self.doubt_questions_count = 0          # Track doubt questions asked
-        self.MAX_DOUBT_QUESTIONS = 2            # Maximum doubt questions allowed
-        self.EXERCISES_BEFORE_DOUBT_CHECK = 4   # Number of exercises before asking for doubts
+        self.MAX_DOUBT_QUESTIONS = 0            # Maximum doubt questions allowed
+        self.EXERCISES_BEFORE_DOUBT_CHECK = 0   # Number of exercises before asking for doubts
         self.topic_exercises_count = 0          # Track exercises completed in current topic
 
     @staticmethod
@@ -489,7 +497,7 @@ class DialogueFSM:
             return translate_text_to_english("No question available.")
 
         # 2. Get the specific question text for the current index
-        q_text = questions[self.current_question_index]
+        q_text = questions[self.current_question_index].replace('$', '')
 
         # 3. Handle SVG content if present for this exercise
         if self.current_exercise.get("svg") and len(self.current_exercise["svg"]) > 0:
@@ -524,6 +532,9 @@ class DialogueFSM:
             isinstance(self.current_exercise["text"]["solution"], list) and
             self.current_question_index < len(self.current_exercise["text"]["solution"])):
             sol_text = self.current_exercise["text"]["solution"][self.current_question_index]
+
+            # Remove the "$" sign from the solution text
+            sol_text = sol_text.replace('$', '')
             return translate_text_to_english(sol_text)
         return translate_text_to_english("No solution available.")
 
@@ -533,6 +544,9 @@ class DialogueFSM:
             isinstance(self.current_exercise["text"]["hint"], list) and
             self.current_hint_index < len(self.current_exercise["text"]["hint"])):
             hint_text = self.current_exercise["text"]["hint"][self.current_hint_index]
+
+            # Remove the "$" sign from the hint text
+            hint_text = hint_text.replace('$', '')
             self.current_hint_index += 1
             return translate_text_to_english(hint_text)
         return None
@@ -641,7 +655,7 @@ class DialogueFSM:
             # Translate topics to English only
             if available_topics_hebrew:
                 english_topics = []
-                for hebrew_topic in available_topics_hebrew[:5]:  # Limit to 5 topics
+                for hebrew_topic in available_topics_hebrew[:]:  # Limit to 5 topics
                     english_topic = translate_text_to_english(hebrew_topic)
                     english_topics.append(english_topic)
                 topics_str = ", ".join(english_topics)
@@ -791,7 +805,7 @@ class DialogueFSM:
             
             if any(indicator in text_lower for indicator in no_doubt_indicators):
                 # Student has no doubts - move to session end for this topic
-                self.state = State.SESSION_END
+                self.state = State.QUESTION_ANSWER
                 response_text = I18N["no_doubts_response"].format(topic=topic_name)
                 self.chat_history.append(AIMessage(content=response_text))
                 return response_text
@@ -827,66 +841,21 @@ class DialogueFSM:
             doubt_indicators = ["yes", "yeah", "yep", "i have", "question", "doubt", "confused", "don't understand"]
             topic_name = self.topic or "this topic"
             
-            if any(indicator in text_lower for indicator in no_doubt_indicators):
-                # No more doubts - end session for this topic
-                self.state = State.SESSION_END
-                response_text = I18N["session_ending"].format(topic=topic_name)
+            if any(indicator in text_lower for indicator in no_doubt_indicators) or self.MAX_DOUBT_QUESTIONS == 0:
+                self.state = State.EXERCISE_SELECTION
+                response_text = I18N["continue_or_new_topic"].format(topic=topic_name)
                 self.chat_history.append(AIMessage(content=response_text))
                 return response_text
-            
-            elif self.doubt_questions_count >= self.MAX_DOUBT_QUESTIONS:
-                # Max doubts reached - end session for this topic
-                doubt_response = self._generate_doubt_clearing_response(user_input)
-                self.state = State.SESSION_END
-                response_text = f"{doubt_response}\n\n{I18N['session_ending'].format(topic=topic_name)}"
-                self.chat_history.append(AIMessage(content=response_text))
-                return response_text
-            
-            else:
-                # Handle another doubt question
+            elif any(indicator in text_lower for indicator in doubt_indicators) or "?" in user_input:
                 self.doubt_questions_count += 1
                 doubt_response = self._generate_doubt_clearing_response(user_input)
-                
-                if self.doubt_questions_count >= self.MAX_DOUBT_QUESTIONS:
-                    # This was the last allowed doubt question for this topic
-                    response_text = f"{doubt_response}\n\n{I18N['session_ending'].format(topic=topic_name)}"
-                    self.state = State.SESSION_END
-                else:
-                    # Still can ask more doubts about this topic
-                    response_text = f"{doubt_response}\n\n{I18N['ask_more_doubts'].format(topic=topic_name)}"
-                
-                self.chat_history.append(AIMessage(content=response_text))
-                return response_text
-
-        # NEW STATE: SESSION_END (Per Topic)
-        elif self.state == State.SESSION_END:
-            # Topic session is complete - offer to start new topic or end completely
-            topic_name = self.topic or "this topic"
-            
-            # Check if user wants to start a new topic
-            new_topic_indicators = ["new topic", "another topic", "different topic", "next topic", "change topic"]
-            if any(indicator in text_lower for indicator in new_topic_indicators):
-                # Reset for new topic session
-                self._reset_for_new_topic()
-                self.state = State.EXERCISE_SELECTION
-                
-                # Get available topics for the grade
-                available_topics = list(set(
-                    ex.get("topic", "Unknown") for ex in self.exercises_data
-                    if ex.get("grade") == self.hebrew_grade
-                ))
-                topics_str = ", ".join(available_topics[:5]) if available_topics else "Any topic"
-                
-                response_text = f"Great! Let's work on a new topic. Which topic would you like to practice? (e.g., {topics_str})"
-                self.chat_history.append(AIMessage(content=response_text))
-                return response_text
-            
+                self.chat_history.append(AIMessage(content=doubt_response))
+                return doubt_response
             else:
-                # Any other input ends the complete session
-                response_text = I18N["final_goodbye"].format(topic=topic_name)
-                self.state = State.END
-                self.chat_history.append(AIMessage(content=response_text))
-                return response_text
+                self.doubt_questions_count += 1
+                doubt_response = f"Sorry, I didn't quite understand that. Could you clarify your question about {topic_name} or say 'no' to move on?\n\n{I18N['ask_more_doubts'].format(topic=topic_name)}"
+                self.chat_history.append(AIMessage(content=doubt_response))
+                return doubt_response
 
         # --- End State ---
         elif self.state == State.END:
