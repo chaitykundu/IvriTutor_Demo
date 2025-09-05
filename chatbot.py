@@ -66,6 +66,8 @@ rag_prompt = ChatPromptTemplate.from_messages([
     - If the question is in Hebrew → respond in Hebrew
     - If the question is in English → respond in English
     - Always match the user's language preference
+    - For Hebrew responses, use Right-to-Left (RTL) formatting for conversational text.
+    - Ensure all mathematical expressions and scientific notation remain Left-to-Right (LTR), even within Hebrew sentences.
     
     Teaching Guidelines:
     - Never give direct answers immediately
@@ -95,7 +97,8 @@ small_talk_prompt = ChatPromptTemplate.from_messages([
     - Warm, encouraging, and approachable
     - Enthusiastic about helping with math
     - Keep responses short and conversational (1-2 sentences max)
-    - Examples: "Hey! How are you doing today?", "Hi there! Good to see you?"
+    - Understand the user's intent even with spelling mistakes or unclear input
+    - Examples: "Hey! How are you doing today?", "Hi there! What's up?", "How's everything going?"
     """),
     MessagesPlaceholder(variable_name="chat_history"),
     ("user", "{input}"),
@@ -113,7 +116,7 @@ personal_followup_prompt = ChatPromptTemplate.from_messages([
     Guidelines:
     - Acknowledge their response warmly
     - Keep it brief and natural (1-2 sentences)
-    - Show genuine interest
+    - Show genuine interest in personal topics like work, sports, daily life
     - Gradually transition toward academic readiness
     """),
     MessagesPlaceholder(variable_name="chat_history"),
@@ -155,7 +158,7 @@ I18N = {
         "guiding_question": "🤔 Let me ask you this: ",
         "encouragement": "You're on the right track! ",
         "try_again": "Can you try again? Think about your approach.",
-        "need_more_attempts": "Give it another try first - I believe you can work through this!",
+        "need_more_attempts": "Give it another try first - I believe you can work through this! {guiding_prompt}",
         "no_exercises": "No exercises found for grade {grade} and topic {topic}.",
         "no_more_hints": "No more hints available. Would you like to see the solution?",
         "no_relevant_exercises": "I couldn't find any relevant exercises for your query.",
@@ -433,6 +436,10 @@ class DialogueFSM:
         self.small_talk_turns = 0
         self.user_language = "en"
         
+        self.small_talk_chain = small_talk_chain
+        self.personal_followup_chain = personal_followup_chain  
+        self.academic_transition_chain = academic_transition_chain
+
         # Enhanced attempt tracking
         self.attempt_tracker = AttemptTracker()
         
@@ -481,65 +488,39 @@ class DialogueFSM:
 
     def _generate_ai_small_talk(self, user_input: str = "") -> str:
         """Generate AI-based small talk response."""
-        greetings = [
-            "Hey! How's it going?",
-            "Hi there! How are you doing today?",
-            "Hello! What's new?",
-            "Hey! Good to see you!"
-        ]
         try:
-            if not user_input.strip():
-                user_input = random.choice(greetings)
-            response = small_talk_chain.invoke({
+            response = self.small_talk_chain.invoke({
                 "chat_history": self.chat_history[-3:],
-                "input": user_input
+                "input": user_input or ""
             })
             return response.content.strip()
         except Exception as e:
             logger.error(f"Error generating AI small talk: {e}")
-            return random.choice(greetings)
+            return "Hey! How's it going today?"
 
     def _generate_ai_personal_followup(self, user_input: str = "") -> str:
         """Generate AI-based personal follow-up response."""
-        personal_prompts = [
-            "Do you search any jobs?",
-            "How was your day yesterday?",
-            "Did you do anything fun recently?",
-            "how yesterday's game was?",
-            "How's your week going so far?",
-            "Any exciting plans coming up?"
-        ]
         try:
-            if not user_input.strip():
-                user_input = random.choice(personal_prompts)
-            response = personal_followup_chain.invoke({
+            response = self.personal_followup_chain.invoke({
                 "chat_history": self.chat_history[-3:],
-                "input": user_input
+                "input": user_input or ""
             })
             return response.content.strip()
         except Exception as e:
             logger.error(f"Error generating AI personal follow-up: {e}")
-            return random.choice(personal_prompts)
-        
+            return "That's interesting! How was your day yesterday?"
+
     def _generate_academic_transition(self, user_input: str = "") -> str:
         """Generate AI-based academic transition response."""
-        transition_prompts = [
-            "By the way, what did you learn recently?",
-            "When is your next exam?",
-            "How's school going?",
-            "What subjects are you studying these days?"
-        ]
         try:
-            if not user_input.strip():
-                user_input = random.choice(transition_prompts)
-            response = academic_transition_chain.invoke({
+            response = self.academic_transition_chain.invoke({
                 "chat_history": self.chat_history[-3:],
-                "input": user_input
+                "input": user_input or ""
             })
             return response.content.strip()
         except Exception as e:
             logger.error(f"Error generating academic transition: {e}")
-            return random.choice(transition_prompts)
+            return "By the way, what have you been learning lately?"
 
     def _generate_guiding_question(self, user_answer: str, question: str, context: str) -> str:
         """Generate a guiding question to help student think through the problem."""
@@ -643,9 +624,7 @@ class DialogueFSM:
         """Provide progressive guidance based on attempts and current guidance level."""
         lang_dict = I18N[self.user_language]
         
-        if self.attempt_tracker.guidance_level == 0:  # Encouragement + Guiding Question
-            if not is_forced and not self.attempt_tracker.can_provide_hint():
-                return f"{lang_dict['encouragement']}{lang_dict['try_again']}"
+        if self.attempt_tracker.guidance_level == 0:  # Encouragement
             
             self.attempt_tracker.guidance_level = 1
             self.state = State.GUIDING_QUESTION
@@ -654,7 +633,10 @@ class DialogueFSM:
             guiding_q = self._generate_guiding_question(user_input, question, context)
             guiding_prefix = lang_dict["guiding_question"]
             
-            return f"{encouragement}{guiding_prefix}{guiding_q}"
+            if is_forced:
+                return f"{encouragement}{guiding_prefix}{guiding_q}"
+            else:
+                return f"{encouragement}{lang_dict['try_again']}\n\n{guiding_prefix}{guiding_q}"
             
         elif self.attempt_tracker.guidance_level == 1:  # Second Guiding Question
             self.attempt_tracker.guidance_level = 2
@@ -683,17 +665,10 @@ class DialogueFSM:
             return f"{solution_prefix}{solution}\n\n{self._move_to_next_exercise_or_question()}"
 
     def _handle_hint_request(self, user_input: str) -> str:
-        """Handle explicit hint requests with attempt checking."""
+        """Handle explicit hint requests by providing guiding questions."""
         lang_dict = I18N[self.user_language]
         
-        # Check if user has made enough attempts
-        if self.attempt_tracker.should_encourage_more_attempts(is_hint_request=True):
-            return lang_dict["need_more_attempts"]
-        
-        # Mark that hint was requested
-        self.attempt_tracker.has_requested_hint = True
-        
-        # Provide hint
+        # Get current question context
         current_question = self._get_current_question()
         retrieved_context = retrieve_relevant_chunks(
             f"Question: {current_question} User's Answer: {user_input}",
@@ -705,69 +680,92 @@ class DialogueFSM:
         if self.current_svg_description:
             context_str += f"\n\nImage Description: {self.current_svg_description}"
         
+        # Instead of checking attempts, provide progressive guidance
         return self._provide_progressive_guidance(user_input, current_question, context_str, is_forced=True)
 
     def _handle_solution_request(self, user_input: str) -> str:
-        """Handle explicit solution requests with attempt checking."""
+        """Handle explicit solution requests by providing guiding questions first."""
         lang_dict = I18N[self.user_language]
         
-        # Check if user has made enough attempts
-        if self.attempt_tracker.should_encourage_more_attempts(is_solution_request=True):
-            return lang_dict["need_more_attempts"]
-        
-        # Mark that solution was requested
-        self.attempt_tracker.has_requested_solution = True
-        
-        # Provide solution with explanation
-        solution_prefix = lang_dict["solution_prefix"]
-        solution = self._get_current_solution()
-        
-        # Generate detailed explanation using AI
-        try:
-            explanation_prompt = ChatPromptTemplate.from_messages([
-                ("system", f"""You are a Math AI tutor providing a detailed solution explanation.
-                
-                Language: Respond in {self.user_language} ({'Hebrew' if self.user_language == 'he' else 'English'})
-                
-                Guidelines:
-                - Explain the solution step by step
-                - Show the reasoning behind each step
-                - Help the student understand the concept
-                - Be clear and educational
-                - Keep it concise but thorough
-                - Reference the image/graph when relevant to explain concepts
-                """),
-                MessagesPlaceholder(variable_name="chat_history"),
-                ("user", "Question: {question}\nSolution: {solution}\n\nProvide a step-by-step explanation:")
-            ])
-            
-            explanation_chain = explanation_prompt | llm
+        # If they haven't gone through the guidance sequence, provide guiding questions first
+        if self.attempt_tracker.guidance_level < 2:  # Less than hint level
             current_question = self._get_current_question()
+            retrieved_context = retrieve_relevant_chunks(
+                f"Question: {current_question} User's Answer: {user_input}",
+                self.pinecone_index,
+                grade=self.hebrew_grade,
+                topic=self.topic if self.topic and self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
+            )
+            context_str = "\n".join([c.get("text", "") for c in retrieved_context if c.get("text")])
+            if self.current_svg_description:
+                context_str += f"\n\nImage Description: {self.current_svg_description}"
             
-            response = explanation_chain.invoke({
-                "chat_history": self.chat_history[-3:],
-                "question": current_question,
-                "solution": solution
-            })
+            # Provide guiding question instead of direct solution
+            encouragement = lang_dict["encouragement"]
+            guiding_q = self._generate_guiding_question(user_input, current_question, context_str)
+            guiding_prefix = lang_dict["guiding_question"]
+            self.attempt_tracker.guidance_level = 1
+            self.state = State.GUIDING_QUESTION
+            return f"{encouragement}{guiding_prefix}{guiding_q}"
+        
+        # If they've been through guidance, provide solution
+        else:
+            self.attempt_tracker.has_requested_solution = True
+            solution_prefix = lang_dict["solution_prefix"]
+            solution = self._get_current_solution()
             
-            explanation = response.content.strip()
-            
-            # Generate NEW SVG for solution explanation with detailed context
-            svg_reference = ""
-            if self.current_exercise and self.current_exercise.get("svg"):
-                svg_reference = self._generate_and_save_svg(for_solution_explanation=True)
-            
-            result = f"{solution_prefix}{solution}\n\n{explanation}"
-            if svg_reference:
-                result += f"\n{svg_reference}"
-            result += self._move_to_next_exercise_or_question()
-            return result
-            
-        except Exception as e:
-            logger.error(f"Error generating solution explanation: {e}")
-            result = f"{solution_prefix}{solution}"
-            result += self._move_to_next_exercise_or_question()
-            return result
+            # Generate detailed explanation using AI
+            try:
+                explanation_prompt = ChatPromptTemplate.from_messages([
+                    ("system", f"""You are a Math AI tutor providing a detailed solution explanation.
+                    
+                    Language: Respond in {self.user_language} ({'Hebrew' if self.user_language == 'he' else 'English'})
+                    
+                    Guidelines:
+                    - Explain the solution step by step
+                    - Show the reasoning behind each step
+                    - Help the student understand the concept
+                    - Be clear and educational
+                    - Keep it concise but thorough
+                    - Reference the image/graph when relevant to explain concepts
+                    """),
+                    MessagesPlaceholder(variable_name="chat_history"),
+                    ("user", "Question: {question}\nSolution: {solution}\n\nProvide a step-by-step explanation:")
+                ])
+                
+                explanation_chain = explanation_prompt | llm
+                current_question = self._get_current_question()
+                
+                response = explanation_chain.invoke({
+                    "chat_history": self.chat_history[-3:],
+                    "question": current_question,
+                    "solution": solution
+                })
+                
+                explanation = response.content.strip()
+                
+                # Generate NEW SVG for solution explanation
+                svg_reference = ""
+                if self.current_exercise and self.current_exercise.get("svg"):
+                    svg_reference = self._generate_and_save_svg(for_solution_explanation=True)
+                
+                result = f"{solution_prefix}{solution}\n\n{explanation}"
+                if svg_reference:
+                    result += f"\n{svg_reference}"
+                result += self._move_to_next_exercise_or_question()
+                return result
+                
+            except Exception as e:
+                logger.error(f"Error generating solution explanation: {e}")
+                result = f"{solution_prefix}{solution}"
+                result += self._move_to_next_exercise_or_question()
+                return result
+                
+            except Exception as e:
+                logger.error(f"Error generating solution explanation: {e}")
+                result = f"{solution_prefix}{solution}"
+                result += self._move_to_next_exercise_or_question()
+                return result
 
     def _reset_attempt_tracking(self):
         """Reset attempt tracking for new exercise."""
@@ -1056,7 +1054,8 @@ class DialogueFSM:
         if self.state == State.START:
             self.state = State.SMALL_TALK
             self.small_talk_turns = 1
-            ai_response = self._generate_ai_small_talk(user_input)
+            simple_greetings = ["Hey! How are you?", "Hi there!", "What's up?", "How's it going?"]
+            ai_response = random.choice(simple_greetings)
             self.chat_history.append(AIMessage(content=ai_response))
             return ai_response
 
