@@ -95,7 +95,7 @@ small_talk_prompt = ChatPromptTemplate.from_messages([
     - Warm, encouraging, and approachable
     - Enthusiastic about helping with math
     - Keep responses short and conversational (1-2 sentences max)
-    - Examples: "Hey! How are you doing today?", "Hi there! Ready for some math?"
+    - Examples: "Hey! How are you doing today?", "Hi there! Good to see you?"
     """),
     MessagesPlaceholder(variable_name="chat_history"),
     ("user", "{input}"),
@@ -121,6 +121,25 @@ personal_followup_prompt = ChatPromptTemplate.from_messages([
 ])
 personal_followup_chain = personal_followup_prompt | llm
 
+academic_transition_prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are transitioning from personal chat to academic topics.
+    
+    Language Rules:
+    - Match the user's language (Hebrew or English)
+    - For Hebrew: Use proper RTL formatting for general text, keep math expressions LTR
+    
+    Academic Transition Guidelines:
+    - Ask about recent learning or upcoming academic events
+    - Examples: "What did you learn recently?", "When is your next exam?", "How's school going?", "What subjects are you studying?"
+    - Bridge from personal to academic naturally
+    - Keep it friendly but start showing academic interest
+    - Keep responses short (1 sentence)
+    - Make the transition feel natural
+    """),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("user", "{input}"),
+])
+academic_transition_chain = academic_transition_prompt | llm
 # -----------------------------
 # Localization (Bilingual Support)
 # -----------------------------
@@ -184,6 +203,7 @@ class State(Enum):
     START = auto()
     SMALL_TALK = auto()
     PERSONAL_FOLLOWUP = auto()
+    ACADEMIC_TRANSITION = auto()
     ASK_GRADE = auto()
     EXERCISE_SELECTION = auto()
     QUESTION_ANSWER = auto()
@@ -461,10 +481,15 @@ class DialogueFSM:
 
     def _generate_ai_small_talk(self, user_input: str = "") -> str:
         """Generate AI-based small talk response."""
+        greetings = [
+            "Hey! How's it going?",
+            "Hi there! How are you doing today?",
+            "Hello! What's new?",
+            "Hey! Good to see you!"
+        ]
         try:
             if not user_input.strip():
-                user_input = "Hello"
-            
+                user_input = random.choice(greetings)
             response = small_talk_chain.invoke({
                 "chat_history": self.chat_history[-3:],
                 "input": user_input
@@ -472,14 +497,21 @@ class DialogueFSM:
             return response.content.strip()
         except Exception as e:
             logger.error(f"Error generating AI small talk: {e}")
-            return "Hey! How are you doing today?"
+            return random.choice(greetings)
 
     def _generate_ai_personal_followup(self, user_input: str = "") -> str:
         """Generate AI-based personal follow-up response."""
+        personal_prompts = [
+            "Do you search any jobs?",
+            "How was your day yesterday?",
+            "Did you do anything fun recently?",
+            "how yesterday's game was?",
+            "How's your week going so far?",
+            "Any exciting plans coming up?"
+        ]
         try:
             if not user_input.strip():
-                user_input = "That's nice"
-                
+                user_input = random.choice(personal_prompts)
             response = personal_followup_chain.invoke({
                 "chat_history": self.chat_history[-3:],
                 "input": user_input
@@ -487,7 +519,27 @@ class DialogueFSM:
             return response.content.strip()
         except Exception as e:
             logger.error(f"Error generating AI personal follow-up: {e}")
-            return "That sounds interesting! Ready to do some math?"
+            return random.choice(personal_prompts)
+        
+    def _generate_academic_transition(self, user_input: str = "") -> str:
+        """Generate AI-based academic transition response."""
+        transition_prompts = [
+            "By the way, what did you learn recently?",
+            "When is your next exam?",
+            "How's school going?",
+            "What subjects are you studying these days?"
+        ]
+        try:
+            if not user_input.strip():
+                user_input = random.choice(transition_prompts)
+            response = academic_transition_chain.invoke({
+                "chat_history": self.chat_history[-3:],
+                "input": user_input
+            })
+            return response.content.strip()
+        except Exception as e:
+            logger.error(f"Error generating academic transition: {e}")
+            return random.choice(transition_prompts)
 
     def _generate_guiding_question(self, user_answer: str, question: str, context: str) -> str:
         """Generate a guiding question to help student think through the problem."""
@@ -604,30 +656,26 @@ class DialogueFSM:
             
             return f"{encouragement}{guiding_prefix}{guiding_q}"
             
-        elif self.attempt_tracker.guidance_level == 1:  # First Hint
+        elif self.attempt_tracker.guidance_level == 1:  # Second Guiding Question
+            self.attempt_tracker.guidance_level = 2
+            self.state = State.GUIDING_QUESTION
+            # Generate a different guiding question, possibly using more context or rephrasing
+            guiding_q = self._generate_guiding_question(user_input, question, context)
+            guiding_prefix = lang_dict["guiding_question"]
+            return f"{guiding_prefix}{guiding_q}"
+
+        elif self.attempt_tracker.guidance_level == 2:  # Hint
             if not is_forced and not self.attempt_tracker.can_provide_hint():
                 return f"{lang_dict['encouragement']}{lang_dict['try_again']}"
-                
-            self.attempt_tracker.guidance_level = 2
+            self.attempt_tracker.guidance_level = 3
             self.state = State.PROVIDING_HINT
-            
             hint = self._generate_progressive_hint(0)
             if hint:
                 hint_prefix = lang_dict["hint_prefix"]
                 return f"{hint_prefix}{hint}"
             else:
-                self.attempt_tracker.guidance_level = 3
+                self.attempt_tracker.guidance_level = 4
                 return self._get_current_solution()
-                
-        elif self.attempt_tracker.guidance_level == 2:  # Second Hint or Solution
-            if not is_forced and not self.attempt_tracker.can_provide_solution():
-                hint = self._generate_progressive_hint(1)
-                if hint:
-                    hint_prefix = lang_dict["hint_prefix"]
-                    return f"{hint_prefix}{hint}"
-            
-            self.attempt_tracker.guidance_level = 3
-            return lang_dict["ask_for_solution"]
                 
         else:  # guidance_level >= 3, provide solution
             solution_prefix = lang_dict["solution_prefix"]
@@ -1020,6 +1068,12 @@ class DialogueFSM:
             return ai_response
 
         elif self.state == State.PERSONAL_FOLLOWUP:
+            self.state = State.ACADEMIC_TRANSITION
+            ai_response = self._generate_academic_transition(user_input)
+            self.chat_history.append(AIMessage(content=ai_response))
+            return ai_response
+        
+        elif self.state == State.ACADEMIC_TRANSITION:
             self.state = State.ASK_GRADE
             response_text = self._get_localized_text("ask_grade")
             self.chat_history.append(AIMessage(content=response_text))
@@ -1038,10 +1092,10 @@ class DialogueFSM:
             
             if available_topics_hebrew:
                 if self.user_language == "en":
-                    english_topics = [translate_text_to_english(topic) for topic in available_topics_hebrew[:5]]
+                    english_topics = [translate_text_to_english(topic) for topic in available_topics_hebrew[:]]
                     topics_str = ", ".join(english_topics)
                 else:
-                    topics_str = ", ".join(available_topics_hebrew[:5])
+                    topics_str = ", ".join(available_topics_hebrew[:])
             else:
                 topics_str = "Any topic"
                 
