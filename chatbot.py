@@ -155,6 +155,7 @@ I18N = {
         "hint_prefix": "💡 Hint: ",
         "solution_prefix": "✅ Solution: ",
         "wrong_answer": "Not quite right. Let me help you think through this...",
+        "partial_answer": "Good start! Now, try to complete the final step.",  #updated
         "guiding_question": "🤔 Let me ask you this: ",
         "encouragement": "You’re making progress — give it try first!",
         "try_again": "Can you try again? Think about your approach.",
@@ -180,6 +181,7 @@ I18N = {
         "hint_prefix": "💡 רמז: ",
         "solution_prefix": "✅ פתרון: ",
         "wrong_answer": "לא בדיוק נכון. בוא אעזור לך לחשוב על זה...",
+        "partial_answer": "פתיחה טובה! עכשיו נסה להשלים את הצעד הסופי.",  #updated
         "guiding_question": "🤔 תן לי לשאול אותך את זה: ",
         "encouragement": "אתה מתקדם - תנסה קודם!",
         "try_again": "תוכל לנסות שוב? חשוב על הגישה שלך.",
@@ -606,9 +608,11 @@ class DialogueFSM:
             
             evaluation_result = eval_response.content.strip()
             is_correct = evaluation_result.lower().startswith("correct:")
+            is_partial = evaluation_result.lower().startswith("partial:") ##updated
             
             return {
                 "is_correct": is_correct,
+                "is_partial": is_partial,  #updated
                 "feedback": evaluation_result,
                 "needs_guidance": not is_correct
             }
@@ -630,13 +634,25 @@ class DialogueFSM:
             self.state = State.GUIDING_QUESTION
             
             encouragement = lang_dict["encouragement"]
+            try_again = lang_dict["try_again"]
             guiding_q = self._generate_guiding_question(user_input, question, context)
             guiding_prefix = lang_dict["guiding_question"]
             
-            if is_forced:
-                return f"{encouragement}{guiding_prefix}{guiding_q}"
+            # 🔄 UPDATED PART: rotate between encouragement and try_again
+            if not hasattr(self, "last_msg_type"):
+                self.last_msg_type = "encouragement"
+
+            if self.last_msg_type == "encouragement":
+                chosen_msg = try_again
+                self.last_msg_type = "try_again"
             else:
-                return f"{encouragement}{lang_dict['try_again']}\n\n{guiding_prefix}{guiding_q}"
+                chosen_msg = encouragement
+                self.last_msg_type = "encouragement"
+
+            if is_forced:
+                return f"{chosen_msg}\n\n{guiding_prefix}{guiding_q}"
+            else:
+                return f"{chosen_msg}\n\n{guiding_prefix}{guiding_q}"
             
         elif self.attempt_tracker.guidance_level == 1:  # Second Guiding Question
             self.attempt_tracker.guidance_level = 2
@@ -1187,6 +1203,15 @@ class DialogueFSM:
                     self._reset_attempt_tracking()
                     self.chat_history.append(AIMessage(content=response_text))
                     return response_text
+                
+                #updated for partial answers
+                elif evaluation_result["is_partial"]:  
+                    encouragement = self._get_localized_text("encouragement")
+                    partial_msg = self._get_localized_text("partial_answer")  # new string
+                    response_text = f"{encouragement} {partial_msg}"
+                    self.chat_history.append(AIMessage(content=response_text))
+                    return response_text
+                
                 else:
                     # Incorrect answer - handle based on attempt count
                     feedback_lines = evaluation_result.get("feedback", self._get_localized_text("wrong_answer")).split('\n')
