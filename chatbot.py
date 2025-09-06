@@ -156,7 +156,7 @@ I18N = {
         "solution_prefix": "✅ Solution: ",
         "wrong_answer": "Not quite right. Let me help you think through this...",
         "guiding_question": "🤔 Let me ask you this: ",
-        "encouragement": "You're on the right track! ",
+        "encouragement": "You’re making progress — give it try first!",
         "try_again": "Can you try again? Think about your approach.",
         "need_more_attempts": "Give it another try first - I believe you can work through this! {guiding_prompt}",
         "no_exercises": "No exercises found for grade {grade} and topic {topic}.",
@@ -181,7 +181,7 @@ I18N = {
         "solution_prefix": "✅ פתרון: ",
         "wrong_answer": "לא בדיוק נכון. בוא אעזור לך לחשוב על זה...",
         "guiding_question": "🤔 תן לי לשאול אותך את זה: ",
-        "encouragement": "אתה בכיוון הנכון! ",
+        "encouragement": "אתה מתקדם - תנסה קודם!",
         "try_again": "תוכל לנסות שוב? חשוב על הגישה שלך.",
         "need_more_attempts": "תן לזה עוד ניסיון - אני מאמין שאתה יכול לעבוד על זה!",
         "no_exercises": "לא נמצאו תרגילים עבור כיתה {grade} ונושא {topic}.",
@@ -752,12 +752,6 @@ class DialogueFSM:
                 result = f"{solution_prefix}{solution}\n\n{explanation}"
                 if svg_reference:
                     result += f"\n{svg_reference}"
-                result += self._move_to_next_exercise_or_question()
-                return result
-                
-            except Exception as e:
-                logger.error(f"Error generating solution explanation: {e}")
-                result = f"{solution_prefix}{solution}"
                 result += self._move_to_next_exercise_or_question()
                 return result
                 
