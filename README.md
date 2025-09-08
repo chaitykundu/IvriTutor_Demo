@@ -83,6 +83,11 @@ Ask for a hint
 Request the solution
 
 
+## Project Instructions
+<img width="599" height="591" alt="image" src="https://github.com/user-attachments/assets/82e17ac4-d136-4c71-b1c2-f5f073169b66" />
+
+
+
 
 
 
