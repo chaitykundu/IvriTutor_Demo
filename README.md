@@ -84,7 +84,20 @@ Request the solution
 
 
 ## Project Instructions
-<img width="599" height="591" alt="image" src="https://github.com/user-attachments/assets/82e17ac4-d136-4c71-b1c2-f5f073169b66" />
+1. Chat Flow and User Engagement
+Lead the Conversation: The chat should initiate the conversation with a friendly greeting like "Hey!", "How's it going?". "What's new?", or "How are you doing?"
+Personalization: Following the initial greeting, the chat should ask about something related to the student's personal life. This could be their job search, how yesterday's game was, etc.
+Academics: After the personal conversation, the chat(teacher) should transition to academic topics by asking questions like "What did you learn recently?" or "When is your next exam?".
+2. Guiding the Student
+Gradual Assistance: If the student indicates they don't know the answer/asking for the full solution, the system should offer them a chance to reconsider before providing help. The support should follow this specific sequence:
+Guiding question -> Another guiding question -> A hint -> The full solution with an explanation
+3. Support for Multiple Languages
+The system needs to support both Hebrew (RTL) and English (LTR). It's crucial that the text direction is correct for each language. This applies to all conversational elements and any mathematical expressions or scientific notation, which should remain LTR.
+4. Handling the Full Solution
+If the student explicitly requests the full solution, they should only receive it after they have been guided through the steps outlined in point 2 (guiding question, guiding question, hint). The full solution should not be given immediately.
+5. Inactivity Timeout
+If the student doesn't respond for 30 seconds, the chat should check in to make sure they are still there.
+
 
 
 
