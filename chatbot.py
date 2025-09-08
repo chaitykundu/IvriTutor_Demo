@@ -41,7 +41,7 @@ EMBEDDING_MODEL_NAME = "intfloat/multilingual-e5-large"
 
 # Enhanced Inactivity Settings
 INACTIVITY_TIMEOUT = 60  # Increased from 30 seconds
-TYPING_DETECTION_THRESHOLD = 5  # Seconds to wait for complete input
+TYPING_DETECTION_THRESHOLD = 10  # Seconds to wait for complete input
 
 # Progressive Guidance Settings
 MIN_ATTEMPTS_BEFORE_HINT = 2
@@ -396,18 +396,21 @@ class AttemptTracker:
         if not is_correct:
             self.incorrect_attempts += 1
         
-        return not is_correct and self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT
+        #return not is_correct and self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT
     
     def can_provide_hint(self) -> bool:
         """Check if hint can be provided based on attempts."""
-        return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT or 
-                self.has_requested_hint)
+        return self.guidence_level >= 2
+        
+                #return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT or 
+                #self.has_requested_hint)
     
     def can_provide_solution(self) -> bool:
         """Check if solution can be provided based on attempts."""
-        return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_SOLUTION or
-                self.has_requested_solution or
-                (self.has_requested_hint and self.incorrect_attempts >= 1))
+        return self.guidance_level >= 3
+        #return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_SOLUTION or
+                #self.has_requested_solution or
+                #(self.has_requested_hint and self.incorrect_attempts >= 1))
     
     def should_encourage_more_attempts(self, is_hint_request: bool = False, is_solution_request: bool = False) -> bool:
         """Determine if we should encourage more attempts instead of giving help."""
@@ -434,7 +437,7 @@ class DialogueFSM:
         self.chat_history = []
         self.current_svg_description = None
         self.recently_asked_exercise_ids = []
-        self.RECENTLY_ASKED_LIMIT = 0
+        self.RECENTLY_ASKED_LIMIT = 5
         self.small_talk_turns = 0
         self.user_language = "en"
         
@@ -479,7 +482,7 @@ class DialogueFSM:
 
     @staticmethod
     def _translate_grade_to_hebrew(grade_num: str) -> str:
-        grade_map = {"7": "ז", "8": "ח", "9": "ט", "10": "י"}
+        grade_map = {"7": "ז", "8": "ח"}
         return grade_map.get(grade_num, grade_num)
 
     def _get_localized_text(self, key: str, **kwargs) -> str:
@@ -591,7 +594,7 @@ class DialogueFSM:
             Response Format:
             CORRECT: [brief encouraging comment]
             OR
-            INCORRECT: [brief explanation of what went wrong without giving the answer]
+            SORRY: [brief explanation of what went wrong without giving the answer]
             """),
             MessagesPlaceholder(variable_name="chat_history"),
             ("user", "Question: {question}\nStudent Answer: {answer}\nContext: {context}\n\nEvaluate the answer:"),
@@ -633,26 +636,10 @@ class DialogueFSM:
             self.attempt_tracker.guidance_level = 1
             self.state = State.GUIDING_QUESTION
             
-            encouragement = lang_dict["encouragement"]
-            try_again = lang_dict["try_again"]
             guiding_q = self._generate_guiding_question(user_input, question, context)
             guiding_prefix = lang_dict["guiding_question"]
-            
-            # 🔄 UPDATED PART: rotate between encouragement and try_again
-            if not hasattr(self, "last_msg_type"):
-                self.last_msg_type = "encouragement"
-
-            if self.last_msg_type == "encouragement":
-                chosen_msg = try_again
-                self.last_msg_type = "try_again"
-            else:
-                chosen_msg = encouragement
-                self.last_msg_type = "encouragement"
-
-            if is_forced:
-                return f"{chosen_msg}\n\n{guiding_prefix}{guiding_q}"
-            else:
-                return f"{chosen_msg}\n\n{guiding_prefix}{guiding_q}"
+    
+            return f"{guiding_prefix}{guiding_q}"
             
         elif self.attempt_tracker.guidance_level == 1:  # Second Guiding Question
             self.attempt_tracker.guidance_level = 2
@@ -693,8 +680,8 @@ class DialogueFSM:
             topic=self.topic if self.topic and self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
         )
         context_str = "\n".join([c.get("text", "") for c in retrieved_context if c.get("text")])
-        if self.current_svg_description:
-            context_str += f"\n\nImage Description: {self.current_svg_description}"
+        #if self.current_svg_description:
+            #context_str += f"\n\nImage Description: {self.current_svg_description}"
         
         # Instead of checking attempts, provide progressive guidance
         return self._provide_progressive_guidance(user_input, current_question, context_str, is_forced=True)
@@ -704,7 +691,9 @@ class DialogueFSM:
         lang_dict = I18N[self.user_language]
         
         # If they haven't gone through the guidance sequence, provide guiding questions first
-        if self.attempt_tracker.guidance_level < 2:  # Less than hint level
+        #if self.attempt_tracker.guidance_level < 2:  # Less than hint level
+            # To this:
+        if self.attempt_tracker.guidance_level < 3:  # Haven't completed guiding questions + hint
             current_question = self._get_current_question()
             retrieved_context = retrieve_relevant_chunks(
                 f"Question: {current_question} User's Answer: {user_input}",
