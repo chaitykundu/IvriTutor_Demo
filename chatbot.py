@@ -44,9 +44,9 @@ INACTIVITY_TIMEOUT = 60  # Increased from 30 seconds
 TYPING_DETECTION_THRESHOLD = 10  # Seconds to wait for complete input
 
 # Progressive Guidance Settings
-MIN_ATTEMPTS_BEFORE_HINT = 2
-MIN_ATTEMPTS_BEFORE_SOLUTION = 3
-MAX_GUIDANCE_LEVELS = 4  # 0=encouragement, 1=guiding_question, 2=hint, 3=solution
+MIN_ATTEMPTS_BEFORE_HINT = 1
+MIN_ATTEMPTS_BEFORE_SOLUTION = 2
+MAX_GUIDANCE_LEVELS = 3  # 0=encouragement, 1=guiding_question, 2=hint, 3=solution
 
 # -----------------------------
 # GenAI Chat Client (using LangChain)
@@ -396,21 +396,18 @@ class AttemptTracker:
         if not is_correct:
             self.incorrect_attempts += 1
         
-        #return not is_correct and self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT
+        return not is_correct and self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT
     
     def can_provide_hint(self) -> bool:
         """Check if hint can be provided based on attempts."""
-        return self.guidence_level >= 2
-        
-                #return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT or 
-                #self.has_requested_hint)
+        return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_HINT or 
+                self.has_requested_hint)
     
     def can_provide_solution(self) -> bool:
         """Check if solution can be provided based on attempts."""
-        return self.guidance_level >= 3
-        #return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_SOLUTION or
-                #self.has_requested_solution or
-                #(self.has_requested_hint and self.incorrect_attempts >= 1))
+        return (self.incorrect_attempts >= MIN_ATTEMPTS_BEFORE_SOLUTION or
+                self.has_requested_solution or
+                (self.has_requested_hint and self.incorrect_attempts >= 1))
     
     def should_encourage_more_attempts(self, is_hint_request: bool = False, is_solution_request: bool = False) -> bool:
         """Determine if we should encourage more attempts instead of giving help."""
@@ -564,6 +561,32 @@ class DialogueFSM:
             logger.error(f"Error generating guiding question: {e}")
             guiding_text = self._get_localized_text("guiding_question")
             return f"{guiding_text}What do you think the first step should be?"
+        
+     ##get similar rag questions   
+    def _generate_similar_question(self, original_question: str) -> str:
+        """Use LLM to rephrase an exercise into a similar question."""
+        try:
+            similar_q_prompt = ChatPromptTemplate.from_messages([
+                ("system", f"""You are a Math AI tutor.
+                
+                Language: Respond in {self.user_language} ({'Hebrew' if self.user_language == 'he' else 'English'})
+                
+                Task:
+                - Rephrase the following math exercise into a SIMILAR but different question.
+                - Keep the same difficulty level.
+                - Do not provide the solution.
+                - Only return the new question text."""),
+                ("user", "{original_question}")
+            ])
+            
+            similar_q_chain = similar_q_prompt | llm
+            response = similar_q_chain.invoke({"original_question": original_question})
+            
+            return response.content.strip()
+        except Exception as e:
+            logger.error(f"Error generating similar question: {e}")
+            return original_question  # fallback to original
+
 
     def _generate_progressive_hint(self, hint_level: int = 0) -> Optional[str]:
         """Generate progressive hints based on level."""
@@ -702,8 +725,8 @@ class DialogueFSM:
                 topic=self.topic if self.topic and self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
             )
             context_str = "\n".join([c.get("text", "") for c in retrieved_context if c.get("text")])
-            if self.current_svg_description:
-                context_str += f"\n\nImage Description: {self.current_svg_description}"
+            #if self.current_svg_description:
+                #context_str += f"\n\nImage Description: {self.current_svg_description}"
             
             # Provide guiding question instead of direct solution
             encouragement = lang_dict["encouragement"]
@@ -863,8 +886,8 @@ class DialogueFSM:
                 file_reference = f"\n\n[Image File: {svg_filepath.as_posix()}]"
                 
                 # Add description if available
-                if self.current_svg_description:
-                    file_reference += f"\n[Image Description: {self.current_svg_description}]"
+                #if self.current_svg_description:
+                    #file_reference += f"\n[Image Description: {self.current_svg_description}]"
                     
                 return file_reference
                 
@@ -891,6 +914,12 @@ class DialogueFSM:
 
         q_text = questions[self.current_question_index].replace(',', '')
 
+        # 👉 Rephrase into a similar question (for demo)
+        try:
+            q_text = self._generate_similar_question(q_text)
+        except Exception as e:
+            logger.error(f"Error generating similar question: {e}")
+
         # Generate SVG only once per question (not for hints)
         if self.current_exercise.get("svg") and not self.svg_generated_for_question:
             svg_reference = self._generate_and_save_svg(for_solution_explanation=False)
@@ -899,8 +928,8 @@ class DialogueFSM:
         elif self.current_svg_file_path and self.svg_generated_for_question:
             # Reuse existing SVG file reference for hints
             q_text += f"\n\n[Image File: {self.current_svg_file_path.as_posix()}]"
-            if self.current_svg_description:
-                q_text += f"\n[Image Description: {self.current_svg_description}]"
+            #if self.current_svg_description:
+                #q_text += f"\n[Image Description: {self.current_svg_description}]"
 
         # Return in user's preferred language
         if self.user_language == "en":
