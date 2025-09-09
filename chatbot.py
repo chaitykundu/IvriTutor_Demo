@@ -1,5 +1,6 @@
 # chatbot.py (Enhanced AI-Based Math Tutor with Progressive Guidance and Improved SVG Handling)
 import os
+import re
 import json
 import random
 import time
@@ -227,6 +228,28 @@ def detect_language(text: str) -> str:
         return "he"
     return "en"
 
+# -----------------------------
+# Helper Functions-Cleantext
+# -----------------------------
+def clean_math_text(text: str) -> str:
+    """Remove LaTeX-style $ signs and other delimiters from math expressions."""
+    if not text:
+        return text
+    # Remove inline LaTeX ($...$)
+    text = re.sub(r'\$(.*?)\$', r'\1', text, flags=re.DOTALL)
+    # Remove display LaTeX ($$...$$)
+    text = re.sub(r'\$\$(.*?)\$\$', r'\1', text, flags=re.DOTALL)
+    # Remove backslash commands (e.g., \frac, \sqrt) but keep content
+    text = re.sub(r'\\([a-zA-Z]+)\{([^}]*)\}', r'\2', text)
+    # Remove standalone backslashes
+    text = re.sub(r'\\([a-zA-Z]+)', r'', text)
+    # Replace multiple spaces with single space
+    text = re.sub(r'\s+', ' ', text)
+    # Remove any remaining $ or $$ that might be malformed
+    text = text.replace('$', '')
+    return text.strip()
+
+
 def translate_text_to_english(text: str) -> str:
     """Translate text (likely Hebrew) to English using GenAI."""
     if not text or not text.strip():
@@ -239,6 +262,7 @@ def translate_text_to_english(text: str) -> str:
         translation_chain = translation_prompt | llm
         response = translation_chain.invoke({"input": text.strip()})
         translated = response.content.strip()
+        translated = clean_math_text(translated)  # Ensure LaTeX is removed from translated text
         if is_likely_hebrew(text) and not is_likely_hebrew(translated):
              return translated
         elif not is_likely_hebrew(text):
@@ -285,6 +309,7 @@ def generate_embedding(text: str) -> List[float]:
 
 def retrieve_relevant_chunks(query: str, pc_index: Any, grade: Optional[str] = None, topic: Optional[str] = None) -> List[Dict[str, Any]]:
     """Retrieve relevant chunks from Pinecone based on a query."""
+    query = clean_math_text(query)  # Clean query before embedding
     query_embedding = generate_embedding(query)
     if not query_embedding:
         return []
@@ -316,7 +341,7 @@ def describe_svg_content(svg_content: str) -> str:
         ])
         svg_description_chain = svg_description_prompt | llm
         response = svg_description_chain.invoke({"svg_input": svg_content})
-        return response.content
+        return clean_math_text(response.content)  # Ensure LaTeX is removed from description
     except Exception as e:
         logger.error(f"Error describing SVG content: {str(e)}")
         return "An error occurred while describing the image."
@@ -495,7 +520,7 @@ class DialogueFSM:
                 "chat_history": self.chat_history[-3:],
                 "input": user_input or ""
             })
-            return response.content.strip()
+            return clean_math_text(response.content.strip())  # Clean small talk response
         except Exception as e:
             logger.error(f"Error generating AI small talk: {e}")
             return "Hey! How's it going today?"
@@ -507,7 +532,7 @@ class DialogueFSM:
                 "chat_history": self.chat_history[-3:],
                 "input": user_input or ""
             })
-            return response.content.strip()
+            return clean_math_text(response.content.strip())  # Clean personal talk response
         except Exception as e:
             logger.error(f"Error generating AI personal follow-up: {e}")
             return "That's interesting! How was your day yesterday?"
@@ -519,7 +544,7 @@ class DialogueFSM:
                 "chat_history": self.chat_history[-3:],
                 "input": user_input or ""
             })
-            return response.content.strip()
+            return clean_math_text(response.content.strip())  # Clean small talk response
         except Exception as e:
             logger.error(f"Error generating academic transition: {e}")
             return "By the way, what have you been learning lately?"
@@ -556,7 +581,7 @@ class DialogueFSM:
                 "context": context
             })
             
-            return response.content.strip()
+            return clean_math_text(response.content.strip())  # Clean guiding question
         except Exception as e:
             logger.error(f"Error generating guiding question: {e}")
             guiding_text = self._get_localized_text("guiding_question")
@@ -582,7 +607,7 @@ class DialogueFSM:
             similar_q_chain = similar_q_prompt | llm
             response = similar_q_chain.invoke({"original_question": original_question})
             
-            return response.content.strip()
+            return clean_math_text(response.content.strip())  # Clean rephrased question
         except Exception as e:
             logger.error(f"Error generating similar question: {e}")
             return original_question  # fallback to original
@@ -596,7 +621,8 @@ class DialogueFSM:
             
             hints = self.current_exercise["text"]["hint"]
             if hint_level < len(hints):
-                hint_text = hints[hint_level].replace('$', '')
+                hint_text = hints[hint_level]  # Remove commas and $ for consistency
+                hint_text = clean_math_text(hint_text)  # ← remove $
                 return translate_text_to_english(hint_text) if self.user_language == "en" else hint_text
         return None
 
@@ -632,7 +658,7 @@ class DialogueFSM:
                 "context": context
             })
             
-            evaluation_result = eval_response.content.strip()
+            evaluation_result = clean_math_text(eval_response.content.strip())  # Clean evaluation response
             is_correct = evaluation_result.lower().startswith("correct:")
             is_partial = evaluation_result.lower().startswith("partial:") ##updated
             
@@ -703,6 +729,7 @@ class DialogueFSM:
             topic=self.topic if self.topic and self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
         )
         context_str = "\n".join([c.get("text", "") for c in retrieved_context if c.get("text")])
+        context_str = clean_math_text(context_str)  # Clean context
         #if self.current_svg_description:
             #context_str += f"\n\nImage Description: {self.current_svg_description}"
         
@@ -725,6 +752,7 @@ class DialogueFSM:
                 topic=self.topic if self.topic and self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
             )
             context_str = "\n".join([c.get("text", "") for c in retrieved_context if c.get("text")])
+            context_str = clean_math_text(context_str)  # Clean context
             #if self.current_svg_description:
                 #context_str += f"\n\nImage Description: {self.current_svg_description}"
             
@@ -770,7 +798,7 @@ class DialogueFSM:
                     "solution": solution
                 })
                 
-                explanation = response.content.strip()
+                explanation = clean_math_text(response.content.strip())  # Clean explanation
                 
                 # Generate NEW SVG for solution explanation
                 svg_reference = ""
@@ -913,6 +941,7 @@ class DialogueFSM:
             return "No question available."
 
         q_text = questions[self.current_question_index].replace(',', '')
+        q_text = clean_math_text(q_text)   # ← remove $
 
         # 👉 Rephrase into a similar question (for demo)
         try:
@@ -942,7 +971,10 @@ class DialogueFSM:
             isinstance(self.current_exercise["text"]["solution"], list) and
             self.current_question_index < len(self.current_exercise["text"]["solution"])):
             sol_text = self.current_exercise["text"]["solution"][self.current_question_index]
-            sol_text = sol_text.replace(',', '')
+            #sol_text = sol_text.replace(',', '')
+
+            # 👉 Remove LaTeX $ delimiters
+            sol_text = clean_math_text(sol_text)   # ← remove $
             
             # Return in user's preferred language
             if self.user_language == "en":
@@ -1020,6 +1052,7 @@ class DialogueFSM:
             )
             
             context_str = "\n".join([c.get("text", "") for c in retrieved_context if c.get("text")])
+            context_str = clean_math_text(context_str)  # Clean context
             
             # Create a doubt-clearing prompt
             doubt_clearing_prompt = ChatPromptTemplate.from_messages([
@@ -1052,8 +1085,9 @@ class DialogueFSM:
             topic_name = self.topic or "this topic"
             intro = self._get_localized_text("doubt_clearing_intro", topic=topic_name)
             complete = self._get_localized_text("doubt_answer_complete", topic=topic_name)
+            return f"{intro}\n\n{clean_math_text(response.content.strip())}\n\n{complete}"
             
-            return f"{intro}\n\n{response.content.strip()}\n\n{complete}"
+            #return f"{intro}\n\n{response.content.strip()}\n\n{complete}"
             
         except Exception as e:
             logger.error(f"Error generating doubt clearing response: {e}")
@@ -1076,7 +1110,7 @@ class DialogueFSM:
             
         # Add user input to chat history
         if user_input:
-            self.chat_history.append(HumanMessage(content=user_input))
+            self.chat_history.append(HumanMessage(content=clean_math_text(user_input)))
 
         # --- State Transitions ---
         if self.state == State.START:
@@ -1131,7 +1165,7 @@ class DialogueFSM:
             return response_text
 
         elif self.state == State.EXERCISE_SELECTION:
-            self.topic = user_input.strip()
+            self.topic = clean_math_text(user_input.strip()) # Clean topic input
             self.topic_exercises_count = 0
             self.doubt_questions_count = 0
             
@@ -1348,6 +1382,7 @@ def main():
             break
 
         response = fsm.transition(user_input)
+
         print(f"A_GUY: {response}")
 
 if __name__ == "__main__":
