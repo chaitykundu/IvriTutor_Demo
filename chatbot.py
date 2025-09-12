@@ -156,7 +156,7 @@ I18N = {
         "hint_prefix": "💡 Hint: ",
         "solution_prefix": "✅ Solution: ",
         "wrong_answer": "Not quite right. Let me help you think through this...",
-        "partial_answer": "Good start! Now, try to complete the final step.",  #updated
+        #"partial_answer": "Good start! Now, try to complete the final step.",  #updated
         "guiding_question": "🤔 Let me ask you this: ",
         "encouragement": "You’re making progress — give it try first!",
         "try_again": "Can you try again? Think about your approach.",
@@ -182,7 +182,7 @@ I18N = {
         "hint_prefix": "💡 רמז: ",
         "solution_prefix": "✅ פתרון: ",
         "wrong_answer": "לא בדיוק נכון. בוא אעזור לך לחשוב על זה...",
-        "partial_answer": "פתיחה טובה! עכשיו נסה להשלים את הצעד הסופי.",  #updated
+        #"partial_answer": "פתיחה טובה! עכשיו נסה להשלים את הצעד הסופי.",  #updated
         "guiding_question": "🤔 תן לי לשאול אותך את זה: ",
         "encouragement": "אתה מתקדם - תנסה קודם!",
         "try_again": "תוכל לנסות שוב? חשוב על הגישה שלך.",
@@ -232,21 +232,12 @@ def detect_language(text: str) -> str:
 # Helper Functions-Cleantext
 # -----------------------------
 def clean_math_text(text: str) -> str:
-    """Remove LaTeX-style $ signs and other delimiters from math expressions."""
-    if not text:
-        return text
-    # Remove inline LaTeX ($...$)
-    text = re.sub(r'\$(.*?)\$', r'\1', text, flags=re.DOTALL)
-    # Remove display LaTeX ($$...$$)
+    if not text: return text
+    # Remove $$...$$ and $...$
     text = re.sub(r'\$\$(.*?)\$\$', r'\1', text, flags=re.DOTALL)
-    # Remove backslash commands (e.g., \frac, \sqrt) but keep content
-    text = re.sub(r'\\([a-zA-Z]+)\{([^}]*)\}', r'\2', text)
-    # Remove standalone backslashes
-    text = re.sub(r'\\([a-zA-Z]+)', r'', text)
-    # Replace multiple spaces with single space
-    text = re.sub(r'\s+', ' ', text)
-    # Remove any remaining $ or $$ that might be malformed
-    text = text.replace('$', '')
+    text = re.sub(r'\$(.*?)\$', r'\1', text, flags=re.DOTALL)
+    # (Do NOT remove backslash commands globally)
+    text = re.sub(r'\s+', ' ', text).replace('$', '')
     return text.strip()
 
 
@@ -462,6 +453,11 @@ class DialogueFSM:
         self.RECENTLY_ASKED_LIMIT = 5
         self.small_talk_turns = 0
         self.user_language = "en"
+        # Initialize the counter
+        self.completed_exercises_count = 0
+        self.exercise_counter = 0   # Track number of completed exercises
+        self.MAX_EXERCISES = 2
+       
         
         self.small_talk_chain = small_talk_chain
         self.personal_followup_chain = personal_followup_chain  
@@ -471,10 +467,9 @@ class DialogueFSM:
         self.attempt_tracker = AttemptTracker()
         
         # Doubt clearing functionality
-        self.completed_exercises_count = 0
         self.doubt_questions_count = 0
         self.MAX_DOUBT_QUESTIONS = 2
-        self.EXERCISES_BEFORE_DOUBT_CHECK = 3
+        self.EXERCISES_BEFORE_DOUBT_CHECK = 2
         self.topic_exercises_count = 0
         
         # Enhanced inactivity timer
@@ -499,8 +494,7 @@ class DialogueFSM:
             self._send_inactivity_message(lang_dict["session_timeout"])
     
     def _send_inactivity_message(self, message):
-        """Send inactivity message."""
-        print(f"\n[INACTIVITY TIMEOUT] A_GUY: {message}")
+        logger.info(f"[INACTIVITY TIMEOUT] {message}")
 
     @staticmethod
     def _translate_grade_to_hebrew(grade_num: str) -> str:
@@ -598,8 +592,13 @@ class DialogueFSM:
                 
                 Task:
                 - Rephrase the following math exercise into a SIMILAR but different question.
-                - Keep the same difficulty level.
+                - Keep the same difficulty level and topic (e.g., if it's about lines, include new points).
                 - Do not provide the solution.
+                -Ensure the question is correct, solvable, and complete: 
+                - For line/point exercises (e.g., slope, distance): Include specific points (e.g., (1, 2) and (3, 4)).
+                - For shapes (e.g., triangle area): Include coordinates for vertices.
+                - For equations: Include a solvable equation with integer solutions.
+                - Use Chain of Thought: First, identify the type (e.g., line with points). Second, generate new data (e.g., points). Third, validate (e.g., non-collinear, solvable). Fourth, rephrase the question including the data.
                 - Only return the new question text."""),
                 ("user", "{original_question}")
             ])
@@ -660,11 +659,11 @@ class DialogueFSM:
             
             evaluation_result = clean_math_text(eval_response.content.strip())  # Clean evaluation response
             is_correct = evaluation_result.lower().startswith("correct:")
-            is_partial = evaluation_result.lower().startswith("partial:") ##updated
+            #is_partial = evaluation_result.lower().startswith("partial:") ##updated
             
             return {
                 "is_correct": is_correct,
-                "is_partial": is_partial,  #updated
+                #"is_partial": is_partial,  #updated
                 "feedback": evaluation_result,
                 "needs_guidance": not is_correct
             }
@@ -739,6 +738,10 @@ class DialogueFSM:
     def _handle_solution_request(self, user_input: str) -> str:
         """Handle explicit solution requests by providing guiding questions first."""
         lang_dict = I18N[self.user_language]
+
+        # Ensure we are working with the CURRENT question only
+        current_question = self._get_current_question()
+        current_solution = self._get_current_solution()
         
         # If they haven't gone through the guidance sequence, provide guiding questions first
         #if self.attempt_tracker.guidance_level < 2:  # Less than hint level
@@ -778,12 +781,14 @@ class DialogueFSM:
                     Language: Respond in {self.user_language} ({'Hebrew' if self.user_language == 'he' else 'English'})
                     
                     Guidelines:
-                    - Explain the solution step by step
-                    - Show the reasoning behind each step
-                    - Help the student understand the concept
-                    - Be clear and educational
-                    - Keep it concise but thorough
-                    - Reference the image/graph when relevant to explain concepts
+                    - Always explain in steps: Step 1, Step 2, Step 3...
+                    - First: state the key formula or rule used.
+                    - Second: substitute values from the problem.
+                    - Third: simplify step by step.
+                    - Fourth: conclude with the final answer.
+                    - End with a short "check your answer" verification if possible.
+                    - Be clear, concise, and educational.
+                    - Never show raw $ signs or LaTeX markup.
                     """),
                     MessagesPlaceholder(variable_name="chat_history"),
                     ("user", "Question: {question}\nSolution: {solution}\n\nProvide a step-by-step explanation:")
@@ -911,13 +916,13 @@ class DialogueFSM:
                 if not for_solution_explanation:
                     self.current_svg_file_path = svg_filepath
                 
-                file_reference = f"\n\n[Image File: {svg_filepath.as_posix()}]"
+                #file_reference = f"\n\n[Image File: {svg_filepath.as_posix()}]"
                 
                 # Add description if available
                 #if self.current_svg_description:
                     #file_reference += f"\n[Image Description: {self.current_svg_description}]"
                     
-                return file_reference
+                #return file_reference
                 
             except Exception as e:
                 logger.error(f"Error saving SVG file: {e}")
@@ -942,12 +947,6 @@ class DialogueFSM:
 
         q_text = questions[self.current_question_index].replace(',', '')
         q_text = clean_math_text(q_text)   # ← remove $
-
-        # 👉 Rephrase into a similar question (for demo)
-        try:
-            q_text = self._generate_similar_question(q_text)
-        except Exception as e:
-            logger.error(f"Error generating similar question: {e}")
 
         # Generate SVG only once per question (not for hints)
         if self.current_exercise.get("svg") and not self.svg_generated_for_question:
@@ -981,6 +980,19 @@ class DialogueFSM:
                 return translate_text_to_english(sol_text)
             return sol_text
         return "No solution available."
+    
+    def _generate_lesson_summary(self) -> str:
+        closing_prompt = ChatPromptTemplate.from_messages([
+            ("system", """You are a friendly math tutor closing a short session.
+            Write a 2–3 sentence positive summary of the lesson.
+            End with a light humorous encouragement."""),
+            MessagesPlaceholder(variable_name="chat_history"),
+            ("user", "Summarize the lesson we just completed.")
+        ])
+        summary_chain = closing_prompt | llm
+        response = summary_chain.invoke({"chat_history": self.chat_history[-10:]})
+        return response.content.strip()
+
 
     def _move_to_next_exercise_or_question(self) -> str:
         """Enhanced version that tracks completed exercises and triggers doubt checking per topic."""
@@ -1001,25 +1013,13 @@ class DialogueFSM:
         else:
             # Current exercise is finished - increment counters
             self.completed_exercises_count += 1
-            self.topic_exercises_count += 1
-            
-            # Check if we should ask for doubts after completing enough exercises
-            if self.topic_exercises_count >= self.EXERCISES_BEFORE_DOUBT_CHECK:
+            #self.topic_exercises_count += 1
+            self.exercise_counter += 1   # NEW counter
+
+            # Check if max exercises reached
+            if self.exercise_counter >= self.MAX_EXERCISES:
                 self.state = State.ASK_FOR_DOUBTS
-                self.current_exercise = None
-                self.current_question_index = 0
-                self.current_hint_index = 0
-                self._reset_attempt_tracking()
-                self.current_svg_description = None
-                topic_name = self.topic or "this topic"
-                return f"\n\n{self._get_localized_text('ask_for_doubts', topic=topic_name)}"
-            
-            # Continue with normal exercise flow
-            self.current_exercise = None
-            self.current_question_index = 0
-            self.current_hint_index = 0
-            self._reset_attempt_tracking()
-            self.current_svg_description = None
+                return self._generate_lesson_summary()
 
             # Construct query for a new exercise
             query = f"Next exercise for grade {self.hebrew_grade}"
@@ -1168,6 +1168,7 @@ class DialogueFSM:
             self.topic = clean_math_text(user_input.strip()) # Clean topic input
             self.topic_exercises_count = 0
             self.doubt_questions_count = 0
+            #self.exercise_counter = 0  # reset 2-exercise block
             
             query = f"Find an exercise for grade {self.hebrew_grade} on topic {self.topic}"
             topic_for_picking = self.topic if self.topic.lower() not in ["anyone", "any", "anything", "random", "whatever", "any topic"] else None
@@ -1256,13 +1257,6 @@ class DialogueFSM:
                     self.chat_history.append(AIMessage(content=response_text))
                     return response_text
                 
-                #updated for partial answers
-                elif evaluation_result["is_partial"]:  
-                    encouragement = self._get_localized_text("encouragement")
-                    partial_msg = self._get_localized_text("partial_answer")  # new string
-                    response_text = f"{encouragement} {partial_msg}"
-                    self.chat_history.append(AIMessage(content=response_text))
-                    return response_text
                 
                 else:
                     # Incorrect answer - handle based on attempt count
