@@ -1,259 +1,150 @@
-# prompt.py
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from typing import List, Optional
-import json
+from typing import List, Dict
 
-# -----------------------------
-# Prompt Templates
-# -----------------------------
-
-def get_rag_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the RAG chatbot prompt template for math tutoring.
-    Args:
-        user_language: 'en' or 'he' to set response language.
+def get_rag_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor assisting in {'English' if user_language == 'en' else 'Hebrew'}.
+    Evaluate user answers, provide guidance, or answer questions based on the context provided.
+    Keep responses concise, clear, and educational.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are a helpful Math AI tutor.
-        
-        Language Rules:
-        - Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        - If Hebrew, use Right-to-Left (RTL) for conversational text, keep mathematical expressions Left-to-Right (LTR)
-        
-        Teaching Guidelines:
-        - Never give direct answers immediately
-        - Use a gradual assistance approach: encouragement → guiding questions → hints → solution
-        - Ask guiding questions to help students think through problems
-        - Build understanding step by step
-        - Use provided context for accurate information
-        - If context lacks crucial information, state what's missing
-        - When providing hints, use EXACT TEXT from context when available
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "Context: {context}\n\nQuestion: {input}")
+        ("user", "{context}\n\n{input}")
     ])
 
-def get_small_talk_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the small talk prompt for initiating conversation.
+def get_small_talk_prompt(user_language: str):
+    system_message = f"""
+    You are a friendly Math AI tutor engaging in small talk in {'English' if user_language == 'en' else 'Hebrew'}.
+    Follow the context strictly to ask the specified small talk question or generate a retry prompt.
+    Do not mention math or academic topics unless explicitly instructed.
+    Keep responses short, engaging, and conversational.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are a friendly Math AI tutor starting a conversation.
-        
-        Language Rules:
-        - Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        - Default to English if unclear
-        
-        Personality:
-        - Warm, encouraging, approachable
-        - Enthusiastic about math
-        - Keep responses short (1-2 sentences)
-        - Examples: "Hey! How are you doing today?", "Hi there! Good to see you?"
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "{input}"),
+        ("user", "User input: {input}\nContext: {context}")
     ])
 
-def get_personal_followup_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for personalized follow-up in small talk.
+def get_personal_followup_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor in {'English' if user_language == 'en' else 'Hebrew'}.
+    Acknowledge the user's hobby and ask a personalized follow-up question in a friendly, engaging way.
+    Do not mention math or academic topics.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are continuing a casual conversation with a student.
-        
-        Language Rules:
-        - Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        
-        Guidelines:
-        - Acknowledge their response warmly
-        - Keep it brief and natural (1-2 sentences)
-        - Show genuine interest
-        - Gradually transition toward academic readiness
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "{input}"),
+        ("user", "User mentioned: {hobby}")
     ])
 
-def get_academic_transition_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for transitioning from small talk to academic topics.
+def get_academic_transition_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor in {'English' if user_language == 'en' else 'Hebrew'}.
+    Transition from small talk to asking about the user's grade or math topic in a smooth, engaging way.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are transitioning from personal chat to academic topics.
-        
-        Language Rules:
-        - Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        - For Hebrew: Use RTL for general text, keep math expressions LTR
-        
-        Guidelines:
-        - Ask about recent learning or upcoming academic events
-        - Examples: "What did you learn recently?", "When is your next exam?"
-        - Keep it friendly, short (1 sentence), natural
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "{input}"),
+        ("user", "{input}")
     ])
 
-def get_personalized_followup_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for hobby-based personalized follow-up in Opening state.
+def get_personalized_followup_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor in {'English' if user_language == 'en' else 'Hebrew'}.
+    Respond to the user's hobby or interest with a personalized, engaging follow-up question or comment.
+    Do not mention math or academic topics.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are a Math AI tutor generating a personalized follow-up based on the student's hobby.
-        
-        Language Rules:
-        - Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        
-        Guidelines:
-        - Create a short, friendly follow-up question based on the hobby
-        - Example: If hobby is basketball, ask "Did you play basketball today?"
-        - Keep it 1-2 sentences, conversational
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "Student's hobby: {hobby}"),
+        ("user", "Hobby: {hobby}")
     ])
 
-def get_humorous_reaction_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for a humorous reaction in Opening state.
+def get_humorous_reaction_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor in {'English' if user_language == 'en' else 'Hebrew'}.
+    Provide a light-hearted, humorous reaction to the user's input.
+    Do not mention math or academic topics in the reaction itself.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are a Math AI tutor generating a short humorous reaction.
-        
-        Language Rules:
-        - Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        
-        Guidelines:
-        - Reference the student's hobby or recent input
-        - Keep it light and encouraging
-        - Example: "Great! Let’s see if your brain is as fit as your legs."
-        - 1-2 sentences max
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "{input}"),
+        ("user", "{input}")
     ])
 
-def get_guiding_question_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for generating guiding questions during learning.
+def get_topic_suggestion_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor in {'English' if user_language == 'en' else 'Hebrew'}.
+    Generate a list of 3-5 math topics suitable for the specified grade.
+    Ensure topics are relevant and age-appropriate.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are a Math AI tutor generating a guiding question.
-        
-        Language: Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        
-        Guidelines:
-        - Ask a question to guide the student toward the solution
-        - Don't give away the answer
-        - Focus on the mathematical concept or method
-        - Be encouraging, supportive, concise (1-2 sentences)
-        - For Hebrew, use RTL for conversational text, LTR for math
-        - Examples: "What operation should we use first?", "What type of equation is this?"
-        """),
+        ("system", system_message),
+        ("user", "Grade: {grade}\nContext: {context}")
+    ])
+
+def get_exercise_prompt(user_language: str) -> ChatPromptTemplate:
+    system_message = f"""You are a Math AI tutor generating a new math exercise.
+    
+    Language: Respond in {'English' if user_language == 'en' else 'Hebrew'}
+    
+    Guidelines:
+    - Create a unique math question for the specified grade and topic.
+    - Ensure it differs from previous questions in chat history. It will be generated by LLms, so avoid repetition.
+    - If there are svg images needed, describe them in the question.
+    - If the question involves a diagram, include an SVG description and line ponits.
+    - Include a question, solution, and one hint.
+    - Format as JSON: {{ "text": {{ "question": ["question"], "solution": ["solution"], "hint": ["hint"] }}, "grade": "{{grade}}", "topic": "{{topic}}" }}
+    - For Hebrew, use RTL for text, LTR for math expressions.
+    """
+    return ChatPromptTemplate.from_messages([
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "Problem: {question}\nStudent's Answer: {answer}\nContext: {context}\n\nGenerate a helpful guiding question:")
+        ("user", "Generate a new exercise for grade {grade} on topic {topic}.")
     ])
 
-def get_humor_response_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for responding to detected humor (e.g., 'haha', 'lol').
-    """
-    return ChatPromptTemplate.from_messages([
-        ("system", f"""Generate a short, friendly humorous response or emoji to match the user's laughter.
-        
-        Language: Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        
-        Guidelines:
-        - Keep it brief (1 sentence or emoji)
-        - Match the user's tone (e.g., 'Haha, glad you're having fun! 😂')
-        """),
-        ("user", "{input}"),
-    ])
-
-def get_solution_explanation_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for generating a step-by-step solution explanation.
+def get_guiding_question_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor in {'English' if user_language == 'en' else 'Hebrew'}.
+    Generate a guiding question to help the user think through a math problem based on their incorrect answer.
+    Keep it concise and encouraging.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are a Math AI tutor providing a detailed solution explanation.
-        
-        Language: Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        
-        Guidelines:
-        - Explain the solution step by step
-        - Show reasoning for each step
-        - Help the student understand the concept
-        - Be clear, educational, concise but thorough
-        - Reference the image/graph when relevant
-        - For Hebrew, use RTL for conversational text, LTR for math
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "Question: {question}\nSolution: {solution}\n\nProvide a step-by-step explanation:")
+        ("user", "Question: {question}\nUser's answer: {answer}\nContext: {context}")
     ])
 
-def get_summary_prompt(user_language: str = "en") -> ChatPromptTemplate:
-    """
-    Returns the prompt for generating a lesson summary.
+def get_solution_explanation_prompt(user_language: str):
+    system_message = f"""
+    You are a Math AI tutor in {'English' if user_language == 'en' else 'Hebrew'}.
+    Provide a clear, step-by-step explanation of the solution to the math problem.
+    Ensure the explanation is educational and easy to understand.
     """
     return ChatPromptTemplate.from_messages([
-        ("system", f"""You are a Math AI tutor generating a concise lesson summary.
-        
-        Language: Respond in {'English' if user_language == 'en' else 'Hebrew'}
-        
-        Guidelines:
-        - Summarize the lesson in 2-3 sentences
-        - Personalize based on diagnostic answers and exercises
-        - Be positive and encouraging
-        - For Hebrew, use RTL for conversational text, LTR for math
-        """),
+        ("system", system_message),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("user", "Diagnostic: {diagnostic}\nGenerate summary:")
+        ("user", "Question: {question}\nSolution: {solution}")
     ])
 
-def get_translation_prompt() -> ChatPromptTemplate:
-    """
-    Returns the prompt for translating text to English.
-    """
-    return ChatPromptTemplate.from_messages([
-        ("system", "You are a precise translator. Translate the following text to English. If it's already in English, return it as is. Provide ONLY the translation."),
-        ("user", "{input}"),
-    ])
-
-def get_svg_description_prompt() -> ChatPromptTemplate:
-    """
-    Returns the prompt for describing SVG content.
-    """
-    return ChatPromptTemplate.from_messages([
-        ("system", "You are an AI assistant. Provide a CONCISE English description of the main mathematical elements in the SVG (e.g., axes, points, lines, shapes). Do not include the raw SVG code. Provide only a brief description."),
-        ("user", "Describe the following SVG content:\n```svg\n{svg_input}\n```"),
-    ])
-
-# -----------------------------
-# Prompt-Related Functions
-# -----------------------------
-
-def generate_guiding_question(
-    llm,
-    user_language: str,
-    chat_history: List,
-    question: str,
-    answer: str,
-    context: str
-) -> str:
-    """
-    Generates a guiding question to help the student.
-    Args:
-        llm: The LLM instance (e.g., ChatGoogleGenerativeAI).
-        user_language: 'en' or 'he'.
-        chat_history: List of previous messages.
-        question: The current math question.
-        answer: Student's answer.
-        context: Retrieved context for the question.
-    Returns:
-        A guiding question string.
-    """
+def generate_humor_response(llm, user_language: str, user_input: str) -> str:
     try:
-        guiding_chain = get_guiding_question_prompt(user_language) | llm
+        humor_prompt = ChatPromptTemplate.from_messages([
+            ("system", f"Respond with a light-hearted, humorous comment in {'English' if user_language == 'en' else 'Hebrew'} based on the user's input. Do not mention math or academic topics."),
+            ("user", "User input: {input}")
+        ])
+        humor_chain = humor_prompt | llm
+        response = humor_chain.invoke({"input": user_input})
+        return response.content.strip()
+    except Exception as e:
+        print(f"Error generating humor response: {e}")
+        return "Haha, nice one!" if user_language == "en" else "חהחה, יפה!"
+
+def generate_guiding_question(llm, user_language: str, chat_history: List, question: str, answer: str, context: str) -> str:
+    try:
+        guiding_prompt = get_guiding_question_prompt(user_language)
+        guiding_chain = guiding_prompt | llm
         response = guiding_chain.invoke({
             "chat_history": chat_history[-3:],
             "question": question,
@@ -263,100 +154,13 @@ def generate_guiding_question(
         return response.content.strip()
     except Exception as e:
         print(f"Error generating guiding question: {e}")
-        return f"{'What do you think the first step should be?' if user_language == 'en' else 'מה אתה חושב שצריך להיות הצעד הראשון?'}"
+        return "Can you explain your thinking?" if user_language == "en" else "האם תוכל להסביר את החשיבה שלך?"
 
-def describe_svg_content(llm, svg_content: str) -> str:
-    """
-    Describes the mathematical elements in SVG content.
-    Args:
-        llm: The LLM instance.
-        svg_content: The SVG content string.
-    Returns:
-        A concise description of the SVG's mathematical elements.
-    """
+def generate_solution_explanation(llm, user_language: str, chat_history: List, question: str, solution: str) -> str:
     try:
-        svg_description_chain = get_svg_description_prompt() | llm
-        response = svg_description_chain.invoke({"svg_input": svg_content})
-        return response.content.strip()
-    except Exception as e:
-        print(f"Error describing SVG content: {e}")
-        return "An error occurred while describing the image."
-
-def translate_text_to_english(llm, text: str) -> str:
-    """
-    Translates text to English if needed.
-    Args:
-        llm: The LLM instance.
-        text: Input text to translate.
-    Returns:
-        Translated text (or original if already English).
-    """
-    if not text or not text.strip():
-        return text
-    try:
-        translation_chain = get_translation_prompt() | llm
-        response = translation_chain.invoke({"input": text.strip()})
-        translated = response.content.strip()
-        if is_likely_hebrew(text) and not is_likely_hebrew(translated):
-            return translated
-        elif not is_likely_hebrew(text):
-            return text
-        else:
-            print(f"Potential translation issue. Input: {text}, Output: {translated}")
-            return translated
-    except Exception as e:
-        print(f"Error translating text: {e}")
-        return f"[Translation Error: {text}]"
-
-def is_likely_hebrew(text: str) -> bool:
-    """
-    Checks if text contains Hebrew characters.
-    Args:
-        text: Input text.
-    Returns:
-        True if Hebrew characters are detected, False otherwise.
-    """
-    return any('\u0590' <= char <= '\u05FF' for char in text)
-
-def generate_humor_response(llm, user_language: str, user_input: str) -> str:
-    """
-    Generates a humorous response to match user's laughter.
-    Args:
-        llm: The LLM instance.
-        user_language: 'en' or 'he'.
-        user_input: User's input containing humor indicators.
-    Returns:
-        A short humorous response or emoji.
-    """
-    try:
-        humor_chain = get_humor_response_prompt(user_language) | llm
-        response = humor_chain.invoke({"input": user_input})
-        return response.content.strip()
-    except Exception as e:
-        print(f"Error generating humor response: {e}")
-        return "Haha, that's funny! 😂" if user_language == "en" else "חה חה, זה מצחיק! 😂"
-
-def generate_solution_explanation(
-    llm,
-    user_language: str,
-    chat_history: List,
-    question: str,
-    solution: str
-) -> str:
-    """
-    Generates a step-by-step explanation for a solution.
-    Args:
-        llm: The LLM instance.
-        user_language: 'en' or 'he'.
-        chat_history: List of previous messages.
-        question: The math question.
-        solution: The correct solution.
-    Returns:
-        A detailed explanation string.
-    """
-    try:
-        explanation_chain = get_solution_explanation_prompt(user_language) | llm
-        response = explanation_chain.invoke({
+        solution_prompt = get_solution_explanation_prompt(user_language)
+        solution_chain = solution_prompt | llm
+        response = solution_chain.invoke({
             "chat_history": chat_history[-3:],
             "question": question,
             "solution": solution
@@ -364,31 +168,73 @@ def generate_solution_explanation(
         return response.content.strip()
     except Exception as e:
         print(f"Error generating solution explanation: {e}")
-        return f"Solution: {solution}"  # Fallback
+        return f"Solution: {solution}" if user_language == "en" else f"פתרון: {solution}"
 
-def generate_lesson_summary(
-    llm,
-    user_language: str,
-    chat_history: List,
-    diagnostic: dict
-) -> str:
-    """
-    Generates a concise lesson summary.
-    Args:
-        llm: The LLM instance.
-        user_language: 'en' or 'he'.
-        chat_history: List of previous messages.
-        diagnostic: Dictionary of diagnostic answers.
-    Returns:
-        A 2-3 sentence summary.
-    """
+def generate_lesson_summary(llm, user_language: str, chat_history: List, diagnostic: Dict) -> str:
     try:
-        summary_chain = get_summary_prompt(user_language) | llm
+        summary_prompt = ChatPromptTemplate.from_messages([
+            ("system", f"Summarize the lesson in {'English' if user_language == 'en' else 'Hebrew'}, highlighting key topics and user progress."),
+            MessagesPlaceholder(variable_name="chat_history"),
+            ("user", "Diagnostic: {diagnostic}")
+        ])
+        summary_chain = summary_prompt | llm
         response = summary_chain.invoke({
-            "chat_history": chat_history[-10:],
-            "diagnostic": json.dumps(diagnostic)
+            "chat_history": chat_history[-5:],
+            "diagnostic": str(diagnostic)
         })
         return response.content.strip()
     except Exception as e:
-        print(f"Error generating summary: {e}")
-        return "Great lesson today!" if user_language == "en" else "שיעור נהדר היום!"
+        print(f"Error generating lesson summary: {e}")
+        return "Great job today!" if user_language == "en" else "עבודה נהדרת היום!"
+
+def is_likely_hebrew(text: str) -> bool:
+    try:
+        return any(1424 <= ord(c) <= 1514 for c in text)
+    except Exception:
+        return False
+
+def describe_svg_content(llm, svg_content: str) -> str:
+    try:
+        svg_prompt = ChatPromptTemplate.from_messages([
+            ("system", "Describe the content of the provided SVG in English, focusing on elements relevant to the math problem."),
+            ("user", "SVG content: {svg_content}")
+        ])
+        svg_chain = svg_prompt | llm
+        response = svg_chain.invoke({"svg_content": svg_content})
+        return response.content.strip()
+    except Exception as e:
+        print(f"Error describing SVG content: {e}")
+        return "SVG description unavailable."
+
+def detect_intent(llm, user_language: str, chat_history: List, question: str, user_input: str) -> str:
+    try:
+        intent_prompt = ChatPromptTemplate.from_messages([
+            ("system", f"Determine the user's intent in {'English' if user_language == 'en' else 'Hebrew'}. Options: 'answer_attempt', 'hint_request', 'solution_request', 'new_exercise_request'."),
+            MessagesPlaceholder(variable_name="chat_history"),
+            ("user", "Current question: {question}\nUser input: {user_input}\n\nIdentify the intent.")
+        ])
+        intent_chain = intent_prompt | llm
+        response = intent_chain.invoke({
+            "chat_history": chat_history[-3:],
+            "question": question,
+            "user_input": user_input
+        })
+        return response.content.strip()
+    except Exception as e:
+        print(f"Error detecting intent: {e}")
+        return "answer_attempt"
+
+def translate_text_to_english(llm, text: str) -> str:
+    try:
+        if is_likely_hebrew(text):
+            translate_prompt = ChatPromptTemplate.from_messages([
+                ("system", "Translate the provided Hebrew text to English, preserving mathematical expressions."),
+                ("user", "Text: {text}")
+            ])
+            translate_chain = translate_prompt | llm
+            response = translate_chain.invoke({"text": text})
+            return response.content.strip()
+        return text
+    except Exception as e:
+        print(f"Error translating text: {e}")
+        return text

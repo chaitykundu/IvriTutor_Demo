@@ -1,0 +1,15 @@
+<svg width="500" height="150" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Balance Beam -->
+  <line x1="20" y1="75" x2="480" y2="75" stroke="black" stroke-width="2"/>
+
+  <!-- Fulcrum (triangle) -->
+  <polygon points="240,75 260,75 250,105" fill="black"/>
+
+  <!-- Left Pan -->
+  <rect x="20" y="45" width="200" height="30" fill="#e0e0e0" stroke="black" stroke-width="1"/>
+  <text x="120" y="65" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="black">3-2a-4+7a</text>
+
+  <!-- Right Pan -->
+  <rect x="280" y="45" width="200" height="30" fill="#e0e0e0" stroke="black" stroke-width="1"/>
+  <text x="380" y="65" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="black">13+4a-8-2a</text>
+</svg>

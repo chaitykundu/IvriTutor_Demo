@@ -96,8 +96,9 @@ small_talk_prompt = ChatPromptTemplate.from_messages([
     
     Personality:
     - Warm, encouraging, and approachable
+    - Enjoys chatting about hobbies, school, and daily life
     - Enthusiastic about helping with math
-    - Keep responses short and conversational (1-2 sentences max)
+    - Keep responses short and conversational (1-2 sentences max) and conversational
     - Understand the user's intent even with spelling mistakes or unclear input
     - Examples: "Hey! How are you doing today?", "Hi there! What's up?", "How's everything going?"
     """),
@@ -125,15 +126,36 @@ personal_followup_prompt = ChatPromptTemplate.from_messages([
 ])
 personal_followup_chain = personal_followup_prompt | llm
 
-academic_transition_prompt = ChatPromptTemplate.from_messages([
-    ("system", """You are transitioning from personal chat to academic topics.
+# Diagnostic prompt (bilingual)
+diagnostic_prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are a math tutor conducting a diagnostic assessment to understand the student's needs.
     
     Language Rules:
     - Match the user's language (Hebrew or English)
     - For Hebrew: Use proper RTL formatting for general text, keep math expressions LTR
     
+    Diagnostic Guidelines:
+    - Ask one diagnostic question at a time based on the sequence: test, last class, focus
+    - Acknowledge the previous response briefly if relevant
+    - Examples: "Sounds interesting! Do you have a test coming up?" or "Got it. What did you cover in your last class?"
+    - Keep it conversational and encouraging
+    - Responses should be short (1-2 sentences max)
+    - Transition naturally to the next question or to academic topics after all questions
+    """),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("user", "Previous diagnostic response: {previous_response}\nCurrent question to ask: {current_question}\nGenerate response:"),
+])
+diagnostic_chain = diagnostic_prompt | llm
+
+academic_transition_prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are transitioning from personal chat to academic topics.
+        
+    Language Rules:
+    - Match the user's language (Hebrew or English)
+    - For Hebrew: Use proper RTL formatting for general text, keep math expressions LTR
+
     Academic Transition Guidelines:
-    - Ask about recent learning or upcoming academic events
+    - Ask about recent learning or upcoming academic events, but AVOID directly asking for grade/class—focus on subjects or interests.
     - Examples: "What did you learn recently?", "When is your next exam?", "How's school going?", "What subjects are you studying?"
     - Bridge from personal to academic naturally
     - Keep it friendly but start showing academic interest
@@ -144,6 +166,8 @@ academic_transition_prompt = ChatPromptTemplate.from_messages([
     ("user", "{input}"),
 ])
 academic_transition_chain = academic_transition_prompt | llm
+
+
 # -----------------------------
 # Localization (Bilingual Support)
 # -----------------------------
@@ -158,7 +182,7 @@ I18N = {
         "wrong_answer": "Not quite right. Let me help you think through this...",
         #"partial_answer": "Good start! Now, try to complete the final step.",  #updated
         "guiding_question": "🤔 Let me ask you this: ",
-        "encouragement": "You’re making progress — give it try first!",
+        "encouragement": "You're making progress — give it try first!",
         "try_again": "Can you try again? Think about your approach.",
         "need_more_attempts": "Give it another try first - I believe you can work through this! {guiding_prompt}",
         "no_exercises": "No exercises found for grade {grade} and topic {topic}.",
@@ -172,6 +196,10 @@ I18N = {
         "no_doubts_response": "Perfect! It looks like you understand {topic} well. Great job today!",
         "doubt_clearing_intro": "I'm here to help! Let me address your question about {topic}:",
         "ask_more_doubts": "Do you have any other questions about {topic}?",
+        "small_talk_hobbies": "What hobbies do you have?",
+        "diagnostic_test": "Okay! Do you have a test coming up?",
+        "diagnostic_last_class": "What did you cover in your last class?",
+        "diagnostic_focus": "What would you like to work on today?",
         "doubt_answer_complete": "I hope that helps clarify things about {topic} for you!"
     },
     "he": {
@@ -198,6 +226,10 @@ I18N = {
         "no_doubts_response": "מושלם! נראה שאתה מבין את {topic} היטב. עבודה נהדרת היום!",
         "doubt_clearing_intro": "אני כאן לעזור! תן לי לענות על השאלה שלך על {topic}:",
         "ask_more_doubts": "יש לך שאלות נוספות על {topic}?",
+        "small_talk_hobbies": "אילו תחביבים יש לך?",
+        "diagnostic_test": "יש לך מבחן בקרוב?",
+        "diagnostic_last_class": "מה סקרתם בשיעור האחרון שלך?",
+        "diagnostic_focus": "על מה תרצה לעבוד היום?",
         "doubt_answer_complete": "אני מקווה שזה עוזר להבהיר דברים על {topic} עבורך!"
     }
 }
@@ -209,6 +241,7 @@ class State(Enum):
     START = auto()
     SMALL_TALK = auto()
     PERSONAL_FOLLOWUP = auto()
+    DIAGNOSTIC = auto()
     ACADEMIC_TRANSITION = auto()
     ASK_GRADE = auto()
     EXERCISE_SELECTION = auto()
@@ -221,7 +254,6 @@ class State(Enum):
 # -----------------------------
 # Helper Functions
 # -----------------------------
-
 def detect_language(text: str) -> str:
     """Detect if text is Hebrew or English."""
     if any('\u0590' <= char <= '\u05FF' for char in text):
@@ -240,7 +272,6 @@ def clean_math_text(text: str) -> str:
     text = re.sub(r'\s+', ' ', text).replace('$', '')
     return text.strip()
 
-
 def translate_text_to_english(text: str) -> str:
     """Translate text (likely Hebrew) to English using GenAI."""
     if not text or not text.strip():
@@ -253,7 +284,7 @@ def translate_text_to_english(text: str) -> str:
         translation_chain = translation_prompt | llm
         response = translation_chain.invoke({"input": text.strip()})
         translated = response.content.strip()
-        translated = clean_math_text(translated)  # Ensure LaTeX is removed from translated text
+        translated = clean_math_text(translated)
         if is_likely_hebrew(text) and not is_likely_hebrew(translated):
              return translated
         elif not is_likely_hebrew(text):
@@ -300,7 +331,7 @@ def generate_embedding(text: str) -> List[float]:
 
 def retrieve_relevant_chunks(query: str, pc_index: Any, grade: Optional[str] = None, topic: Optional[str] = None) -> List[Dict[str, Any]]:
     """Retrieve relevant chunks from Pinecone based on a query."""
-    query = clean_math_text(query)  # Clean query before embedding
+    query = clean_math_text(query)
     query_embedding = generate_embedding(query)
     if not query_embedding:
         return []
@@ -332,7 +363,7 @@ def describe_svg_content(svg_content: str) -> str:
         ])
         svg_description_chain = svg_description_prompt | llm
         response = svg_description_chain.invoke({"svg_input": svg_content})
-        return clean_math_text(response.content)  # Ensure LaTeX is removed from description
+        return clean_math_text(response.content)
     except Exception as e:
         logger.error(f"Error describing SVG content: {str(e)}")
         return "An error occurred while describing the image."
@@ -375,13 +406,10 @@ class EnhancedInactivityTimer:
         time_since_activity = current_time - self.last_activity_time
         
         if self.typing_detected and time_since_activity < TYPING_DETECTION_THRESHOLD:
-            # User was typing recently, extend timer
             self.start()
         elif time_since_activity >= self.timeout:
-            # Truly inactive
             self.callback()
         else:
-            # Restart timer for remaining time
             remaining_time = self.timeout - time_since_activity
             self.timer = threading.Timer(remaining_time, self._check_inactivity)
             self.timer.daemon = True
@@ -453,15 +481,21 @@ class DialogueFSM:
         self.RECENTLY_ASKED_LIMIT = 5
         self.small_talk_turns = 0
         self.user_language = "en"
-        # Initialize the counter
-        self.completed_exercises_count = 0
-        self.exercise_counter = 0   # Track number of completed exercises
+        # MARK HERE: Initialize topic-specific exercise counter
+        self.topic_exercises_count = 0   # Track number of completed exercises per topic
+        #self.exercise_counter = 0   # Track number of completed exercises
         self.MAX_EXERCISES = 2
        
         
         self.small_talk_chain = small_talk_chain
-        self.personal_followup_chain = personal_followup_chain  
+        self.personal_followup_chain = personal_followup_chain
+        self.diagnostic_chain = diagnostic_chain  
         self.academic_transition_chain = academic_transition_chain
+
+        self.small_talk_question_index = 0
+        self.small_talk_responses = []  # Store user responses for small talk
+        self.diagnostic_question_index = 0
+        self.diagnostic_responses = []  # Store user responses for test, last class, and focus
 
         # Enhanced attempt tracking
         self.attempt_tracker = AttemptTracker()
@@ -470,7 +504,7 @@ class DialogueFSM:
         self.doubt_questions_count = 0
         self.MAX_DOUBT_QUESTIONS = 2
         self.EXERCISES_BEFORE_DOUBT_CHECK = 2
-        self.topic_exercises_count = 0
+        #self.topic_exercises_count = 0  # Already initialized above
         
         # Enhanced inactivity timer
         self.inactivity_timer = EnhancedInactivityTimer(self._handle_inactivity)
@@ -506,6 +540,53 @@ class DialogueFSM:
         lang_dict = I18N[self.user_language]
         text = lang_dict.get(key, I18N["en"][key])
         return text.format(**kwargs) if kwargs else text
+    
+    def _extract_grade_from_input(self, text: str) -> Optional[str]:
+        """Extract grade number (7/8 or Hebrew equivalent) from user input using regex."""
+        import re
+        
+        # English grades: 7 or 8 (case-insensitive, whole word)
+        english_match = re.search(r'\b(7|8)\b', text, re.IGNORECASE)
+        if english_match:
+            return english_match.group(1)
+        
+        # Hebrew grades: ז (7), ח (8) - using the existing map
+        hebrew_map = {"ז": "7", "ח": "8"}  # Matches _translate_grade_to_hebrew
+        hebrew_match = re.search(r'(ז|ח)', text)
+        if hebrew_match:
+            hebrew_char = hebrew_match.group(1)
+            return hebrew_map.get(hebrew_char, None)
+        
+        return None
+
+    def _generate_grade_acknowledgment(self, user_input: str, grade: str) -> str:
+        """Generate AI-based acknowledgment for grade selection."""
+        try:
+            acknowledgment_prompt = ChatPromptTemplate.from_messages([
+                ("system", f"""You are a friendly Math AI tutor acknowledging a student's grade selection.
+                
+                Language: Respond in {self.user_language} ({'Hebrew' if self.user_language == 'he' else 'English'})
+                
+                Guidelines:
+                - Acknowledge the user's input warmly and briefly (1 sentence, 5-10 words)
+                - Mention the grade they selected
+                - Be encouraging and conversational
+                - Examples: 'Great, grade 8 sounds awesome!', 'Nice choice, grade 7!'
+                - Return ONLY the acknowledgment sentence
+                """),
+                MessagesPlaceholder(variable_name="chat_history"),
+                ("user", "User input: {input}\nSelected grade: {grade}")
+            ])
+            acknowledgment_chain = acknowledgment_prompt | llm
+            response = acknowledgment_chain.invoke({
+                "chat_history": self.chat_history[-3:],
+                "input": user_input,
+                "grade": grade
+            })
+            return clean_math_text(response.content.strip())
+        except Exception as e:
+            logger.error(f"Error generating grade acknowledgment: {e}")
+            return f"Got it, grade {grade} is perfect!" if self.user_language == "en" else f"מצוין, כיתה {self._translate_grade_to_hebrew(grade)} נהדרת!"
 
     def _generate_ai_small_talk(self, user_input: str = "") -> str:
         """Generate AI-based small talk response."""
@@ -530,6 +611,19 @@ class DialogueFSM:
         except Exception as e:
             logger.error(f"Error generating AI personal follow-up: {e}")
             return "That's interesting! How was your day yesterday?"
+        
+    def _get_small_talk_question(self) -> str:
+        """Get the small talk question (only hobbies)."""
+        return self._get_localized_text("small_talk_hobbies")
+        
+    def _get_diagnostic_question(self) -> str:
+        """Get the current diagnostic question based on index."""
+        diagnostic_questions = [
+            self._get_localized_text("diagnostic_test"),
+            self._get_localized_text("diagnostic_last_class"),
+            self._get_localized_text("diagnostic_focus")
+        ]
+        return diagnostic_questions[self.diagnostic_question_index]
 
     def _generate_academic_transition(self, user_input: str = "") -> str:
         """Generate AI-based academic transition response."""
@@ -946,18 +1040,18 @@ class DialogueFSM:
             return "No question available."
 
         q_text = questions[self.current_question_index].replace(',', '')
-        q_text = clean_math_text(q_text)   # ← remove $
+        q_text = clean_math_text(q_text)   # Remove $
 
         # Generate SVG only once per question (not for hints)
         if self.current_exercise.get("svg") and not self.svg_generated_for_question:
             svg_reference = self._generate_and_save_svg(for_solution_explanation=False)
-            q_text += svg_reference
+            # Ensure svg_reference is a string and non-empty before concatenation
+            if svg_reference and isinstance(svg_reference, str):
+                q_text += f"\n{svg_reference}"
             self.svg_generated_for_question = True
         elif self.current_svg_file_path and self.svg_generated_for_question:
             # Reuse existing SVG file reference for hints
             q_text += f"\n\n[Image File: {self.current_svg_file_path.as_posix()}]"
-            #if self.current_svg_description:
-                #q_text += f"\n[Image Description: {self.current_svg_description}]"
 
         # Return in user's preferred language
         if self.user_language == "en":
@@ -985,7 +1079,7 @@ class DialogueFSM:
         closing_prompt = ChatPromptTemplate.from_messages([
             ("system", """You are a friendly math tutor closing a short session.
             Write a 2–3 sentence positive summary of the lesson.
-            End with a light humorous encouragement."""),
+            End with a light humorous encouragement.""" ),
             MessagesPlaceholder(variable_name="chat_history"),
             ("user", "Summarize the lesson we just completed.")
         ])
@@ -1012,14 +1106,15 @@ class DialogueFSM:
 
         else:
             # Current exercise is finished - increment counters
-            self.completed_exercises_count += 1
-            #self.topic_exercises_count += 1
-            self.exercise_counter += 1   # NEW counter
+           # self.completed_exercises_count += 1
+            self.topic_exercises_count += 1  # MARK HERE: Increment topic-specific counter
+            #self.exercise_counter += 1   # NEW counter
 
-            # Check if max exercises reached
-            if self.exercise_counter >= self.MAX_EXERCISES:
+            # MARK HERE: Check if 2 exercises completed for this topic - then ask for doubts
+            if self.topic_exercises_count >= self.MAX_EXERCISES:
                 self.state = State.ASK_FOR_DOUBTS
-                return self._generate_lesson_summary()
+                topic_name = self.topic or "this topic"
+                return f"\n\n{self._get_localized_text('ask_for_doubts', topic=topic_name)}"
 
             # Construct query for a new exercise
             query = f"Next exercise for grade {self.hebrew_grade}"
@@ -1084,8 +1179,8 @@ class DialogueFSM:
             
             topic_name = self.topic or "this topic"
             intro = self._get_localized_text("doubt_clearing_intro", topic=topic_name)
-            complete = self._get_localized_text("doubt_answer_complete", topic=topic_name)
-            return f"{intro}\n\n{clean_math_text(response.content.strip())}\n\n{complete}"
+            #complete = self._get_localized_text("doubt_answer_complete", topic=topic_name)
+            return f"{intro}\n\n{clean_math_text(response.content.strip())}"
             
             #return f"{intro}\n\n{response.content.strip()}\n\n{complete}"
             
@@ -1115,6 +1210,8 @@ class DialogueFSM:
         # --- State Transitions ---
         if self.state == State.START:
             self.state = State.SMALL_TALK
+            self.small_talk_question_index = 0
+            self.small_talk_responses = []
             self.small_talk_turns = 1
             simple_greetings = ["Hey! How are you?", "Hi there!", "What's up?", "How's it going?"]
             ai_response = random.choice(simple_greetings)
@@ -1122,30 +1219,119 @@ class DialogueFSM:
             return ai_response
 
         elif self.state == State.SMALL_TALK:
-            self.state = State.PERSONAL_FOLLOWUP
-            self.small_talk_turns += 1
-            ai_response = self._generate_ai_personal_followup(user_input)
-            self.chat_history.append(AIMessage(content=ai_response))
-            return ai_response
+            if self.small_talk_question_index == 0:
+                # Generate contextual response to greeting + hobbies question
+                try:
+                    response = self.small_talk_chain.invoke({
+                        "chat_history": self.chat_history[-3:],
+                        "input": user_input or ""
+                    })
+                    response_text = clean_math_text(response.content.strip())
+                    # Ensure hobbies question is included
+                    hobbies_q = self._get_localized_text("small_talk_hobbies")
+                    response_text = f"{response_text} {hobbies_q}"
+                    self.small_talk_question_index += 1
+                    self.chat_history.append(AIMessage(content=response_text))
+                    return response_text
+                except Exception as e:
+                    logger.error(f"Error generating contextual small talk: {e}")
+                    # Fallback: static response + hobbies
+                    fallback_response = "I'm doing great, thanks for asking!" if self.user_language == "en" else "אני בסדר, תודה ששאלת!"
+                    hobbies_q = self._get_localized_text("small_talk_hobbies")
+                    response_text = f"{fallback_response} {hobbies_q}"
+                    self.small_talk_question_index += 1
+                    self.chat_history.append(AIMessage(content=response_text))
+                    return response_text
+            else:
+                # User responded to hobbies, move to personal followup
+                self.small_talk_responses.append(user_input)
+                self.state = State.PERSONAL_FOLLOWUP
+                ai_response = self._generate_ai_personal_followup(user_input)
+                self.chat_history.append(AIMessage(content=ai_response))
+                return ai_response
 
         elif self.state == State.PERSONAL_FOLLOWUP:
-            self.state = State.ACADEMIC_TRANSITION
-            ai_response = self._generate_academic_transition(user_input)
-            self.chat_history.append(AIMessage(content=ai_response))
-            return ai_response
+            self.state = State.DIAGNOSTIC
+            self.diagnostic_question_index = 0
+            self.diagnostic_responses = []  # Reset responses
+            response_text = self._get_diagnostic_question()
+            self.chat_history.append(AIMessage(content=response_text))
+            return response_text
         
+        elif self.state == State.DIAGNOSTIC:
+            # Store the user's response
+            self.diagnostic_responses.append(user_input)
+            self.diagnostic_question_index += 1
+
+            # Check if there are more diagnostic questions
+            if self.diagnostic_question_index < 3:  # 3 questions total
+                # Get next diagnostic question
+                next_question = self._get_diagnostic_question()
+                # Generate short contextual acknowledgment
+                try:
+                    contextual_prompt = ChatPromptTemplate.from_messages([
+                        ("system", f"""You are a friendly math tutor.
+                        Language: Respond in {self.user_language} ({'Hebrew' if self.user_language == 'he' else 'English'})
+                        Guidelines:
+                        - Acknowledge the user's previous response in ONE short sentence (5-10 words).
+                        - Be warm, conversational, and encouraging.
+                        - Examples: 'Wow, great to hear!', 'That's awesome!', 'Cool, love that!'
+                        - Return ONLY the acknowledgment sentence.""" ),
+                        MessagesPlaceholder(variable_name="chat_history"),
+                        ("user", "{input}")
+                    ])
+                    contextual_chain = contextual_prompt | llm
+                    ack_response = contextual_chain.invoke({
+                        "chat_history": self.chat_history[-3:],
+                        "input": user_input
+                    })
+                    acknowledgment = clean_math_text(ack_response.content.strip())
+                    if not acknowledgment:  # Ensure non-empty
+                        acknowledgment = "That's awesome!"
+                except Exception as e:
+                    logger.error(f"Error generating contextual acknowledgment: {e}")
+                    acknowledgment = "That's awesome!"  # Fallback
+
+                # Combine acknowledgment with diagnostic question
+                response_text = f"{acknowledgment} So, {next_question}"
+                self.chat_history.append(AIMessage(content=response_text))
+                return response_text
+            else:
+                # All questions done - move to academic transition
+                self.state = State.ACADEMIC_TRANSITION
+                ai_response = self._generate_academic_transition(user_input)
+                self.chat_history.append(AIMessage(content=ai_response))
+                return ai_response
+            
         elif self.state == State.ACADEMIC_TRANSITION:
+            # Use existing academic transition (fallback until contextual method is added)
+            ai_response = self._generate_academic_transition(user_input)
             self.state = State.ASK_GRADE
-            response_text = self._get_localized_text("ask_grade")
+            grade_ask = self._get_localized_text("ask_grade")
+            response_text = f"{ai_response}\n\n{grade_ask}"
             self.chat_history.append(AIMessage(content=response_text))
             return response_text
 
         elif self.state == State.ASK_GRADE:
-            self.grade = user_input.strip()
+            # Extract grade number from user input using regex and AI
+            extracted_grade = self._extract_grade_from_input(user_input.strip())
+            
+            if not extracted_grade:
+                # Ask again if no valid grade found - localized with examples
+                examples = "7 or 8" if self.user_language == "en" else "ז or ח"
+                retry_message = f"{self._get_localized_text('ask_grade')} ({self._get_localized_text('examples', examples=examples)})"
+                self.chat_history.append(AIMessage(content=retry_message))
+                return retry_message
+            
+            # Success: Set grades
+            self.grade = extracted_grade
             self.hebrew_grade = self._translate_grade_to_hebrew(self.grade)
             self.state = State.EXERCISE_SELECTION
             
-            # Get available topics in Hebrew and translate if needed
+            # Generate contextual acknowledgment using AI (existing)
+            grade_acknowledgment = self._generate_grade_acknowledgment(user_input, self.grade)
+            
+            # Get available topics (existing logic)
             available_topics_hebrew = list(set(
                 ex.get("topic", "Unknown") for ex in self.exercises_data
                 if ex.get("grade") == self.hebrew_grade
@@ -1153,20 +1339,22 @@ class DialogueFSM:
             
             if available_topics_hebrew:
                 if self.user_language == "en":
-                    english_topics = [translate_text_to_english(topic) for topic in available_topics_hebrew[:]]
+                    english_topics = [translate_text_to_english(topic) for topic in available_topics_hebrew[:3]]
                     topics_str = ", ".join(english_topics)
                 else:
-                    topics_str = ", ".join(available_topics_hebrew[:])
+                    topics_str = ", ".join(available_topics_hebrew[:3])
             else:
                 topics_str = "Any topic"
                 
-            response_text = self._get_localized_text("ask_topic", grade=self.grade, topics=topics_str)
+            topic_question = self._get_localized_text("ask_topic", grade=self.grade, topics=topics_str)
+            response_text = f"{grade_acknowledgment} {topic_question}"
             self.chat_history.append(AIMessage(content=response_text))
             return response_text
 
         elif self.state == State.EXERCISE_SELECTION:
             self.topic = clean_math_text(user_input.strip()) # Clean topic input
-            self.topic_exercises_count = 0
+            # MARK HERE: Reset counters when new topic is selected
+            self.topic_exercises_count = 0  # Reset for new topic
             self.doubt_questions_count = 0
             #self.exercise_counter = 0  # reset 2-exercise block
             
